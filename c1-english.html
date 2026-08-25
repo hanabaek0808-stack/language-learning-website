@@ -3,6 +3,614 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>English C1 | LinguaPath</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#20242c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#263a8b,#5267c9);
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+font-size:34px;
+margin-bottom:8px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 18px;
+}
+
+.back{
+display:inline-block;
+margin-bottom:25px;
+color:#263a8b;
+text-decoration:none;
+font-weight:bold;
+}
+
+.intro{
+text-align:center;
+margin-bottom:30px;
+}
+
+.intro h2{
+color:#263a8b;
+margin-bottom:8px;
+}
+
+.language-box{
+background:white;
+padding:20px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+margin-bottom:30px;
+}
+
+.language-box label{
+font-weight:bold;
+color:#263a8b;
+}
+
+.language-box select{
+margin-top:10px;
+width:100%;
+max-width:350px;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+.words{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.word{
+background:white;
+padding:22px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+}
+
+.word h3{
+color:#263a8b;
+font-size:24px;
+margin-bottom:4px;
+}
+
+.pronunciation{
+color:#777;
+font-size:14px;
+margin-bottom:12px;
+}
+
+.translation{
+font-size:18px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.example{
+color:#555;
+margin-bottom:12px;
+}
+
+.listen{
+background:#263a8b;
+color:white;
+border:none;
+padding:9px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.listen:hover{
+background:#17245f;
+}
+
+.section-title{
+text-align:center;
+margin:40px 0 20px;
+color:#263a8b;
+}
+
+.quiz{
+background:white;
+padding:25px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+text-align:center;
+}
+
+.quiz button{
+margin-top:15px;
+background:#263a8b;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+cursor:pointer;
+}
+
+footer{
+margin-top:45px;
+background:#202b55;
+color:white;
+text-align:center;
+padding:28px;
+}
+
+@media(max-width:650px){
+.words{
+grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🇬🇧 English C1</h1>
+<p>Advanced English with multilingual meanings</p>
+</header>
+
+<div class="container">
+
+<a class="back" href="english.html">
+← Back to English
+</a>
+
+<div class="intro">
+<h2>🌟 C1 Advanced Vocabulary</h2>
+<p>
+Develop sophisticated vocabulary for academic, professional and everyday communication.
+</p>
+</div>
+
+<div class="language-box">
+
+<label for="language">
+🌍 Choose your translation language:
+</label>
+
+<br>
+
+<select id="language" onchange="changeLanguage()">
+
+<option value="urdu">🇵🇰 Urdu</option>
+<option value="arabic">🇸🇦 Arabic</option>
+<option value="spanish">🇪🇸 Spanish</option>
+<option value="french">🇫🇷 French</option>
+<option value="german">🇩🇪 German</option>
+<option value="chinese">🇨🇳 Chinese</option>
+<option value="turkish">🇹🇷 Turkish</option>
+<option value="korean">🇰🇷 Korean</option>
+<option value="japanese">🇯🇵 Japanese</option>
+
+</select>
+
+</div>
+
+<h2 class="section-title">
+📚 Essential C1 Words
+</h2>
+
+<div class="words">
+
+
+<div class="word">
+
+<h3>Compelling</h3>
+
+<div class="pronunciation">
+/kəmˈpelɪŋ/
+</div>
+
+<div class="translation"
+data-urdu="قائل کرنے والا / مؤثر"
+data-arabic="مقنع"
+data-spanish="Convincente"
+data-french="Convaincant"
+data-german="Überzeugend"
+data-chinese="引人注目的"
+data-turkish="İkna edici"
+data-korean="설득력 있는"
+data-japanese="説得力のある">
+قائل کرنے والا / مؤثر
+</div>
+
+<p class="example">
+<b>Example:</b> She gave a compelling argument.
+</p>
+
+<button class="listen" onclick="speak('Compelling')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Substantial</h3>
+
+<div class="pronunciation">
+/səbˈstænʃəl/
+</div>
+
+<div class="translation"
+data-urdu="کافی / اہم"
+data-arabic="كبير / جوهري"
+data-spanish="Sustancial"
+data-french="Substantiel"
+data-german="Erheblich"
+data-chinese="大量的"
+data-turkish="Önemli / büyük"
+data-korean="상당한"
+data-japanese="かなりの">
+کافی / اہم
+</div>
+
+<p class="example">
+<b>Example:</b> The project requires a substantial amount of money.
+</p>
+
+<button class="listen" onclick="speak('Substantial')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Ambiguous</h3>
+
+<div class="pronunciation">
+/æmˈbɪɡjuəs/
+</div>
+
+<div class="translation"
+data-urdu="مبہم"
+data-arabic="غامض"
+data-spanish="Ambiguo"
+data-french="Ambigu"
+data-german="Mehrdeutig"
+data-chinese="模棱两可的"
+data-turkish="Belirsiz"
+data-korean="모호한"
+data-japanese="曖昧な">
+مبہم
+</div>
+
+<p class="example">
+<b>Example:</b> His answer was ambiguous.
+</p>
+
+<button class="listen" onclick="speak('Ambiguous')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Coherent</h3>
+
+<div class="pronunciation">
+/kəʊˈhɪərənt/
+</div>
+
+<div class="translation"
+data-urdu="مربوط / واضح"
+data-arabic="مترابط"
+data-spanish="Coherente"
+data-french="Cohérent"
+data-german="Zusammenhängend"
+data-chinese="连贯的"
+data-turkish="Tutarlı"
+data-korean="일관성 있는"
+data-japanese="首尾一貫した">
+مربوط / واضح
+</div>
+
+<p class="example">
+<b>Example:</b> She presented a coherent explanation.
+</p>
+
+<button class="listen" onclick="speak('Coherent')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Furthermore</h3>
+
+<div class="pronunciation">
+/ˌfɜːrðəˈmɔːr/
+</div>
+
+<div class="translation"
+data-urdu="مزید برآں"
+data-arabic="علاوة على ذلك"
+data-spanish="Además"
+data-french="De plus"
+data-german="Darüber hinaus"
+data-chinese="此外"
+data-turkish="Ayrıca"
+data-korean="더욱이"
+data-japanese="さらに">
+مزید برآں
+</div>
+
+<p class="example">
+<b>Example:</b> Furthermore, the results support our conclusion.
+</p>
+
+<button class="listen" onclick="speak('Furthermore')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Nevertheless</h3>
+
+<div class="pronunciation">
+/ˌnevəðəˈles/
+</div>
+
+<div class="translation"
+data-urdu="اس کے باوجود"
+data-arabic="ومع ذلك"
+data-spanish="Sin embargo"
+data-french="Néanmoins"
+data-german="Dennoch"
+data-chinese="然而"
+data-turkish="Bununla birlikte"
+data-korean="그럼에도 불구하고"
+data-japanese="それにもかかわらず">
+اس کے باوجود
+</div>
+
+<p class="example">
+<b>Example:</b> The task was difficult; nevertheless, we completed it.
+</p>
+
+<button class="listen" onclick="speak('Nevertheless')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Facilitate</h3>
+
+<div class="pronunciation">
+/fəˈsɪlɪteɪt/
+</div>
+
+<div class="translation"
+data-urdu="آسان بنانا"
+data-arabic="يسهل"
+data-spanish="Facilitar"
+data-french="Faciliter"
+data-german="Erleichtern"
+data-chinese="促进"
+data-turkish="Kolaylaştırmak"
+data-korean="촉진하다"
+data-japanese="促進する">
+آسان بنانا
+</div>
+
+<p class="example">
+<b>Example:</b> Technology can facilitate communication.
+</p>
+
+<button class="listen" onclick="speak('Facilitate')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Conventional</h3>
+
+<div class="pronunciation">
+/kənˈvenʃənəl/
+</div>
+
+<div class="translation"
+data-urdu="روایتی"
+data-arabic="تقليدي"
+data-spanish="Convencional"
+data-french="Conventionnel"
+data-german="Konventionell"
+data-chinese="传统的"
+data-turkish="Geleneksel"
+data-korean="전통적인"
+data-japanese="従来の">
+روایتی
+</div>
+
+<p class="example">
+<b>Example:</b> They rejected the conventional approach.
+</p>
+
+<button class="listen" onclick="speak('Conventional')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Perspective</h3>
+
+<div class="pronunciation">
+/pəˈspektɪv/
+</div>
+
+<div class="translation"
+data-urdu="نقطۂ نظر"
+data-arabic="وجهة نظر"
+data-spanish="Perspectiva"
+data-french="Perspective"
+data-german="Perspektive"
+data-chinese="观点"
+data-turkish="Bakış açısı"
+data-korean="관점"
+data-japanese="視点">
+نقطۂ نظر
+</div>
+
+<p class="example">
+<b>Example:</b> Travel can change your perspective on life.
+</p>
+
+<button class="listen" onclick="speak('Perspective')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Controversial</h3>
+
+<div class="pronunciation">
+/ˌkɒntrəˈvɜːʃəl/
+</div>
+
+<div class="translation"
+data-urdu="متنازع"
+data-arabic="مثير للجدل"
+data-spanish="Controvertido"
+data-french="Controversé"
+data-german="Umstritten"
+data-chinese="有争议的"
+data-turkish="Tartışmalı"
+data-korean="논란이 되는"
+data-japanese="物議を醸す">
+متنازع
+</div>
+
+<p class="example">
+<b>Example:</b> The decision was highly controversial.
+</p>
+
+<button class="listen" onclick="speak('Controversial')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<h2 class="section-title">
+🧠 C1 Practice
+</h2>
+
+<div class="quiz">
+
+<h3>Ready to test your C1 vocabulary?</h3>
+
+<p>
+Challenge yourself with advanced vocabulary.
+</p>
+
+<a href="vocabulary-quiz.html">
+<button>
+🧠 Start Vocabulary Quiz
+</button>
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<h3>🌍 LinguaPath</h3>
+
+<p>Learn • Practice • Improve</p>
+
+<p>© 2026 LinguaPath</p>
+
+</footer>
+
+
+<script>
+
+function changeLanguage(){
+
+const language =
+document.getElementById("language").value;
+
+const translations =
+document.querySelectorAll(".translation");
+
+translations.forEach(function(item){
+
+item.textContent =
+item.getAttribute("data-" + language);
+
+});
+
+}
+
+
+function speak(word){
+
+const speech =
+new SpeechSynthesisUtterance(word);
+
+speech.lang="en-US";
+speech.rate=0.85;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+</script>
+
+</body>
+  </html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>English C1 Vocabulary | LinguaPath</title>
 
 <style>
