@@ -4,6 +4,426 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>English B2 | LinguaPath</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#20242c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#263a8b,#5267c9);
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{font-size:34px;margin-bottom:8px}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 18px;
+}
+
+.back{
+display:inline-block;
+margin-bottom:25px;
+color:#263a8b;
+text-decoration:none;
+font-weight:bold;
+}
+
+.intro{
+text-align:center;
+margin-bottom:30px;
+}
+
+.intro h2{
+color:#263a8b;
+margin-bottom:8px;
+}
+
+.language-box{
+background:white;
+padding:20px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+margin-bottom:30px;
+}
+
+.language-box label{
+font-weight:bold;
+color:#263a8b;
+}
+
+.language-box select{
+margin-top:10px;
+width:100%;
+max-width:350px;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+.words{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.word{
+background:white;
+padding:22px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+}
+
+.word h3{
+color:#263a8b;
+font-size:24px;
+margin-bottom:4px;
+}
+
+.pronunciation{
+color:#777;
+font-size:14px;
+margin-bottom:12px;
+}
+
+.translation{
+font-size:18px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.example{
+color:#555;
+margin-bottom:12px;
+}
+
+.listen{
+background:#263a8b;
+color:white;
+border:none;
+padding:9px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.listen:hover{
+background:#17245f;
+}
+
+.section-title{
+text-align:center;
+margin:40px 0 20px;
+color:#263a8b;
+}
+
+.quiz{
+background:white;
+padding:25px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+text-align:center;
+}
+
+.quiz button{
+margin-top:15px;
+background:#263a8b;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+cursor:pointer;
+}
+
+footer{
+margin-top:45px;
+background:#202b55;
+color:white;
+text-align:center;
+padding:28px;
+}
+
+@media(max-width:650px){
+.words{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🇬🇧 English B2</h1>
+<p>Upper-intermediate English with multilingual meanings</p>
+</header>
+
+<div class="container">
+
+<a class="back" href="english.html">← Back to English</a>
+
+<div class="intro">
+<h2>🌿 B2 Upper-Intermediate Vocabulary</h2>
+<p>Develop advanced everyday vocabulary for study, work and communication.</p>
+</div>
+
+<div class="language-box">
+
+<label for="language">🌍 Choose your translation language:</label>
+<br>
+
+<select id="language" onchange="changeLanguage()">
+<option value="urdu">🇵🇰 Urdu</option>
+<option value="arabic">🇸🇦 Arabic</option>
+<option value="spanish">🇪🇸 Spanish</option>
+<option value="french">🇫🇷 French</option>
+<option value="german">🇩🇪 German</option>
+<option value="chinese">🇨🇳 Chinese</option>
+<option value="turkish">🇹🇷 Turkish</option>
+<option value="korean">🇰🇷 Korean</option>
+<option value="japanese">🇯🇵 Japanese</option>
+</select>
+
+</div>
+
+<h2 class="section-title">📚 Essential B2 Words</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Significant</h3>
+<div class="pronunciation">/sɪɡˈnɪfɪkənt/</div>
+<div class="translation"
+data-urdu="اہم / نمایاں"
+data-arabic="مهم"
+data-spanish="Significativo"
+data-french="Significatif"
+data-german="Bedeutend"
+data-chinese="重要的"
+data-turkish="Önemli"
+data-korean="중요한"
+data-japanese="重要な">اہم / نمایاں</div>
+<p class="example"><b>Example:</b> There has been a significant change.</p>
+<button class="listen" onclick="speak('Significant')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Analyze</h3>
+<div class="pronunciation">/ˈænəlaɪz/</div>
+<div class="translation"
+data-urdu="تجزیہ کرنا"
+data-arabic="يحلل"
+data-spanish="Analizar"
+data-french="Analyser"
+data-german="Analysieren"
+data-chinese="分析"
+data-turkish="Analiz etmek"
+data-korean="분석하다"
+data-japanese="分析する">تجزیہ کرنا</div>
+<p class="example"><b>Example:</b> Students must analyze the information carefully.</p>
+<button class="listen" onclick="speak('Analyze')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Complex</h3>
+<div class="pronunciation">/ˈkɒmpleks/</div>
+<div class="translation"
+data-urdu="پیچیدہ"
+data-arabic="معقد"
+data-spanish="Complejo"
+data-french="Complexe"
+data-german="Komplex"
+data-chinese="复杂的"
+data-turkish="Karmaşık"
+data-korean="복잡한"
+data-japanese="複雑な">پیچیدہ</div>
+<p class="example"><b>Example:</b> This is a complex problem.</p>
+<button class="listen" onclick="speak('Complex')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Approach</h3>
+<div class="pronunciation">/əˈprəʊtʃ/</div>
+<div class="translation"
+data-urdu="طریقہ / نقطۂ نظر"
+data-arabic="نهج"
+data-spanish="Enfoque"
+data-french="Approche"
+data-german="Ansatz"
+data-chinese="方法"
+data-turkish="Yaklaşım"
+data-korean="접근법"
+data-japanese="アプローチ">طریقہ / نقطۂ نظر</div>
+<p class="example"><b>Example:</b> We need a different approach to this problem.</p>
+<button class="listen" onclick="speak('Approach')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Maintain</h3>
+<div class="pronunciation">/meɪnˈteɪn/</div>
+<div class="translation"
+data-urdu="برقرار رکھنا"
+data-arabic="يحافظ على"
+data-spanish="Mantener"
+data-french="Maintenir"
+data-german="Aufrechterhalten"
+data-chinese="保持"
+data-turkish="Sürdürmek"
+data-korean="유지하다"
+data-japanese="維持する">برقرار رکھنا</div>
+<p class="example"><b>Example:</b> It is important to maintain a healthy lifestyle.</p>
+<button class="listen" onclick="speak('Maintain')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Efficient</h3>
+<div class="pronunciation">/ɪˈfɪʃənt/</div>
+<div class="translation"
+data-urdu="موثر"
+data-arabic="فعال"
+data-spanish="Eficiente"
+data-french="Efficace"
+data-german="Effizient"
+data-chinese="高效的"
+data-turkish="Verimli"
+data-korean="효율적인"
+data-japanese="効率的な">موثر</div>
+<p class="example"><b>Example:</b> We need a more efficient system.</p>
+<button class="listen" onclick="speak('Efficient')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Consequently</h3>
+<div class="pronunciation">/ˈkɒnsɪkwəntli/</div>
+<div class="translation"
+data-urdu="نتیجتاً"
+data-arabic="وبالتالي"
+data-spanish="En consecuencia"
+data-french="Par conséquent"
+data-german="Folglich"
+data-chinese="因此"
+data-turkish="Sonuç olarak"
+data-korean="결과적으로"
+data-japanese="その結果">نتیجتاً</div>
+<p class="example"><b>Example:</b> He missed the bus and consequently arrived late.</p>
+<button class="listen" onclick="speak('Consequently')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Potential</h3>
+<div class="pronunciation">/pəˈtenʃəl/</div>
+<div class="translation"
+data-urdu="ممکنہ صلاحیت"
+data-arabic="إمكانات"
+data-spanish="Potencial"
+data-french="Potentiel"
+data-german="Potenzial"
+data-chinese="潜力"
+data-turkish="Potansiyel"
+data-korean="잠재력"
+data-japanese="可能性">ممکنہ صلاحیت</div>
+<p class="example"><b>Example:</b> This student has great potential.</p>
+<button class="listen" onclick="speak('Potential')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Evaluate</h3>
+<div class="pronunciation">/ɪˈvæljueɪt/</div>
+<div class="translation"
+data-urdu="جائزہ لینا"
+data-arabic="يقيم"
+data-spanish="Evaluar"
+data-french="Évaluer"
+data-german="Bewerten"
+data-chinese="评估"
+data-turkish="Değerlendirmek"
+data-korean="평가하다"
+data-japanese="評価する">جائزہ لینا</div>
+<p class="example"><b>Example:</b> We need to evaluate the results.</p>
+<button class="listen" onclick="speak('Evaluate')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Reliable</h3>
+<div class="pronunciation">/rɪˈlaɪəbəl/</div>
+<div class="translation"
+data-urdu="قابلِ اعتماد"
+data-arabic="موثوق"
+data-spanish="Fiable"
+data-french="Fiable"
+data-german="Zuverlässig"
+data-chinese="可靠的"
+data-turkish="Güvenilir"
+data-korean="신뢰할 수 있는"
+data-japanese="信頼できる">قابلِ اعتماد</div>
+<p class="example"><b>Example:</b> We need a reliable source of information.</p>
+<button class="listen" onclick="speak('Reliable')">🔊 Listen</button>
+</div>
+
+</div>
+
+<h2 class="section-title">🧠 B2 Practice</h2>
+
+<div class="quiz">
+
+<h3>Ready to test your B2 vocabulary?</h3>
+
+<p>Practice the words you have learned.</p>
+
+<a href="vocabulary-quiz.html">
+<button>🧠 Start Vocabulary Quiz</button>
+</a>
+
+</div>
+
+</div>
+
+<footer>
+<h3>🌍 LinguaPath</h3>
+<p>Learn • Practice • Improve</p>
+<p>© 2026 LinguaPath</p>
+</footer>
+
+<script>
+
+function changeLanguage(){
+
+const language=document.getElementById("language").value;
+
+document.querySelectorAll(".translation").forEach(function(item){
+item.textContent=item.getAttribute("data-"+language);
+});
+
+}
+
+function speak(word){
+
+const speech=new SpeechSynthesisUtterance(word);
+
+speech.lang="en-US";
+speech.rate=0.85;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+</script>
+
+</body>
+  </html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>English B2 Vocabulary | LinguaPath</title>
 
 <style>
