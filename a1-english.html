@@ -4,6 +4,613 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>English A1 | LinguaPath</title>
+
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#20242c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#263a8b,#5267c9);
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+font-size:34px;
+margin-bottom:8px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 18px;
+}
+
+.back{
+display:inline-block;
+margin-bottom:25px;
+color:#263a8b;
+text-decoration:none;
+font-weight:bold;
+}
+
+.intro{
+text-align:center;
+margin-bottom:30px;
+}
+
+.intro h2{
+color:#263a8b;
+margin-bottom:8px;
+}
+
+.language-box{
+background:white;
+padding:20px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+margin-bottom:30px;
+}
+
+.language-box label{
+font-weight:bold;
+color:#263a8b;
+}
+
+.language-box select{
+margin-top:10px;
+width:100%;
+max-width:350px;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+.words{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.word{
+background:white;
+padding:22px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+}
+
+.word h3{
+color:#263a8b;
+font-size:24px;
+margin-bottom:4px;
+}
+
+.pronunciation{
+color:#777;
+font-size:14px;
+margin-bottom:12px;
+}
+
+.translation{
+font-size:18px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.example{
+color:#555;
+margin-bottom:12px;
+}
+
+.listen{
+background:#263a8b;
+color:white;
+border:none;
+padding:9px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.listen:hover{
+background:#17245f;
+}
+
+.section-title{
+text-align:center;
+margin:40px 0 20px;
+color:#263a8b;
+}
+
+.quiz{
+background:white;
+padding:25px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+text-align:center;
+}
+
+.quiz button{
+margin-top:15px;
+background:#263a8b;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+cursor:pointer;
+}
+
+footer{
+margin-top:45px;
+background:#202b55;
+color:white;
+text-align:center;
+padding:28px;
+}
+
+@media(max-width:650px){
+.words{
+grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🇬🇧 English A1</h1>
+<p>Beginner English with multilingual meanings</p>
+</header>
+
+<div class="container">
+
+<a class="back" href="english.html">
+← Back to English
+</a>
+
+<div class="intro">
+<h2>🌱 A1 Beginner Vocabulary</h2>
+<p>
+Learn essential English words with meanings in different languages.
+</p>
+</div>
+
+<div class="language-box">
+
+<label for="language">
+🌍 Choose your translation language:
+</label>
+
+<br>
+
+<select id="language" onchange="changeLanguage()">
+
+<option value="urdu">🇵🇰 Urdu</option>
+<option value="arabic">🇸🇦 Arabic</option>
+<option value="spanish">🇪🇸 Spanish</option>
+<option value="french">🇫🇷 French</option>
+<option value="german">🇩🇪 German</option>
+<option value="chinese">🇨🇳 Chinese</option>
+<option value="turkish">🇹🇷 Turkish</option>
+<option value="korean">🇰🇷 Korean</option>
+<option value="japanese">🇯🇵 Japanese</option>
+
+</select>
+
+</div>
+
+
+<h2 class="section-title">📚 Essential A1 Words</h2>
+
+<div class="words">
+
+
+<div class="word">
+
+<h3>Hello</h3>
+
+<div class="pronunciation">
+/həˈloʊ/
+</div>
+
+<div class="translation"
+data-urdu="ہیلو / سلام"
+data-arabic="مرحباً"
+data-spanish="Hola"
+data-french="Bonjour"
+data-german="Hallo"
+data-chinese="你好"
+data-turkish="Merhaba"
+data-korean="안녕하세요"
+data-japanese="こんにちは">
+ہیلو / سلام
+</div>
+
+<p class="example">
+<b>Example:</b> Hello! How are you?
+</p>
+
+<button class="listen" onclick="speak('Hello')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Goodbye</h3>
+
+<div class="pronunciation">
+/ˌɡʊdˈbaɪ/
+</div>
+
+<div class="translation"
+data-urdu="خدا حافظ"
+data-arabic="وداعاً"
+data-spanish="Adiós"
+data-french="Au revoir"
+data-german="Auf Wiedersehen"
+data-chinese="再见"
+data-turkish="Hoşça kal"
+data-korean="안녕히 가세요"
+data-japanese="さようなら">
+خدا حافظ
+</div>
+
+<p class="example">
+<b>Example:</b> Goodbye! See you tomorrow.
+</p>
+
+<button class="listen" onclick="speak('Goodbye')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Thank you</h3>
+
+<div class="pronunciation">
+/ˈθæŋk juː/
+</div>
+
+<div class="translation"
+data-urdu="شکریہ"
+data-arabic="شكراً"
+data-spanish="Gracias"
+data-french="Merci"
+data-german="Danke"
+data-chinese="谢谢"
+data-turkish="Teşekkür ederim"
+data-korean="감사합니다"
+data-japanese="ありがとうございます">
+شکریہ
+</div>
+
+<p class="example">
+<b>Example:</b> Thank you for your help.
+</p>
+
+<button class="listen" onclick="speak('Thank you')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Please</h3>
+
+<div class="pronunciation">
+/pliːz/
+</div>
+
+<div class="translation"
+data-urdu="براہ کرم"
+data-arabic="من فضلك"
+data-spanish="Por favor"
+data-french="S'il vous plaît"
+data-german="Bitte"
+data-chinese="请"
+data-turkish="Lütfen"
+data-korean="부탁합니다"
+data-japanese="お願いします">
+براہ کرم
+</div>
+
+<p class="example">
+<b>Example:</b> Please sit down.
+</p>
+
+<button class="listen" onclick="speak('Please')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Yes</h3>
+
+<div class="pronunciation">
+/jes/
+</div>
+
+<div class="translation"
+data-urdu="ہاں"
+data-arabic="نعم"
+data-spanish="Sí"
+data-french="Oui"
+data-german="Ja"
+data-chinese="是"
+data-turkish="Evet"
+data-korean="네"
+data-japanese="はい">
+ہاں
+</div>
+
+<p class="example">
+<b>Example:</b> Yes, I understand.
+</p>
+
+<button class="listen" onclick="speak('Yes')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>No</h3>
+
+<div class="pronunciation">
+/noʊ/
+</div>
+
+<div class="translation"
+data-urdu="نہیں"
+data-arabic="لا"
+data-spanish="No"
+data-french="Non"
+data-german="Nein"
+data-chinese="不"
+data-turkish="Hayır"
+data-korean="아니요"
+data-japanese="いいえ">
+نہیں
+</div>
+
+<p class="example">
+<b>Example:</b> No, I don't know.
+</p>
+
+<button class="listen" onclick="speak('No')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Friend</h3>
+
+<div class="pronunciation">
+/frend/
+</div>
+
+<div class="translation"
+data-urdu="دوست"
+data-arabic="صديق"
+data-spanish="Amigo"
+data-french="Ami"
+data-german="Freund"
+data-chinese="朋友"
+data-turkish="Arkadaş"
+data-korean="친구"
+data-japanese="友達">
+دوست
+</div>
+
+<p class="example">
+<b>Example:</b> Ali is my friend.
+</p>
+
+<button class="listen" onclick="speak('Friend')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>House</h3>
+
+<div class="pronunciation">
+/haʊs/
+</div>
+
+<div class="translation"
+data-urdu="گھر"
+data-arabic="منزل"
+data-spanish="Casa"
+data-french="Maison"
+data-german="Haus"
+data-chinese="房子"
+data-turkish="Ev"
+data-korean="집"
+data-japanese="家">
+گھر
+</div>
+
+<p class="example">
+<b>Example:</b> This is my house.
+</p>
+
+<button class="listen" onclick="speak('House')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Water</h3>
+
+<div class="pronunciation">
+/ˈwɔːtər/
+</div>
+
+<div class="translation"
+data-urdu="پانی"
+data-arabic="ماء"
+data-spanish="Agua"
+data-french="Eau"
+data-german="Wasser"
+data-chinese="水"
+data-turkish="Su"
+data-korean="물"
+data-japanese="水">
+پانی
+</div>
+
+<p class="example">
+<b>Example:</b> I need some water.
+</p>
+
+<button class="listen" onclick="speak('Water')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Book</h3>
+
+<div class="pronunciation">
+/bʊk/
+</div>
+
+<div class="translation"
+data-urdu="کتاب"
+data-arabic="كتاب"
+data-spanish="Libro"
+data-french="Livre"
+data-german="Buch"
+data-chinese="书"
+data-turkish="Kitap"
+data-korean="책"
+data-japanese="本">
+کتاب
+</div>
+
+<p class="example">
+<b>Example:</b> I have a new book.
+</p>
+
+<button class="listen" onclick="speak('Book')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<h2 class="section-title">🧠 A1 Practice</h2>
+
+<div class="quiz">
+
+<h3>Ready to test yourself?</h3>
+
+<p>
+Practice the vocabulary you have learned.
+</p>
+
+<a href="vocabulary-quiz.html">
+<button>🧠 Start Vocabulary Quiz</button>
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<h3>🌍 LinguaPath</h3>
+
+<p>Learn • Practice • Improve</p>
+
+<p>© 2026 LinguaPath</p>
+
+</footer>
+
+
+<script>
+
+function changeLanguage(){
+
+const language =
+document.getElementById("language").value;
+
+const translations =
+document.querySelectorAll(".translation");
+
+translations.forEach(function(item){
+
+item.textContent =
+item.getAttribute("data-" + language);
+
+});
+
+}
+
+
+function speak(word){
+
+const speech =
+new SpeechSynthesisUtterance(word);
+
+speech.lang="en-US";
+speech.rate=0.85;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+</script>
+
+</body>
+  </html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>English A1 Vocabulary | LinguaPath</title>
 
 <style>
