@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary Quiz | LinguaPath</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#20242c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#263a8b,#5267c9);
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+font-size:32px;
+margin-bottom:8px;
+}
+
+.container{
+max-width:750px;
+margin:auto;
+padding:25px 18px;
+}
+
+.back{
+display:inline-block;
+margin-bottom:20px;
+color:#263a8b;
+text-decoration:none;
+font-weight:bold;
+}
+
+.quiz-card{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.progress{
+color:#666;
+margin-bottom:15px;
+font-weight:bold;
+}
+
+.question{
+font-size:23px;
+font-weight:bold;
+margin-bottom:20px;
+color:#263a8b;
+}
+
+.options{
+display:grid;
+gap:12px;
+}
+
+.option{
+border:1px solid #ddd;
+background:#fafafa;
+padding:14px;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+text-align:left;
+}
+
+.option:hover{
+background:#eef1ff;
+}
+
+.correct{
+background:#d9f7df !important;
+border-color:#39a653 !important;
+}
+
+.wrong{
+background:#ffdede !important;
+border-color:#d9534f !important;
+}
+
+#feedback{
+margin-top:18px;
+font-weight:bold;
+min-height:25px;
+}
+
+.next{
+margin-top:20px;
+background:#263a8b;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+display:none;
+}
+
+.next:hover{
+background:#17245f;
+}
+
+.result{
+text-align:center;
+display:none;
+}
+
+.result h2{
+color:#263a8b;
+font-size:28px;
+margin-bottom:10px;
+}
+
+.score{
+font-size:40px;
+font-weight:bold;
+margin:15px;
+}
+
+.restart{
+background:#263a8b;
+color:white;
+border:none;
+padding:13px 25px;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+}
+
+footer{
+margin-top:40px;
+background:#202b55;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+@media(max-width:600px){
+.question{font-size:20px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🧠 Vocabulary Quiz</h1>
+<p>Test your English vocabulary</p>
+</header>
+
+<div class="container">
+
+<a class="back" href="english.html">
+← Back to English
+</a>
+
+<div class="quiz-card">
+
+<div id="quiz">
+
+<div class="progress" id="progress"></div>
+
+<div class="question" id="question"></div>
+
+<div class="options" id="options"></div>
+
+<div id="feedback"></div>
+
+<button class="next" id="next" onclick="nextQuestion()">
+Next Question →
+</button>
+
+</div>
+
+<div class="result" id="result">
+
+<h2>🎉 Quiz Complete!</h2>
+
+<p>Your score is:</p>
+
+<div class="score" id="score"></div>
+
+<p id="message"></p>
+
+<br>
+
+<button class="restart" onclick="restartQuiz()">
+🔄 Try Again
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+<h3>🌍 LinguaPath</h3>
+<p>Learn • Practice • Improve</p>
+<p>© 2026 LinguaPath</p>
+</footer>
+
+
+<script>
+
+const questions=[
+
+{
+question:"What does 'Meticulous' mean?",
+options:[
+"Very careless",
+"Extremely careful about details",
+"Very angry",
+"Very fast"
+],
+answer:1
+},
+
+{
+question:"What does 'Scrutinise' mean?",
+options:[
+"To examine very carefully",
+"To forget something",
+"To explain briefly",
+"To destroy something"
+],
+answer:0
+},
+
+{
+question:"What does 'Eloquent' mean?",
+options:[
+"Unable to speak",
+"Fluent and persuasive",
+"Very confusing",
+"Extremely quiet"
+],
+answer:1
+},
+
+{
+question:"What does 'Mitigate' mean?",
+options:[
+"To increase a problem",
+"To ignore a problem",
+"To reduce the seriousness of something",
+"To create a problem"
+],
+answer:2
+},
+
+{
+question:"What does 'Ubiquitous' mean?",
+options:[
+"Rare",
+"Present everywhere",
+"Very expensive",
+"Impossible"
+],
+answer:1
+},
+
+{
+question:"What does 'Concise' mean?",
+options:[
+"Long and complicated",
+"Short and clear",
+"Incorrect",
+"Emotional"
+],
+answer:1
+},
+
+{
+question:"What does 'Inevitable' mean?",
+options:[
+"Certain to happen",
+"Impossible to understand",
+"Easy to avoid",
+"Very unusual"
+],
+answer:0
+},
+
+{
+question:"What does 'Substantiate' mean?",
+options:[
+"To hide evidence",
+"To provide evidence supporting something",
+"To disagree politely",
+"To simplify something"
+],
+answer:1
+},
+
+{
+question:"What does 'Pragmatic' mean?",
+options:[
+"Practical",
+"Emotional",
+"Unrealistic",
+"Traditional"
+],
+answer:0
+},
+
+{
+question:"What does 'Unprecedented' mean?",
+options:[
+"Very common",
+"Already repeated",
+"Never having happened before",
+"Easy to predict"
+],
+answer:2
+}
+
+];
+
+let current=0;
+let score=0;
+let answered=false;
+
+function loadQuestion(){
+
+answered=false;
+
+const q=questions[current];
+
+document.getElementById("progress").textContent=
+"Question "+(current+1)+" of "+questions.length;
+
+document.getElementById("question").textContent=q.question;
+
+const options=document.getElementById("options");
+
+options.innerHTML="";
+
+document.getElementById("feedback").textContent="";
+
+document.getElementById("next").style.display="none";
+
+q.options.forEach((option,index)=>{
+
+const button=document.createElement("button");
+
+button.className="option";
+
+button.textContent=option;
+
+button.onclick=()=>checkAnswer(index,button);
+
+options.appendChild(button);
+
+});
+
+}
+
+function checkAnswer(selected,button){
+
+if(answered)return;
+
+answered=true;
+
+const q=questions[current];
+
+const buttons=document.querySelectorAll(".option");
+
+buttons[q.answer].classList.add("correct");
+
+if(selected===q.answer){
+
+score++;
+
+document.getElementById("feedback").textContent=
+"✅ Correct! Excellent work.";
+
+}else{
+
+button.classList.add("wrong");
+
+document.getElementById("feedback").textContent=
+"❌ Incorrect. The correct answer is: "+
+q.options[q.answer];
+
+}
+
+document.getElementById("next").style.display="inline-block";
+
+}
+
+function nextQuestion(){
+
+current++;
+
+if(current<questions.length){
+
+loadQuestion();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+function showResult(){
+
+document.getElementById("quiz").style.display="none";
+
+document.getElementById("result").style.display="block";
+
+document.getElementById("score").textContent=
+score+" / "+questions.length;
+
+let message="";
+
+const percentage=(score/questions.length)*100;
+
+if(percentage===100){
+
+message="🏆 Perfect score! You are a vocabulary master!";
+
+}else if(percentage>=80){
+
+message="🌟 Excellent! Your vocabulary is very strong.";
+
+}else if(percentage>=60){
+
+message="👍 Good job! Keep practising.";
+
+}else{
+
+message="📚 Keep learning and try the quiz again.";
+
+}
+
+document.getElementById("message").textContent=message;
+
+}
+
+function restartQuiz(){
+
+current=0;
+score=0;
+
+document.getElementById("quiz").style.display="block";
+
+document.getElementById("result").style.display="none";
+
+loadQuestion();
+
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+  </html>
