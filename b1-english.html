@@ -3,6 +3,416 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English B1 | LinguaPath</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#20242c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#263a8b,#5267c9);
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{font-size:34px;margin-bottom:8px}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 18px;
+}
+
+.back{
+display:inline-block;
+margin-bottom:25px;
+color:#263a8b;
+text-decoration:none;
+font-weight:bold;
+}
+
+.intro{text-align:center;margin-bottom:30px}
+.intro h2{color:#263a8b;margin-bottom:8px}
+
+.language-box{
+background:white;
+padding:20px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+margin-bottom:30px;
+}
+
+.language-box label{
+font-weight:bold;
+color:#263a8b;
+}
+
+.language-box select{
+margin-top:10px;
+width:100%;
+max-width:350px;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+.words{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.word{
+background:white;
+padding:22px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+}
+
+.word h3{
+color:#263a8b;
+font-size:24px;
+margin-bottom:4px;
+}
+
+.pronunciation{
+color:#777;
+font-size:14px;
+margin-bottom:12px;
+}
+
+.translation{
+font-size:18px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.example{
+color:#555;
+margin-bottom:12px;
+}
+
+.listen{
+background:#263a8b;
+color:white;
+border:none;
+padding:9px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.section-title{
+text-align:center;
+margin:40px 0 20px;
+color:#263a8b;
+}
+
+.quiz{
+background:white;
+padding:25px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+text-align:center;
+}
+
+.quiz button{
+margin-top:15px;
+background:#263a8b;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+cursor:pointer;
+}
+
+footer{
+margin-top:45px;
+background:#202b55;
+color:white;
+text-align:center;
+padding:28px;
+}
+
+@media(max-width:650px){
+.words{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🇬🇧 English B1</h1>
+<p>Intermediate English with multilingual meanings</p>
+</header>
+
+<div class="container">
+
+<a class="back" href="english.html">← Back to English</a>
+
+<div class="intro">
+<h2>🌿 B1 Intermediate Vocabulary</h2>
+<p>Develop stronger vocabulary for everyday communication, study and work.</p>
+</div>
+
+<div class="language-box">
+
+<label for="language">🌍 Choose your translation language:</label>
+<br>
+
+<select id="language" onchange="changeLanguage()">
+<option value="urdu">🇵🇰 Urdu</option>
+<option value="arabic">🇸🇦 Arabic</option>
+<option value="spanish">🇪🇸 Spanish</option>
+<option value="french">🇫🇷 French</option>
+<option value="german">🇩🇪 German</option>
+<option value="chinese">🇨🇳 Chinese</option>
+<option value="turkish">🇹🇷 Turkish</option>
+<option value="korean">🇰🇷 Korean</option>
+<option value="japanese">🇯🇵 Japanese</option>
+</select>
+
+</div>
+
+<h2 class="section-title">📚 Essential B1 Words</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Achieve</h3>
+<div class="pronunciation">/əˈtʃiːv/</div>
+<div class="translation"
+data-urdu="حاصل کرنا"
+data-arabic="يحقق"
+data-spanish="Lograr"
+data-french="Atteindre"
+data-german="Erreichen"
+data-chinese="实现"
+data-turkish="Başarmak"
+data-korean="성취하다"
+data-japanese="達成する">حاصل کرنا</div>
+<p class="example"><b>Example:</b> She worked hard to achieve her goal.</p>
+<button class="listen" onclick="speak('Achieve')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Opportunity</h3>
+<div class="pronunciation">/ˌɒpərˈtjuːnəti/</div>
+<div class="translation"
+data-urdu="موقع"
+data-arabic="فرصة"
+data-spanish="Oportunidad"
+data-french="Occasion"
+data-german="Gelegenheit"
+data-chinese="机会"
+data-turkish="Fırsat"
+data-korean="기회"
+data-japanese="機会">موقع</div>
+<p class="example"><b>Example:</b> This is a great opportunity to learn.</p>
+<button class="listen" onclick="speak('Opportunity')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Environment</h3>
+<div class="pronunciation">/ɪnˈvaɪrənmənt/</div>
+<div class="translation"
+data-urdu="ماحول"
+data-arabic="بيئة"
+data-spanish="Medio ambiente"
+data-french="Environnement"
+data-german="Umwelt"
+data-chinese="环境"
+data-turkish="Çevre"
+data-korean="환경"
+data-japanese="環境">ماحول</div>
+<p class="example"><b>Example:</b> We should protect the environment.</p>
+<button class="listen" onclick="speak('Environment')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Develop</h3>
+<div class="pronunciation">/dɪˈveləp/</div>
+<div class="translation"
+data-urdu="ترقی دینا"
+data-arabic="يطور"
+data-spanish="Desarrollar"
+data-french="Développer"
+data-german="Entwickeln"
+data-chinese="发展"
+data-turkish="Geliştirmek"
+data-korean="개발하다"
+data-japanese="発展させる">ترقی دینا</div>
+<p class="example"><b>Example:</b> Reading helps you develop your vocabulary.</p>
+<button class="listen" onclick="speak('Develop')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>However</h3>
+<div class="pronunciation">/haʊˈevər/</div>
+<div class="translation"
+data-urdu="تاہم"
+data-arabic="ومع ذلك"
+data-spanish="Sin embargo"
+data-french="Cependant"
+data-german="Jedoch"
+data-chinese="然而"
+data-turkish="Ancak"
+data-korean="그러나"
+data-japanese="しかし">تاہم</div>
+<p class="example"><b>Example:</b> It was difficult; however, we continued.</p>
+<button class="listen" onclick="speak('However')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Require</h3>
+<div class="pronunciation">/rɪˈkwaɪər/</div>
+<div class="translation"
+data-urdu="ضرورت ہونا"
+data-arabic="يتطلب"
+data-spanish="Requerir"
+data-french="Nécessiter"
+data-german="Erfordern"
+data-chinese="需要"
+data-turkish="Gerektirmek"
+data-korean="필요로 하다"
+data-japanese="必要とする">ضرورت ہونا</div>
+<p class="example"><b>Example:</b> This job requires good communication skills.</p>
+<button class="listen" onclick="speak('Require')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Responsible</h3>
+<div class="pronunciation">/rɪˈspɒnsəbəl/</div>
+<div class="translation"
+data-urdu="ذمہ دار"
+data-arabic="مسؤول"
+data-spanish="Responsable"
+data-french="Responsable"
+data-german="Verantwortlich"
+data-chinese="负责的"
+data-turkish="Sorumlu"
+data-korean="책임감 있는"
+data-japanese="責任のある">ذمہ دار</div>
+<p class="example"><b>Example:</b> He is responsible for the project.</p>
+<button class="listen" onclick="speak('Responsible')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Consider</h3>
+<div class="pronunciation">/kənˈsɪdər/</div>
+<div class="translation"
+data-urdu="غور کرنا"
+data-arabic="يعتبر"
+data-spanish="Considerar"
+data-french="Considérer"
+data-german="Berücksichtigen"
+data-chinese="考虑"
+data-turkish="Düşünmek"
+data-korean="고려하다"
+data-japanese="考慮する">غور کرنا</div>
+<p class="example"><b>Example:</b> Please consider my suggestion.</p>
+<button class="listen" onclick="speak('Consider')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Improve</h3>
+<div class="pronunciation">/ɪmˈpruːv/</div>
+<div class="translation"
+data-urdu="بہتر کرنا"
+data-arabic="يحسن"
+data-spanish="Mejorar"
+data-french="Améliorer"
+data-german="Verbessern"
+data-chinese="改善"
+data-turkish="Geliştirmek"
+data-korean="향상시키다"
+data-japanese="改善する">بہتر کرنا</div>
+<p class="example"><b>Example:</b> Practice can improve your English.</p>
+<button class="listen" onclick="speak('Improve')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Confident</h3>
+<div class="pronunciation">/ˈkɒnfɪdənt/</div>
+<div class="translation"
+data-urdu="پُراعتماد"
+data-arabic="واثق"
+data-spanish="Seguro"
+data-french="Confiant"
+data-german="Selbstbewusst"
+data-chinese="自信的"
+data-turkish="Kendine güvenen"
+data-korean="자신감 있는"
+data-japanese="自信のある">پُراعتماد</div>
+<p class="example"><b>Example:</b> She feels confident when speaking English.</p>
+<button class="listen" onclick="speak('Confident')">🔊 Listen</button>
+</div>
+
+</div>
+
+<h2 class="section-title">🧠 B1 Practice</h2>
+
+<div class="quiz">
+
+<h3>Ready to test your B1 vocabulary?</h3>
+
+<p>Practice the words you have learned.</p>
+
+<a href="vocabulary-quiz.html">
+<button>🧠 Start Vocabulary Quiz</button>
+</a>
+
+</div>
+
+</div>
+
+<footer>
+<h3>🌍 LinguaPath</h3>
+<p>Learn • Practice • Improve</p>
+<p>© 2026 LinguaPath</p>
+</footer>
+
+<script>
+
+function changeLanguage(){
+
+const language=document.getElementById("language").value;
+
+document.querySelectorAll(".translation").forEach(function(item){
+
+item.textContent=item.getAttribute("data-"+language);
+
+});
+
+}
+
+function speak(word){
+
+const speech=new SpeechSynthesisUtterance(word);
+
+speech.lang="en-US";
+speech.rate=0.85;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+</script>
+
+</body>
+  </html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>English B1 Vocabulary | LinguaPath</title>
 
 <style>
