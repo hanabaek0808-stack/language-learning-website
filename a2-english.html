@@ -4,6 +4,589 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>English A2 | LinguaPath</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#20242c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#263a8b,#5267c9);
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+font-size:34px;
+margin-bottom:8px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 18px;
+}
+
+.back{
+display:inline-block;
+margin-bottom:25px;
+color:#263a8b;
+text-decoration:none;
+font-weight:bold;
+}
+
+.intro{
+text-align:center;
+margin-bottom:30px;
+}
+
+.intro h2{
+color:#263a8b;
+margin-bottom:8px;
+}
+
+.language-box{
+background:white;
+padding:20px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+margin-bottom:30px;
+}
+
+.language-box label{
+font-weight:bold;
+color:#263a8b;
+}
+
+.language-box select{
+margin-top:10px;
+width:100%;
+max-width:350px;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+.words{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.word{
+background:white;
+padding:22px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+}
+
+.word h3{
+color:#263a8b;
+font-size:24px;
+margin-bottom:4px;
+}
+
+.pronunciation{
+color:#777;
+font-size:14px;
+margin-bottom:12px;
+}
+
+.translation{
+font-size:18px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.example{
+color:#555;
+margin-bottom:12px;
+}
+
+.listen{
+background:#263a8b;
+color:white;
+border:none;
+padding:9px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.listen:hover{
+background:#17245f;
+}
+
+.section-title{
+text-align:center;
+margin:40px 0 20px;
+color:#263a8b;
+}
+
+.quiz{
+background:white;
+padding:25px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+text-align:center;
+}
+
+.quiz button{
+margin-top:15px;
+background:#263a8b;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+cursor:pointer;
+}
+
+footer{
+margin-top:45px;
+background:#202b55;
+color:white;
+text-align:center;
+padding:28px;
+}
+
+@media(max-width:650px){
+.words{
+grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🇬🇧 English A2</h1>
+<p>Elementary English with multilingual meanings</p>
+</header>
+
+<div class="container">
+
+<a class="back" href="english.html">
+← Back to English
+</a>
+
+<div class="intro">
+<h2>🌱 A2 Elementary Vocabulary</h2>
+<p>
+Build your everyday English vocabulary and communicate with more confidence.
+</p>
+</div>
+
+<div class="language-box">
+
+<label for="language">
+🌍 Choose your translation language:
+</label>
+
+<br>
+
+<select id="language" onchange="changeLanguage()">
+
+<option value="urdu">🇵🇰 Urdu</option>
+<option value="arabic">🇸🇦 Arabic</option>
+<option value="spanish">🇪🇸 Spanish</option>
+<option value="french">🇫🇷 French</option>
+<option value="german">🇩🇪 German</option>
+<option value="chinese">🇨🇳 Chinese</option>
+<option value="turkish">🇹🇷 Turkish</option>
+<option value="korean">🇰🇷 Korean</option>
+<option value="japanese">🇯🇵 Japanese</option>
+
+</select>
+
+</div>
+
+
+<h2 class="section-title">📚 Essential A2 Words</h2>
+
+<div class="words">
+
+
+<div class="word">
+
+<h3>Improve</h3>
+
+<div class="pronunciation">/ɪmˈpruːv/</div>
+
+<div class="translation"
+data-urdu="بہتر کرنا"
+data-arabic="يحسن"
+data-spanish="Mejorar"
+data-french="Améliorer"
+data-german="Verbessern"
+data-chinese="改善"
+data-turkish="Geliştirmek"
+data-korean="향상시키다"
+data-japanese="改善する">
+بہتر کرنا
+</div>
+
+<p class="example">
+<b>Example:</b> I want to improve my English.
+</p>
+
+<button class="listen" onclick="speak('Improve')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Experience</h3>
+
+<div class="pronunciation">/ɪkˈspɪəriəns/</div>
+
+<div class="translation"
+data-urdu="تجربہ"
+data-arabic="خبرة"
+data-spanish="Experiencia"
+data-french="Expérience"
+data-german="Erfahrung"
+data-chinese="经验"
+data-turkish="Deneyim"
+data-korean="경험"
+data-japanese="経験">
+تجربہ
+</div>
+
+<p class="example">
+<b>Example:</b> She has experience in teaching.
+</p>
+
+<button class="listen" onclick="speak('Experience')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Healthy</h3>
+
+<div class="pronunciation">/ˈhelθi/</div>
+
+<div class="translation"
+data-urdu="صحت مند"
+data-arabic="صحي"
+data-spanish="Saludable"
+data-french="Sain"
+data-german="Gesund"
+data-chinese="健康的"
+data-turkish="Sağlıklı"
+data-korean="건강한"
+data-japanese="健康な">
+صحت مند
+</div>
+
+<p class="example">
+<b>Example:</b> Eating vegetables is healthy.
+</p>
+
+<button class="listen" onclick="speak('Healthy')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Important</h3>
+
+<div class="pronunciation">/ɪmˈpɔːrtənt/</div>
+
+<div class="translation"
+data-urdu="اہم"
+data-arabic="مهم"
+data-spanish="Importante"
+data-french="Important"
+data-german="Wichtig"
+data-chinese="重要"
+data-turkish="Önemli"
+data-korean="중요한"
+data-japanese="重要な">
+اہم
+</div>
+
+<p class="example">
+<b>Example:</b> Education is important for everyone.
+</p>
+
+<button class="listen" onclick="speak('Important')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Usually</h3>
+
+<div class="pronunciation">/ˈjuːʒuəli/</div>
+
+<div class="translation"
+data-urdu="عام طور پر"
+data-arabic="عادةً"
+data-spanish="Usualmente"
+data-french="Habituellement"
+data-german="Normalerweise"
+data-chinese="通常"
+data-turkish="Genellikle"
+data-korean="보통"
+data-japanese="通常">
+عام طور پر
+</div>
+
+<p class="example">
+<b>Example:</b> I usually wake up early.
+</p>
+
+<button class="listen" onclick="speak('Usually')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Healthy</h3>
+
+<div class="pronunciation">/ˈhelθi/</div>
+
+<div class="translation"
+data-urdu="صحت مند"
+data-arabic="صحي"
+data-spanish="Saludable"
+data-french="Sain"
+data-german="Gesund"
+data-chinese="健康"
+data-turkish="Sağlıklı"
+data-korean="건강한"
+data-japanese="健康な">
+صحت مند
+</div>
+
+<p class="example">
+<b>Example:</b> Walking is a healthy activity.
+</p>
+
+<button class="listen" onclick="speak('Healthy')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Advice</h3>
+
+<div class="pronunciation">/ədˈvaɪs/</div>
+
+<div class="translation"
+data-urdu="مشورہ"
+data-arabic="نصيحة"
+data-spanish="Consejo"
+data-french="Conseil"
+data-german="Rat"
+data-chinese="建议"
+data-turkish="Tavsiye"
+data-korean="조언"
+data-japanese="助言">
+مشورہ
+</div>
+
+<p class="example">
+<b>Example:</b> My teacher gave me good advice.
+</p>
+
+<button class="listen" onclick="speak('Advice')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Journey</h3>
+
+<div class="pronunciation">/ˈdʒɜːrni/</div>
+
+<div class="translation"
+data-urdu="سفر"
+data-arabic="رحلة"
+data-spanish="Viaje"
+data-french="Voyage"
+data-german="Reise"
+data-chinese="旅程"
+data-turkish="Yolculuk"
+data-korean="여행"
+data-japanese="旅">
+سفر
+</div>
+
+<p class="example">
+<b>Example:</b> The journey took three hours.
+</p>
+
+<button class="listen" onclick="speak('Journey')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Decide</h3>
+
+<div class="pronunciation">/dɪˈsaɪd/</div>
+
+<div class="translation"
+data-urdu="فیصلہ کرنا"
+data-arabic="يقرر"
+data-spanish="Decidir"
+data-french="Décider"
+data-german="Entscheiden"
+data-chinese="决定"
+data-turkish="Karar vermek"
+data-korean="결정하다"
+data-japanese="決める">
+فیصلہ کرنا
+</div>
+
+<p class="example">
+<b>Example:</b> I need to decide what to do.
+</p>
+
+<button class="listen" onclick="speak('Decide')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Different</h3>
+
+<div class="pronunciation">/ˈdɪfrənt/</div>
+
+<div class="translation"
+data-urdu="مختلف"
+data-arabic="مختلف"
+data-spanish="Diferente"
+data-french="Différent"
+data-german="Anders"
+data-chinese="不同的"
+data-turkish="Farklı"
+data-korean="다른"
+data-japanese="違う">
+مختلف
+</div>
+
+<p class="example">
+<b>Example:</b> Everyone has different ideas.
+</p>
+
+<button class="listen" onclick="speak('Different')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<h2 class="section-title">🧠 A2 Practice</h2>
+
+<div class="quiz">
+
+<h3>Ready to test your A2 vocabulary?</h3>
+
+<p>
+Practice the words you have learned.
+</p>
+
+<a href="vocabulary-quiz.html">
+<button>🧠 Start Vocabulary Quiz</button>
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<h3>🌍 LinguaPath</h3>
+
+<p>Learn • Practice • Improve</p>
+
+<p>© 2026 LinguaPath</p>
+
+</footer>
+
+
+<script>
+
+function changeLanguage(){
+
+const language =
+document.getElementById("language").value;
+
+const translations =
+document.querySelectorAll(".translation");
+
+translations.forEach(function(item){
+
+item.textContent =
+item.getAttribute("data-" + language);
+
+});
+
+}
+
+
+function speak(word){
+
+const speech =
+new SpeechSynthesisUtterance(word);
+
+speech.lang="en-US";
+speech.rate=0.85;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+</script>
+
+</body>
+  </html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>English A2 Vocabulary | LinguaPath</title>
 
 <style>
