@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English C2 | LinguaPath</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#20242c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#17245f,#5267c9);
+color:white;
+text-align:center;
+padding:45px 20px;
+}
+
+header h1{font-size:34px;margin-bottom:8px}
+
+.container{
+max-width:1050px;
+margin:auto;
+padding:25px 18px;
+}
+
+.back{
+display:inline-block;
+margin-bottom:25px;
+color:#263a8b;
+text-decoration:none;
+font-weight:bold;
+}
+
+.intro{
+text-align:center;
+margin-bottom:30px;
+}
+
+.intro h2{
+color:#263a8b;
+margin-bottom:8px;
+}
+
+.search{
+max-width:600px;
+margin:25px auto;
+}
+
+.search input{
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:16px;
+}
+
+.topic{margin-top:35px}
+
+.topic h2{
+color:#263a8b;
+margin-bottom:15px;
+}
+
+.words{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.word{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.word h3{
+color:#263a8b;
+font-size:21px;
+}
+
+.pronunciation{
+color:#777;
+font-size:14px;
+}
+
+.word p{margin-top:5px}
+
+.listen{
+margin-top:10px;
+background:#263a8b;
+color:white;
+border:none;
+padding:8px 14px;
+border-radius:8px;
+cursor:pointer;
+}
+
+footer{
+margin-top:40px;
+background:#202b55;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+@media(max-width:600px){
+.words{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🇬🇧 English C2 Vocabulary</h1>
+<p>Master sophisticated English and express ideas with precision</p>
+</header>
+
+<div class="container">
+
+<a class="back" href="english.html">
+← Back to English Levels
+</a>
+
+<div class="intro">
+<h2>🏆 C2 Vocabulary</h2>
+<p>
+Master advanced words, precise expressions and sophisticated
+English for academic, professional and everyday communication.
+</p>
+</div>
+
+<div class="search">
+<input
+type="text"
+id="search"
+placeholder="🔎 Search a word..."
+onkeyup="searchWords()">
+</div>
+
+
+<section class="topic">
+<h2>🧠 1. Critical Thinking</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Scrutinise</h3>
+<span class="pronunciation">/ˈskruːtənaɪz/</span>
+<p><b>Urdu:</b> باریک بینی سے جانچنا</p>
+<p><b>Meaning:</b> To examine something extremely carefully</p>
+<p><b>Example:</b> The researchers scrutinised the evidence.</p>
+<button class="listen" onclick="speak('Scrutinise')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Infer</h3>
+<span class="pronunciation">/ɪnˈfɜːr/</span>
+<p><b>Urdu:</b> اخذ کرنا</p>
+<p><b>Meaning:</b> To reach a conclusion from evidence</p>
+<p><b>Example:</b> We can infer several conclusions from the data.</p>
+<button class="listen" onclick="speak('Infer')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Coherent</h3>
+<span class="pronunciation">/koʊˈhɪrənt/</span>
+<p><b>Urdu:</b> مربوط، منطقی</p>
+<p><b>Meaning:</b> Logical and well organised</p>
+<p><b>Example:</b> She presented a coherent argument.</p>
+<button class="listen" onclick="speak('Coherent')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Ambiguous</h3>
+<span class="pronunciation">/æmˈbɪɡjuəs/</span>
+<p><b>Urdu:</b> مبہم</p>
+<p><b>Meaning:</b> Having more than one possible meaning</p>
+<p><b>Example:</b> The statement was deliberately ambiguous.</p>
+<button class="listen" onclick="speak('Ambiguous')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Substantiate</h3>
+<span class="pronunciation">/səbˈstænʃieɪt/</span>
+<p><b>Urdu:</b> ثبوت سے ثابت کرنا</p>
+<p><b>Meaning:</b> To provide evidence that proves something</p>
+<p><b>Example:</b> The claim could not be substantiated.</p>
+<button class="listen" onclick="speak('Substantiate')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<section class="topic">
+<h2>📚 2. Academic & Literary English</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Paradigm</h3>
+<span class="pronunciation">/ˈpærədaɪm/</span>
+<p><b>Urdu:</b> نمونہ، نظریاتی ڈھانچہ</p>
+<p><b>Meaning:</b> A typical model or pattern</p>
+<p><b>Example:</b> The discovery changed the scientific paradigm.</p>
+<button class="listen" onclick="speak('Paradigm')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Nuance</h3>
+<span class="pronunciation">/ˈnuːɑːns/</span>
+<p><b>Urdu:</b> باریک فرق</p>
+<p><b>Meaning:</b> A subtle difference in meaning or expression</p>
+<p><b>Example:</b> The novel contains many cultural nuances.</p>
+<button class="listen" onclick="speak('Nuance')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Empirical</h3>
+<span class="pronunciation">/ɪmˈpɪrɪkəl/</span>
+<p><b>Urdu:</b> تجرباتی</p>
+<p><b>Meaning:</b> Based on observation or experiment</p>
+<p><b>Example:</b> The theory requires empirical evidence.</p>
+<button class="listen" onclick="speak('Empirical')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Connotation</h3>
+<span class="pronunciation">/ˌkɑːnəˈteɪʃən/</span>
+<p><b>Urdu:</b> ضمنی مفہوم</p>
+<p><b>Meaning:</b> An additional meaning associated with a word</p>
+<p><b>Example:</b> The word has a negative connotation.</p>
+<button class="listen" onclick="speak('Connotation')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Rhetorical</h3>
+<span class="pronunciation">/rɪˈtɔːrɪkəl/</span>
+<p><b>Urdu:</b> خطیبانہ</p>
+<p><b>Meaning:</b> Related to effective or persuasive language</p>
+<p><b>Example:</b> The speaker used a powerful rhetorical question.</p>
+<button class="listen" onclick="speak('Rhetorical')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<section class="topic">
+<h2>💼 3. Professional English</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Leverage</h3>
+<span class="pronunciation">/ˈlevərɪdʒ/</span>
+<p><b>Urdu:</b> مؤثر طور پر استعمال کرنا</p>
+<p><b>Meaning:</b> To use something to maximum advantage</p>
+<p><b>Example:</b> We can leverage technology to improve efficiency.</p>
+<button class="listen" onclick="speak('Leverage')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Mitigate</h3>
+<span class="pronunciation">/ˈmɪtɪɡeɪt/</span>
+<p><b>Urdu:</b> کم کرنا</p>
+<p><b>Meaning:</b> To reduce the seriousness of something</p>
+<p><b>Example:</b> The policy aims to mitigate the risks.</p>
+<button class="listen" onclick="speak('Mitigate')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Facilitate</h3>
+<span class="pronunciation">/fəˈsɪlɪteɪt/</span>
+<p><b>Urdu:</b> آسان بنانا</p>
+<p><b>Meaning:</b> To make an action or process easier</p>
+<p><b>Example:</b> The meeting facilitated cooperation.</p>
+<button class="listen" onclick="speak('Facilitate')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Allocate</h3>
+<span class="pronunciation">/ˈæləkeɪt/</span>
+<p><b>Urdu:</b> مختص کرنا</p>
+<p><b>Meaning:</b> To distribute something for a particular purpose</p>
+<p><b>Example:</b> The organisation allocated more money to education.</p>
+<button class="listen" onclick="speak('Allocate')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Accountability</h3>
+<span class="pronunciation">/əˌkaʊntəˈbɪləti/</span>
+<p><b>Urdu:</b> جواب دہی</p>
+<p><b>Meaning:</b> Responsibility for actions and decisions</p>
+<p><b>Example:</b> Public officials should have accountability.</p>
+<button class="listen" onclick="speak('Accountability')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<section class="topic">
+<h2>🌍 4. Society & Global Issues</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Disparity</h3>
+<span class="pronunciation">/dɪˈspærəti/</span>
+<p><b>Urdu:</b> تفاوت</p>
+<p><b>Meaning:</b> A significant difference between things</p>
+<p><b>Example:</b> There is a large disparity in income.</p>
+<button class="listen" onclick="speak('Disparity')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Marginalised</h3>
+<span class="pronunciation">/ˈmɑːrdʒɪnəlaɪzd/</span>
+<p><b>Urdu:</b> حاشیے پر دھکیلا ہوا</p>
+<p><b>Meaning:</b> Treated as less important or excluded</p>
+<p><b>Example:</b> The programme supports marginalised communities.</p>
+<button class="listen" onclick="speak('Marginalised')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Prejudice</h3>
+<span class="pronunciation">/ˈpredʒədɪs/</span>
+<p><b>Urdu:</b> تعصب</p>
+<p><b>Meaning:</b> An unfair opinion formed without enough knowledge</p>
+<p><b>Example:</b> Education can help reduce prejudice.</p>
+<button class="listen" onclick="speak('Prejudice')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Sovereignty</h3>
+<span class="pronunciation">/ˈsɑːvrənti/</span>
+<p><b>Urdu:</b> خود مختاری</p>
+<p><b>Meaning:</b> The authority of a country to govern itself</p>
+<p><b>Example:</b> The country defended its sovereignty.</p>
+<button class="listen" onclick="speak('Sovereignty')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Humanitarian</h3>
+<span class="pronunciation">/hjuːˌmænɪˈteriən/</span>
+<p><b>Urdu:</b> انسانی ہمدردی سے متعلق</p>
+<p><b>Meaning:</b> Concerned with improving human welfare</p>
+<p><b>Example:</b> The organisation provided humanitarian assistance.</p>
+<button class="listen" onclick="speak('Humanitarian')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<section class="topic">
+<h2>🌱 5. Environment & Science</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Ecological</h3>
+<span class="pronunciation">/ˌiːkəˈlɑːdʒɪkəl/</span>
+<p><b>Urdu:</b> ماحولیاتی</p>
+<p><b>Meaning:</b> Related to the natural environment</p>
+<p><b>Example:</b> The project has serious ecological consequences.</p>
+<button class="listen" onclick="speak('Ecological')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Contamination</h3>
+<span class="pronunciation">/kənˌtæməˈneɪʃən/</span>
+<p><b>Urdu:</b> آلودگی</p>
+<p><b>Meaning:</b> The process of making something impure or polluted</p>
+<p><b>Example:</b> Water contamination is a serious problem.</p>
+<button class="listen" onclick="speak('Contamination')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Biodiversity</h3>
+<span class="pronunciation">/ˌbaɪoʊdaɪˈvɜːrsəti/</span>
+<p><b>Urdu:</b> حیاتیاتی تنوع</p>
+<p><b>Meaning:</b> The variety of living things in an environment</p>
+<p><b>Example:</b> Forests contain enormous biodiversity.</p>
+<button class="listen" onclick="speak('Biodiversity')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Sustainable</h3>
+<span class="pronunciation">/səˈsteɪnəbəl/</span>
+<p><b>Urdu:</b> پائیدار</p>
+<p><b>Meaning:</b> Able to continue without damaging resources</p>
+<p><b>Example:</b> We need sustainable development.</p>
+<button class="listen" onclick="speak('Sustainable')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Degradation</h3>
+<span class="pronunciation">/ˌdeɡrəˈdeɪʃən/</span>
+<p><b>Urdu:</b> تنزلی، خرابی</p>
+<p><b>Meaning:</b> The process of becoming worse</p>
+<p><b>Example:</b> Soil degradation threatens agriculture.</p>
+<button class="listen" onclick="speak('Degradation')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<section class="topic">
+<h2>🗣️ 6. Sophisticated Communication</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Eloquent</h3>
+<span class="pronunciation">/ˈeləkwənt/</span>
+<p><b>Urdu:</b> فصیح و بلیغ</p>
+<p><b>Meaning:</b> Fluent or persuasive in speaking or writing</p>
+<p><b>Example:</b> She gave an eloquent speech.</p>
+<button class="listen" onclick="speak('Eloquent')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Concise</h3>
+<span class="pronunciation">/kənˈsaɪs/</span>
+<p><b>Urdu:</b> مختصر اور جامع</p>
+<p><b>Meaning:</b> Expressing much in few words</p>
+<p><b>Example:</b> Please keep your answer concise.</p>
+<button class="listen" onclick="speak('Concise')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Diplomatic</h3>
+<span class="pronunciation">/ˌdɪpləˈmætɪk/</span>
+<p><b>Urdu:</b> سفارتی، محتاط</p>
+<p><b>Meaning:</b> Careful not to offend people</p>
+<p><b>Example:</b> He gave a diplomatic response.</p>
+<button class="listen" onclick="speak('Diplomatic')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Articulate</h3>
+<span class="pronunciation">/ɑːrˈtɪkjəleɪt/</span>
+<p><b>Urdu:</b> واضح انداز میں بیان کرنا</p>
+<p><b>Meaning:</b> To express ideas clearly and effectively</p>
+<p><b>Example:</b> He is able to articulate complex ideas.</p>
+<button class="listen" onclick="speak('Articulate')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Provoke</h3>
+<span class="pronunciation">/prəˈvoʊk/</span>
+<p><b>Urdu:</b> اکسایا، ابھارنا</p>
+<p><b>Meaning:</b> To cause a reaction or feeling</p>
+<p><b>Example:</b> The article provoked a strong response.</p>
+<button class="listen" onclick="speak('Provoke')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<section class="topic">
+<h2>⚖️ 7. Argument & Debate</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Concede</h3>
+<span class="pronunciation">/kənˈsiːd/</span>
+<p><b>Urdu:</b> تسلیم کرنا</p>
+<p><b>Meaning:</b> To admit that something is true</p>
+<p><b>Example:</b> He conceded that his opponent had a valid point.</p>
+<button class="listen" onclick="speak('Concede')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Refute</h3>
+<span class="pronunciation">/rɪˈfjuːt/</span>
+<p><b>Urdu:</b> تردید کرنا</p>
+<p><b>Meaning:</b> To prove that an argument is wrong</p>
+<p><b>Example:</b> The evidence refuted the original claim.</p>
+<button class="listen" onclick="speak('Refute')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Counterargument</h3>
+<span class="pronunciation">/ˈkaʊntərˌɑːrɡjəmənt/</span>
+<p><b>Urdu:</b> جوابی دلیل</p>
+<p><b>Meaning:</b> An argument against another argument</p>
+<p><b>Example:</b> She presented a strong counterargument.</p>
+<button class="listen" onclick="speak('Counterargument')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Contention</h3>
+<span class="pronunciation">/kənˈtenʃən/</span>
+<p><b>Urdu:</b> دعویٰ، مؤقف</p>
+<p><b>Meaning:</b> An argument or claim</p>
+<p><b>Example:</b> His central contention was convincing.</p>
+<button class="listen" onclick="speak('Contention')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Premise</h3>
+<span class="pronunciation">/ˈpremɪs/</span>
+<p><b>Urdu:</b> بنیادی مفروضہ</p>
+<p><b>Meaning:</b> An idea used as the basis of an argument</p>
+<p><b>Example:</b> The argument is based on a questionable premise.</p>
+<button class="listen" onclick="speak('Premise')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<section class="topic">
+<h2>✨ 8. Sophisticated Adjectives</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Intricate</h3>
+<span class="pronunciation">/ˈɪntrɪkət/</span>
+<p><b>Urdu:</b> پیچیدہ</p>
+<p><b>Meaning:</b> Very complicated or detailed</p>
+<p><b>Example:</b> The artist created an intricate design.</p>
+<button class="listen" onclick="speak('Intricate')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Profound</h3>
+<span class="pronunciation">/prəˈfaʊnd/</span>
+<p><b>Urdu:</b> گہرا</p>
+<p><b>Meaning:</b> Very deep or intense</p>
+<p><b>Example:</b> The book had a profound impact on me.</p>
+<button class="listen" onclick="speak('Profound')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Ubiquitous</h3>
+<span class="pronunciation">/juːˈbɪkwɪtəs/</span>
+<p><b>Urdu:</b> ہر جگہ موجود</p>
+<p><b>Meaning:</b> Present or found everywhere</p>
+<p><b>Example:</b> Smartphones have become ubiquitous.</p>
+<button class="listen" onclick="speak('Ubiquitous')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Feasible</h3>
+<span class="pronunciation">/ˈfiːzəbəl/</span>
+<p><b>Urdu:</b> قابلِ عمل</p>
+<p><b>Meaning:</b> Possible and practical</p>
+<p><b>Example:</b> We need to find a feasible solution.</p>
+<button class="listen" onclick="speak('Feasible')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Inevitable</h3>
+<span class="pronunciation">/ɪnˈevɪtəbəl/</span>
+<p><b>Urdu:</b> ناگزیر</p>
+<p><b>Meaning:</b> Certain to happen</p>
+<p><b>Example:</b> Some degree of change is inevitable.</p>
+<button class="listen" onclick="speak('Inevitable')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<section class="topic">
+<h2>🎯 9. Powerful Verbs</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Exacerbate</h3>
+<span class="pronunciation">/ɪɡˈzæsərbeɪt/</span>
+<p><b>Urdu:</b> مزید خراب کرنا</p>
+<p><b>Meaning:</b> To make a problem worse</p>
+<p><b>Example:</b> The decision could exacerbate the crisis.</p>
+<button class="listen" onclick="speak('Exacerbate')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Undermine</h3>
+<span class="pronunciation">/ˌʌndərˈmaɪn/</span>
+<p><b>Urdu:</b> کمزور کرنا</p>
+<p><b>Meaning:</b> To gradually weaken something</p>
+<p><b>Example:</b> Corruption can undermine public trust.</p>
+<button class="listen" onclick="speak('Undermine')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Foster</h3>
+<span class="pronunciation">/ˈfɔːstər/</span>
+<p><b>Urdu:</b> فروغ دینا</p>
+<p><b>Meaning:</b> To encourage development</p>
+<p><b>Example:</b> Education can foster creativity.</p>
+<button class="listen" onclick="speak('Foster')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Comprehend</h3>
+<span class="pronunciation">/ˌkɑːmprɪˈhend/</span>
+<p><b>Urdu:</b> سمجھنا</p>
+<p><b>Meaning:</b> To understand something fully</p>
+<p><b>Example:</b> It is difficult to comprehend the scale of the problem.</p>
+<button class="listen" onclick="speak('Comprehend')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Anticipate</h3>
+<span class="pronunciation">/ænˈtɪsəpeɪt/</span>
+<p><b>Urdu:</b> پیش بینی کرنا</p>
+<p><b>Meaning:</b> To expect something before it happens</p>
+<p><b>Example:</b> We need to anticipate future challenges.</p>
+<button class="listen" onclick="speak('Anticipate')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<section class="topic">
+<h2>🏆 10. C2 Master Words</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Meticulous</h3>
+<span class="pronunciation">/məˈtɪkjələs/</span>
+<p><b>Urdu:</b> نہایت محتاط اور باریک بین</p>
+<p><b>Meaning:</b> Extremely careful about details</p>
+<p><b>Example:</b> She is meticulous in her research.</p>
+<button class="listen" onclick="speak('Meticulous')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Pragmatic</h3>
+<span class="pronunciation">/præɡˈmætɪk/</span>
+<p><b>Urdu:</b> عملی</p>
+<p><b>Meaning:</b> Dealing with problems in a practical way</p>
+<p><b>Example:</b> We need a pragmatic approach.</p>
+<button class="listen" onclick="speak('Pragmatic')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Conspicuous</h3>
+<span class="pronunciation">/kənˈspɪkjuəs/</span>
+<p><b>Urdu:</b> نمایاں</p>
+<p><b>Meaning:</b> Very easy to notice</p>
+<p><b>Example:</b> There was a conspicuous difference between the two results.</p>
+<button class="listen" onclick="speak('Conspicuous')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Inherent</h3>
+<span class="pronunciation">/ɪnˈhɪrənt/</span>
+<p><b>Urdu:</b> اندرونی، فطری</p>
+<p><b>Meaning:</b> Naturally existing as part of something</p>
+<p><b>Example:</b> Every system has inherent limitations.</p>
+<button class="listen" onclick="speak('Inherent')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Unprecedented</h3>
+<span class="pronunciation">/ʌnˈpresɪdentɪd/</span>
+<p><b>Urdu:</b> بے مثال</p>
+<p><b>Meaning:</b> Never having happened before</p>
+<p><b>Example:</b> The country experienced unprecedented growth.</p>
+<button class="listen" onclick="speak('Unprecedented')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+</div>
+
+<footer>
+<h3>🌍 LinguaPath</h3>
+<p>Learn • Practice • Improve</p>
+<p>© 2026 LinguaPath</p>
+</footer>
+
+<script>
+
+function speak(word){
+
+const speech=new SpeechSynthesisUtterance(word);
+
+speech.lang="en-US";
+speech.rate=0.85;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+function searchWords(){
+
+const input=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+const cards=document.querySelectorAll(".word");
+
+cards.forEach(function(card){
+
+const text=card.innerText.toLowerCase();
+
+if(text.includes(input)){
+card.style.display="";
+}else{
+card.style.display="none";
+}
+
+});
+
+}
+
+</script>
+
+</body>
+  </html>
