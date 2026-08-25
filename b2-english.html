@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>English B2 Vocabulary | LinguaPath</title>
+
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#20242c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#263a8b,#5267c9);
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+font-size:32px;
+margin-bottom:8px;
+}
+
+.container{
+max-width:1050px;
+margin:auto;
+padding:25px 18px;
+}
+
+.back{
+display:inline-block;
+margin-bottom:25px;
+color:#263a8b;
+text-decoration:none;
+font-weight:bold;
+}
+
+.intro{
+text-align:center;
+margin-bottom:30px;
+}
+
+.intro h2{
+color:#263a8b;
+margin-bottom:8px;
+}
+
+.search{
+margin:25px auto;
+max-width:600px;
+}
+
+.search input{
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:16px;
+}
+
+.topic{
+margin-top:35px;
+}
+
+.topic h2{
+color:#263a8b;
+margin-bottom:15px;
+}
+
+.words{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.word{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.word h3{
+color:#263a8b;
+font-size:21px;
+}
+
+.pronunciation{
+color:#777;
+font-size:14px;
+}
+
+.word p{
+margin-top:5px;
+}
+
+.listen{
+margin-top:10px;
+background:#263a8b;
+color:white;
+border:none;
+padding:8px 14px;
+border-radius:8px;
+cursor:pointer;
+}
+
+footer{
+margin-top:40px;
+background:#202b55;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+@media(max-width:600px){
+.words{
+grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🇬🇧 English B2 Vocabulary</h1>
+
+<p>Upper-intermediate vocabulary for confident communication</p>
+
+</header>
+
+
+<div class="container">
+
+<a class="back" href="english.html">
+← Back to English Levels
+</a>
+
+
+<div class="intro">
+
+<h2>📚 B2 Vocabulary</h2>
+
+<p>
+Develop a stronger vocabulary with useful B2 words,
+Urdu translations, meanings, examples and pronunciation.
+</p>
+
+</div>
+
+
+<div class="search">
+
+<input
+type="text"
+id="search"
+placeholder="🔎 Search a word..."
+onkeyup="searchWords()">
+
+</div>
+
+
+<!-- SOCIETY -->
+
+<section class="topic">
+
+<h2>🌍 1. Society</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Society</h3>
+<span class="pronunciation">/səˈsaɪəti/</span>
+<p><b>Urdu:</b> معاشرہ</p>
+<p><b>Meaning:</b> People living together as a community</p>
+<p><b>Example:</b> Education is important for society.</p>
+<button class="listen" onclick="speak('Society')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Equality</h3>
+<span class="pronunciation">/ɪˈkwɑːləti/</span>
+<p><b>Urdu:</b> مساوات</p>
+<p><b>Meaning:</b> The state of being equal</p>
+<p><b>Example:</b> Everyone deserves equality.</p>
+<button class="listen" onclick="speak('Equality')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Government</h3>
+<span class="pronunciation">/ˈɡʌvərnmənt/</span>
+<p><b>Urdu:</b> حکومت</p>
+<p><b>Meaning:</b> The group that controls a country</p>
+<p><b>Example:</b> The government introduced a new policy.</p>
+<button class="listen" onclick="speak('Government')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Citizen</h3>
+<span class="pronunciation">/ˈsɪtɪzən/</span>
+<p><b>Urdu:</b> شہری</p>
+<p><b>Meaning:</b> A legally recognized member of a country</p>
+<p><b>Example:</b> Every citizen has rights and responsibilities.</p>
+<button class="listen" onclick="speak('Citizen')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Responsibility</h3>
+<span class="pronunciation">/rɪˌspɑːnsəˈbɪləti/</span>
+<p><b>Urdu:</b> ذمہ داری</p>
+<p><b>Meaning:</b> Something that you are expected to do</p>
+<p><b>Example:</b> Helping others is a social responsibility.</p>
+<button class="listen" onclick="speak('Responsibility')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- ENVIRONMENT -->
+
+<section class="topic">
+
+<h2>🌱 2. Environment</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Sustainable</h3>
+<span class="pronunciation">/səˈsteɪnəbəl/</span>
+<p><b>Urdu:</b> پائیدار</p>
+<p><b>Meaning:</b> Able to continue without causing serious harm</p>
+<p><b>Example:</b> We need sustainable sources of energy.</p>
+<button class="listen" onclick="speak('Sustainable')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Climate</h3>
+<span class="pronunciation">/ˈklaɪmət/</span>
+<p><b>Urdu:</b> آب و ہوا</p>
+<p><b>Meaning:</b> The usual weather of a place</p>
+<p><b>Example:</b> Climate change affects many countries.</p>
+<button class="listen" onclick="speak('Climate')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Conservation</h3>
+<span class="pronunciation">/ˌkɑːnsərˈveɪʃən/</span>
+<p><b>Urdu:</b> تحفظ</p>
+<p><b>Meaning:</b> Protection of nature and resources</p>
+<p><b>Example:</b> Wildlife conservation is essential.</p>
+<button class="listen" onclick="speak('Conservation')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Resource</h3>
+<span class="pronunciation">/ˈriːsɔːrs/</span>
+<p><b>Urdu:</b> وسیلہ، ذریعہ</p>
+<p><b>Meaning:</b> Something useful that can be used</p>
+<p><b>Example:</b> Water is an important natural resource.</p>
+<button class="listen" onclick="speak('Resource')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Waste</h3>
+<span class="pronunciation">/weɪst/</span>
+<p><b>Urdu:</b> فضلہ</p>
+<p><b>Meaning:</b> Unwanted material</p>
+<p><b>Example:</b> We should reduce food waste.</p>
+<button class="listen" onclick="speak('Waste')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- EDUCATION -->
+
+<section class="topic">
+
+<h2>🎓 3. Education</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Academic</h3>
+<span class="pronunciation">/ˌækəˈdemɪk/</span>
+<p><b>Urdu:</b> تعلیمی</p>
+<p><b>Meaning:</b> Related to education or study</p>
+<p><b>Example:</b> She has excellent academic results.</p>
+<button class="listen" onclick="speak('Academic')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Curriculum</h3>
+<span class="pronunciation">/kəˈrɪkjələm/</span>
+<p><b>Urdu:</b> نصاب</p>
+<p><b>Meaning:</b> The subjects taught in a course</p>
+<p><b>Example:</b> The school changed its curriculum.</p>
+<button class="listen" onclick="speak('Curriculum')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Assignment</h3>
+<span class="pronunciation">/əˈsaɪnmənt/</span>
+<p><b>Urdu:</b> تعلیمی کام</p>
+<p><b>Meaning:</b> A piece of work given to students</p>
+<p><b>Example:</b> I finished my assignment.</p>
+<button class="listen" onclick="speak('Assignment')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Researcher</h3>
+<span class="pronunciation">/rɪˈsɜːrtʃər/</span>
+<p><b>Urdu:</b> محقق</p>
+<p><b>Meaning:</b> A person who carries out research</p>
+<p><b>Example:</b> The researcher collected new information.</p>
+<button class="listen" onclick="speak('Researcher')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Evaluate</h3>
+<span class="pronunciation">/ɪˈvæljueɪt/</span>
+<p><b>Urdu:</b> جانچنا، جائزہ لینا</p>
+<p><b>Meaning:</b> To judge the quality or value of something</p>
+<p><b>Example:</b> Teachers evaluate students' work.</p>
+<button class="listen" onclick="speak('Evaluate')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- TECHNOLOGY -->
+
+<section class="topic">
+
+<h2>💻 4. Technology</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Device</h3>
+<span class="pronunciation">/dɪˈvaɪs/</span>
+<p><b>Urdu:</b> آلہ</p>
+<p><b>Meaning:</b> A piece of equipment designed for a purpose</p>
+<p><b>Example:</b> This device is easy to use.</p>
+<button class="listen" onclick="speak('Device')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Digital</h3>
+<span class="pronunciation">/ˈdɪdʒɪtəl/</span>
+<p><b>Urdu:</b> ڈیجیٹل</p>
+<p><b>Meaning:</b> Using electronic technology</p>
+<p><b>Example:</b> Many people use digital services.</p>
+<button class="listen" onclick="speak('Digital')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Artificial</h3>
+<span class="pronunciation">/ˌɑːrtɪˈfɪʃəl/</span>
+<p><b>Urdu:</b> مصنوعی</p>
+<p><b>Meaning:</b> Made by humans rather than naturally</p>
+<p><b>Example:</b> Artificial intelligence is developing quickly.</p>
+<button class="listen" onclick="speak('Artificial')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Privacy</h3>
+<span class="pronunciation">/ˈpraɪvəsi/</span>
+<p><b>Urdu:</b> رازداری</p>
+<p><b>Meaning:</b> The right to keep personal information private</p>
+<p><b>Example:</b> Online privacy is important.</p>
+<button class="listen" onclick="speak('Privacy')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Access</h3>
+<span class="pronunciation">/ˈækses/</span>
+<p><b>Urdu:</b> رسائی</p>
+<p><b>Meaning:</b> The ability to use or reach something</p>
+<p><b>Example:</b> Students have access to the internet.</p>
+<button class="listen" onclick="speak('Access')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- BUSINESS -->
+
+<section class="topic">
+
+<h2>📈 5. Business & Economy</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Investment</h3>
+<span class="pronunciation">/ɪnˈvestmənt/</span>
+<p><b>Urdu:</b> سرمایہ کاری</p>
+<p><b>Meaning:</b> Money put into something to gain a benefit</p>
+<p><b>Example:</b> Education is a valuable investment.</p>
+<button class="listen" onclick="speak('Investment')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Income</h3>
+<span class="pronunciation">/ˈɪnkʌm/</span>
+<p><b>Urdu:</b> آمدنی</p>
+<p><b>Meaning:</b> Money received regularly</p>
+<p><b>Example:</b> His monthly income has increased.</p>
+<button class="listen" onclick="speak('Income')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Consumer</h3>
+<span class="pronunciation">/kənˈsuːmər/</span>
+<p><b>Urdu:</b> صارف</p>
+<p><b>Meaning:</b> A person who buys or uses goods and services</p>
+<p><b>Example:</b> Consumers compare prices before buying.</p>
+<button class="listen" onclick="speak('Consumer')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Demand</h3>
+<span class="pronunciation">/dɪˈmænd/</span>
+<p><b>Urdu:</b> طلب</p>
+<p><b>Meaning:</b> The desire or need for something</p>
+<p><b>Example:</b> There is high demand for skilled workers.</p>
+<button class="listen" onclick="speak('Demand')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Affordable</h3>
+<span class="pronunciation">/əˈfɔːrdəbəl/</span>
+<p><b>Urdu:</b> قابلِ استطاعت</p>
+<p><b>Meaning:</b> Not too expensive</p>
+<p><b>Example:</b> The company offers affordable products.</p>
+<button class="listen" onclick="speak('Affordable')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- COMMUNICATION -->
+
+<section class="topic">
+
+<h2>🗣️ 6. Communication</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Communicate</h3>
+<span class="pronunciation">/kəˈmjuːnɪkeɪt/</span>
+<p><b>Urdu:</b> رابطہ کرنا</p>
+<p><b>Meaning:</b> To share information or ideas</p>
+<p><b>Example:</b> Good leaders communicate clearly.</p>
+<button class="listen" onclick="speak('Communicate')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Persuade</h3>
+<span class="pronunciation">/pərˈsweɪd/</span>
+<p><b>Urdu:</b> قائل کرنا</p>
+<p><b>Meaning:</b> To convince someone to do something</p>
+<p><b>Example:</b> She persuaded me to join the course.</p>
+<button class="listen" onclick="speak('Persuade')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Argument</h3>
+<span class="pronunciation">/ˈɑːrɡjəmənt/</span>
+<p><b>Urdu:</b> دلیل، بحث</p>
+<p><b>Meaning:</b> A reason given to support an idea</p>
+<p><b>Example:</b> He presented a strong argument.</p>
+<button class="listen" onclick="speak('Argument')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Discuss</h3>
+<span class="pronunciation">/dɪˈskʌs/</span>
+<p><b>Urdu:</b> بحث کرنا</p>
+<p><b>Meaning:</b> To talk about something in detail</p>
+<p><b>Example:</b> We need to discuss this problem.</p>
+<button class="listen" onclick="speak('Discuss')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Express</h3>
+<span class="pronunciation">/ɪkˈspres/</span>
+<p><b>Urdu:</b> اظہار کرنا</p>
+<p><b>Meaning:</b> To show or communicate an idea or feeling</p>
+<p><b>Example:</b> She expressed her opinion clearly.</p>
+<button class="listen" onclick="speak('Express')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- HEALTH -->
+
+<section class="topic">
+
+<h2>🏥 7. Health & Lifestyle</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Balanced</h3>
+<span class="pronunciation">/ˈbælənst/</span>
+<p><b>Urdu:</b> متوازن</p>
+<p><b>Meaning:</b> Containing the right amounts of different things</p>
+<p><b>Example:</b> We should eat a balanced diet.</p>
+<button class="listen" onclick="speak('Balanced')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Exercise</h3>
+<span class="pronunciation">/ˈeksərsaɪz/</span>
+<p><b>Urdu:</b> ورزش</p>
+<p><b>Meaning:</b> Physical activity to keep healthy</p>
+<p><b>Example:</b> Regular exercise is good for you.</p>
+<button class="listen" onclick="speak('Exercise')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Prevent</h3>
+<span class="pronunciation">/prɪˈvent/</span>
+<p><b>Urdu:</b> روکنا</p>
+<p><b>Meaning:</b> To stop something from happening</p>
+<p><b>Example:</b> Exercise can help prevent some health problems.</p>
+<button class="listen" onclick="speak('Prevent')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Treatment</h3>
+<span class="pronunciation">/ˈtriːtmənt/</span>
+<p><b>Urdu:</b> علاج</p>
+<p><b>Meaning:</b> Medical care given to treat an illness</p>
+<p><b>Example:</b> The patient received treatment.</p>
+<button class="listen" onclick="speak('Treatment')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Stress</h3>
+<span class="pronunciation">/stres/</span>
+<p><b>Urdu:</b> دباؤ</p>
+<p><b>Meaning:</b> A feeling of pressure or worry</p>
+<p><b>Example:</b> Too much work can cause stress.</p>
+<button class="listen" onclick="speak('Stress')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- TRAVEL -->
+
+<section class="topic">
+
+<h2>✈️ 8. Travel & Culture</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Destination</h3>
+<span class="pronunciation">/ˌdestɪˈneɪʃən/</span>
+<p><b>Urdu:</b> منزل</p>
+<p><b>Meaning:</b> The place you are travelling to</p>
+<p><b>Example:</b> Paris is a popular destination.</p>
+<button class="listen" onclick="speak('Destination')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Culture</h3>
+<span class="pronunciation">/ˈkʌltʃər/</span>
+<p><b>Urdu:</b> ثقافت</p>
+<p><b>Meaning:</b> The customs and beliefs of a group</p>
+<p><b>Example:</b> Every country has its own culture.</p>
+<button class="listen" onclick="speak('Culture')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Traditional</h3>
+<span class="pronunciation">/trəˈdɪʃənəl/</span>
+<p><b>Urdu:</b> روایتی</p>
+<p><b>Meaning:</b> Related to customs passed through generations</p>
+<p><b>Example:</b> We wore traditional clothes.</p>
+<button class="listen" onclick="speak('Traditional')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Explore</h3>
+<span class="pronunciation">/ɪkˈsplɔːr/</span>
+<p><b>Urdu:</b> دریافت کرنا، گھومنا</p>
+<p><b>Meaning:</b> To travel around and discover something</p>
+<p><b>Example:</b> We explored the old city.</p>
+<button class="listen" onclick="speak('Explore')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Accommodation</h3>
+<span class="pronunciation">/əˌkɑːməˈdeɪʃən/</span>
+<p><b>Urdu:</b> رہائش</p>
+<p><b>Meaning:</b> A place where someone stays</p>
+<p><b>Example:</b> We found comfortable accommodation.</p>
+<button class="listen" onclick="speak('Accommodation')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- PROBLEMS -->
+
+<section class="topic">
+
+<h2>⚠️ 9. Problems & Solutions</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Challenge</h3>
+<span class="pronunciation">/ˈtʃælɪndʒ/</span>
+<p><b>Urdu:</b> چیلنج</p>
+<p><b>Meaning:</b> A difficult situation or task</p>
+<p><b>Example:</b> Learning a language can be a challenge.</p>
+<button class="listen" onclick="speak('Challenge')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Solution</h3>
+<span class="pronunciation">/səˈluːʃən/</span>
+<p><b>Urdu:</b> حل</p>
+<p><b>Meaning:</b> An answer to a problem</p>
+<p><b>Example:</b> We need to find a solution.</p>
+<button class="listen" onclick="speak('Solution')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Cause</h3>
+<span class="pronunciation">/kɔːz/</span>
+<p><b>Urdu:</b> سبب</p>
+<p><b>Meaning:</b> The reason something happens</p>
+<p><b>Example:</b> We need to find the cause of the problem.</p>
+<button class="listen" onclick="speak('Cause')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Effect</h3>
+<span class="pronunciation">/ɪˈfekt/</span>
+<p><b>Urdu:</b> اثر</p>
+<p><b>Meaning:</b> The result of an action</p>
+<p><b>Example:</b> Pollution has a negative effect on health.</p>
+<button class="listen" onclick="speak('Effect')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Reduce</h3>
+<span class="pronunciation">/rɪˈduːs/</span>
+<p><b>Urdu:</b> کم کرنا</p>
+<p><b>Meaning:</b> To make something smaller or less</p>
+<p><b>Example:</b> We should reduce plastic waste.</p>
+<button class="listen" onclick="speak('Reduce')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- ABSTRACT -->
+
+<section class="topic">
+
+<h2>🧠 10. Advanced Everyday Words</h2>
+
+<div class="words">
+
+<div class="word">
+<h3>Benefit</h3>
+<span class="pronunciation">/ˈbenɪfɪt/</span>
+<p><b>Urdu:</b> فائدہ</p>
+<p><b>Meaning:</b> A helpful or useful result</p>
+<p><b>Example:</b> Reading has many benefits.</p>
+<button class="listen" onclick="speak('Benefit')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Require</h3>
+<span class="pronunciation">/rɪˈkwaɪər/</span>
+<p><b>Urdu:</b> ضرورت ہونا</p>
+<p><b>Meaning:</b> To need something</p>
+<p><b>Example:</b> This job requires experience.</p>
+<button class="listen" onclick="speak('Require')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Approach</h3>
+<span class="pronunciation">/əˈproʊtʃ/</span>
+<p><b>Urdu:</b> طریقہ، نقطۂ نظر</p>
+<p><b>Meaning:</b> A way of dealing with something</p>
+<p><b>Example:</b> We need a different approach.</p>
+<button class="listen" onclick="speak('Approach')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Efficient</h3>
+<span class="pronunciation">/ɪˈfɪʃənt/</span>
+<p><b>Urdu:</b> مؤثر</p>
+<p><b>Meaning:</b> Working well without wasting time or resources</p>
+<p><b>Example:</b> This is an efficient way to study.</p>
+<button class="listen" onclick="speak('Efficient')">🔊 Listen</button>
+</div>
+
+<div class="word">
+<h3>Impact</h3>
+<span class="pronunciation">/ˈɪmpækt/</span>
+<p><b>Urdu:</b> اثر</p>
+<p><b>Meaning:</b> A strong effect on something</p>
+<p><b>Example:</b> Technology has a major impact on education.</p>
+<button class="listen" onclick="speak('Impact')">🔊 Listen</button>
+</div>
+
+</div>
+</section>
+
+</div>
+
+
+<footer>
+
+<h3>🌍 LinguaPath</h3>
+
+<p>Learn • Practice • Improve</p>
+
+<p>© 2026 LinguaPath</p>
+
+</footer>
+
+
+<script>
+
+function speak(word){
+
+const speech=new SpeechSynthesisUtterance(word);
+
+speech.lang="en-US";
+
+speech.rate=0.85;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+
+function searchWords(){
+
+const input=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+const cards=document.querySelectorAll(".word");
+
+cards.forEach(function(card){
+
+const text=card.innerText.toLowerCase();
+
+if(text.includes(input)){
+
+card.style.display="";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+</script>
+
+</body>
+  </html>
