@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quizzes | LinguaPath</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#20242c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#263a8b,#5267c9);
+color:white;
+text-align:center;
+padding:42px 20px;
+}
+
+header h1{
+font-size:38px;
+margin-bottom:8px;
+}
+
+header p{
+font-size:17px;
+}
+
+nav{
+background:white;
+padding:16px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:10;
+}
+
+nav a{
+color:#263a8b;
+text-decoration:none;
+font-weight:bold;
+margin:0 10px;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:35px 18px;
+}
+
+.hero{
+background:white;
+padding:30px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+margin-bottom:30px;
+}
+
+.hero h2{
+color:#263a8b;
+font-size:30px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#666;
+}
+
+
+/* QUIZ SETTINGS */
+
+.settings{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+margin-bottom:30px;
+}
+
+.settings h2{
+color:#263a8b;
+margin-bottom:20px;
+text-align:center;
+}
+
+.setting-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.setting label{
+display:block;
+font-weight:bold;
+margin-bottom:7px;
+color:#333;
+}
+
+select{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:9px;
+font-size:16px;
+background:white;
+}
+
+
+/* BUTTONS */
+
+.btn{
+background:#263a8b;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:9px;
+cursor:pointer;
+font-weight:bold;
+font-size:15px;
+margin-top:18px;
+}
+
+.btn:hover{
+background:#17245f;
+}
+
+.start-area{
+text-align:center;
+}
+
+
+/* QUIZ */
+
+.quiz-box{
+display:none;
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.quiz-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+gap:15px;
+}
+
+.question-number{
+font-weight:bold;
+color:#263a8b;
+}
+
+.score-display{
+font-weight:bold;
+color:#555;
+}
+
+.progress{
+height:10px;
+background:#e8eaf0;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:25px;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:#263a8b;
+transition:.3s;
+}
+
+.question{
+font-size:23px;
+font-weight:bold;
+margin-bottom:25px;
+text-align:center;
+}
+
+.options{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.option{
+background:#f8f9fc;
+border:2px solid #e1e4ec;
+padding:15px;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+transition:.2s;
+}
+
+.option:hover{
+border-color:#263a8b;
+background:#eef1ff;
+}
+
+.option.correct{
+background:#dff5e5;
+border-color:#299447;
+color:#17652c;
+}
+
+.option.wrong{
+background:#fde2e2;
+border-color:#d33;
+color:#9b1515;
+}
+
+.option.disabled{
+pointer-events:none;
+}
+
+
+/* EXPLANATION */
+
+.explanation{
+display:none;
+margin-top:20px;
+padding:18px;
+background:#f4f6ff;
+border-left:5px solid #263a8b;
+border-radius:8px;
+}
+
+.explanation strong{
+color:#263a8b;
+}
+
+
+/* NEXT */
+
+.next-area{
+text-align:right;
+}
+
+
+/* RESULT */
+
+.result{
+display:none;
+background:white;
+padding:35px;
+border-radius:18px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.result h2{
+font-size:32px;
+color:#263a8b;
+margin-bottom:12px;
+}
+
+.result-score{
+font-size:48px;
+font-weight:bold;
+color:#263a8b;
+margin:15px;
+}
+
+.result-message{
+font-size:18px;
+color:#555;
+margin-bottom:15px;
+}
+
+.result-details{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin:25px 0;
+}
+
+.result-card{
+background:#f5f7fb;
+padding:18px;
+border-radius:12px;
+}
+
+.result-card h3{
+color:#263a8b;
+font-size:24px;
+}
+
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:40px;
+}
+
+.feature{
+background:white;
+padding:25px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.feature-icon{
+font-size:35px;
+margin-bottom:8px;
+}
+
+.feature h3{
+color:#263a8b;
+margin-bottom:7px;
+}
+
+.feature p{
+color:#666;
+}
+
+
+/* FOOTER */
+
+footer{
+margin-top:50px;
+background:#202b55;
+color:white;
+text-align:center;
+padding:28px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.setting-grid,
+.options,
+.features,
+.result-details{
+grid-template-columns:1fr;
+}
+
+.quiz-header{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.question{
+font-size:20px;
+}
+
+}
+
+@media(max-width:450px){
+
+nav a{
+display:inline-block;
+margin:5px;
+}
+
+.container{
+padding:25px 12px;
+}
+
+.hero h2{
+font-size:25px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>🧠 LinguaPath Quizzes</h1>
+
+<p>Test your vocabulary, grammar and language skills.</p>
+
+</header>
+
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="vocabulary.html">📚 Vocabulary</a>
+
+<a href="stories.html">📖 Stories</a>
+
+<a href="quizzes.html">🧠 Quizzes</a>
+
+</nav>
+
+
+<main class="container">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h2>🎯 Test Your Language Skills</h2>
+
+<p>
+Choose a language and level, then challenge yourself with interactive questions.
+</p>
+
+</section>
+
+
+<!-- SETTINGS -->
+
+<section class="settings" id="settings">
+
+<h2>⚙️ Quiz Settings</h2>
+
+
+<div class="setting-grid">
+
+
+<div class="setting">
+
+<label for="language">
+🌍 Choose Language
+</label>
+
+<select id="language">
+
+<option value="english">🇬🇧 English</option>
+
+<option value="arabic">🇸🇦 Arabic</option>
+
+<option value="chinese">🇨🇳 Chinese</option>
+
+<option value="korean">🇰🇷 Korean</option>
+
+<option value="japanese">🇯🇵 Japanese</option>
+
+</select>
+
+</div>
+
+
+<div class="setting">
+
+<label for="level">
+📊 Choose Level
+</label>
+
+<select id="level">
+
+<option value="A1">A1 — Beginner</option>
+
+<option value="A2">A2 — Elementary</option>
+
+<option value="B1">B1 — Intermediate</option>
+
+<option value="B2">B2 — Upper Intermediate</option>
+
+<option value="C1">C1 — Advanced</option>
+
+<option value="C2">C2 — Mastery</option>
+
+</select>
+
+</div>
+
+
+</div>
+
+
+<div class="start-area">
+
+<button class="btn" onclick="startQuiz()">
+🚀 Start Quiz
+</button>
+
+</div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section class="quiz-box" id="quizBox">
+
+
+<div class="quiz-header">
+
+<div class="question-number" id="questionNumber">
+Question 1 / 10
+</div>
+
+<div class="score-display">
+Score: <span id="score">0</span>
+</div>
+
+</div>
+
+
+<div class="progress">
+
+<div class="progress-bar" id="progressBar"></div>
+
+</div>
+
+
+<div class="question" id="question">
+Question will appear here.
+</div>
+
+
+<div class="options" id="options">
+</div>
+
+
+<div class="explanation" id="explanation">
+</div>
+
+
+<div class="next-area">
+
+<button class="btn" id="nextButton" onclick="nextQuestion()" style="display:none;">
+Next Question →
+</button>
+
+</div>
+
+
+</section>
+
+
+<!-- RESULT -->
+
+<section class="result" id="result">
+
+<h2>🏆 Quiz Complete!</h2>
+
+<div class="result-score" id="resultScore">
+0%
+</div>
+
+<div class="result-message" id="resultMessage">
+</div>
+
+
+<div class="result-details">
+
+<div class="result-card">
+
+<h3 id="correctAnswers">
+0
+</h3>
+
+<p>Correct</p>
+
+</div>
+
+
+<div class="result-card">
+
+<h3 id="wrongAnswers">
+0
+</h3>
+
+<p>Incorrect</p>
+
+</div>
+
+
+<div class="result-card">
+
+<h3 id="totalQuestions">
+10
+</h3>
+
+<p>Total</p>
+
+</div>
+
+</div>
+
+
+<button class="btn" onclick="restartQuiz()">
+🔄 Try Again
+</button>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🎯
+</div>
+
+<h3>Level-Based</h3>
+
+<p>
+Practice from A1 beginner level to C2 mastery.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🔊
+</div>
+
+<h3>Pronunciation</h3>
+
+<p>
+Listen to questions and language examples.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+📈
+</div>
+
+<h3>Track Progress</h3>
+
+<p>
+See your score and identify areas for improvement.
+</p>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<h3>🌍 LinguaPath</h3>
+
+<p>Learn • Practice • Improve</p>
+
+<p>© 2026 LinguaPath</p>
+
+</footer>
+
+
+<script>
+
+
+/* =========================
+   QUIZ QUESTION BANK
+========================= */
+
+
+const quizData = {
+
+
+english: {
+
+A1: [
+
+{
+q:"What does 'Hello' mean?",
+options:["Goodbye","A greeting","Thank you","Sorry"],
+answer:1,
+explanation:"Hello is commonly used when greeting someone."
+},
+
+{
+q:"Choose the correct sentence.",
+options:[
+"I am student.",
+"I student am.",
+"I am a student.",
+"Student I am a."
+],
+answer:2,
+explanation:"The correct sentence is 'I am a student.'"
+},
+
+{
+q:"What is the opposite of 'big'?",
+options:["Large","Small","Tall","Long"],
+answer:1,
+explanation:"The opposite of big is small."
+},
+
+{
+q:"Which word means 'water'?",
+options:["Food","House","Water","Book"],
+answer:2,
+explanation:"Water is the liquid we drink."
+},
+
+{
+q:"Choose the correct plural of 'book'.",
+options:["Bookes","Books","Bookies","Book"],
+answer:1,
+explanation:"The plural form is 'books'."
+}
+
+],
+
+A2: [
+
+{
+q:"Which sentence is in the past tense?",
+options:[
+"I eat breakfast.",
+"I am eating.",
+"I ate breakfast.",
+"I will eat."
+],
+answer:2,
+explanation:"'Ate' is the past form of 'eat'."
+},
+
+{
+q:"What does 'expensive' mean?",
+options:[
+"Costing a lot of money",
+"Very small",
+"Very easy",
+"Free"
+],
+answer:0,
+explanation:"Expensive means costing a lot of money."
+},
+
+{
+q:"Choose the correct sentence.",
+options:[
+"She don't like tea.",
+"She doesn't like tea.",
+"She not likes tea.",
+"She doesn't likes tea."
+],
+answer:1,
+explanation:"With 'she', use 'doesn't + base verb'."
+}
+
+],
+
+B1: [
+
+{
+q:"Choose the correct conditional sentence.",
+options:[
+"If I study, I will improve.",
+"If I studied, I improve.",
+"If I study, I improved.",
+"If I studying, I will improve."
+],
+answer:0,
+explanation:"The first conditional uses present simple + will."
+},
+
+{
+q:"What does 'although' express?",
+options:[
+"Contrast",
+"Time",
+"Place",
+"Number"
+],
+answer:0,
+explanation:"Although introduces a contrast."
+}
+
+]
+
+},
+
+
+arabic: {
+
+A1: [
+
+{
+q:"ماذا تعني كلمة «مَرْحَبًا»؟",
+options:["Goodbye","Hello","Thank you","Water"],
+answer:1,
+explanation:"مَرْحَبًا means Hello."
+},
+
+{
+q:"ماذا تعني «شُكْرًا»؟",
+options:["Please","Friend","Thank you","School"],
+answer:2,
+explanation:"شُكْرًا means Thank you."
+},
+
+{
+q:"أي كلمة تعني «ماء»؟",
+options:["ماء","كتاب","بيت","مدرسة"],
+answer:0,
+explanation:"ماء means water."
+}
+
+],
+
+A2: [
+
+{
+q:"ما معنى «صديق»؟",
+options:["Teacher","Friend","Student","House"],
+answer:1,
+explanation:"صديق means friend."
+},
+
+{
+q:"ما معنى «مدرسة»؟",
+options:["School","Book","Water","Family"],
+answer:0,
+explanation:"مدرسة means school."
+}
+
+],
+
+B1: [
+
+{
+q:"أي جملة صحيحة؟",
+options:[
+"أنا يذهب إلى المدرسة.",
+"أنا أذهب إلى المدرسة.",
+"أنا ذهب المدرسة.",
+"أنا تذهب المدرسة."
+],
+answer:1,
+explanation:"أنا أذهب إلى المدرسة means I go to school."
+}
+
+]
+
+},
+
+
+chinese: {
+
+A1: [
+
+{
+q:"“你好” means:",
+options:["Goodbye","Hello","Thank you","Friend"],
+answer:1,
+explanation:"你好 (Nǐ hǎo) means Hello."
+},
+
+{
+q:"“谢谢” means:",
+options:["Hello","Water","Thank you","School"],
+answer:2,
+explanation:"谢谢 (Xièxie) means Thank you."
+},
+
+{
+q:"“水” means:",
+options:["Food","Water","Book","Friend"],
+answer:1,
+explanation:"水 (shuǐ) means water."
+}
+
+],
+
+A2: [
+
+{
+q:"“朋友” means:",
+options:["Teacher","Friend","Student","Family"],
+answer:1,
+explanation:"朋友 (péngyou) means friend."
+},
+
+{
+q:"“学校” means:",
+options:["School","House","Book","Restaurant"],
+answer:0,
+explanation:"学校 (xuéxiào) means school."
+}
+
+],
+
+B1: [
+
+{
+q:"Which sentence means 'I like Chinese'?",
+options:[
+"我喜欢中文。",
+"我不喜欢中文。",
+"我学习中文。",
+"我去中文。"
+],
+answer:0,
+explanation:"我喜欢中文 means I like Chinese."
+}
+
+]
+
+},
+
+
+korean: {
+
+A1: [
+
+{
+q:"안녕하세요 means:",
+options:["Goodbye","Hello","Thank you","Water"],
+answer:1,
+explanation:"안녕하세요 (Annyeonghaseyo) means Hello."
+},
+
+{
+q:"감사합니다 means:",
+options:["Hello","Thank you","Friend","School"],
+answer:1,
+explanation:"감사합니다 (Gamsahamnida) means Thank you."
+},
+
+{
+q:"물 means:",
+options:["Water","Book","Friend","Food"],
+answer:0,
+explanation:"물 (mul) means water."
+}
+
+],
+
+A2: [
+
+{
+q:"친구 means:",
+options:["Teacher","Friend","Student","House"],
+answer:1,
+explanation:"친구 (chingu) means friend."
+},
+
+{
+q:"학교 means:",
+options:["School","Water","Book","Family"],
+answer:0,
+explanation:"학교 (hakgyo) means school."
+}
+
+],
+
+B1: [
+
+{
+q:"나는 한국어를 공부해요 means:",
+options:[
+"I study Korean.",
+"I eat Korean food.",
+"I speak English.",
+"I go to Korea."
+],
+answer:0,
+explanation:"나는 한국어를 공부해요 means I study Korean."
+}
+
+]
+
+},
+
+
+japanese: {
+
+A1: [
+
+{
+q:"こんにちは means:",
+options:["Goodbye","Hello","Thank you","Sorry"],
+answer:1,
+explanation:"こんにちは (Konnichiwa) is a common Japanese greeting."
+},
+
+{
+q:"ありがとう means:",
+options:["Hello","Thank you","Friend","Water"],
+answer:1,
+explanation:"ありがとう (Arigatou) means Thank you."
+},
+
+{
+q:"みず means:",
+options:["School","Water","Book","Friend"],
+answer:1,
+explanation:"みず (mizu) means water."
+}
+
+],
+
+A2: [
+
+{
+q:"ともだち means:",
+options:["Teacher","Friend","Student","Family"],
+answer:1,
+explanation:"ともだち (tomodachi) means friend."
+},
+
+{
+q:"がっこう means:",
+options:["School","House","Water","Book"],
+answer:0,
+explanation:"がっこう (gakkou) means school."
+}
+
+],
+
+B1: [
+
+{
+q:"私は日本語を勉強します means:",
+options:[
+"I study Japanese.",
+"I teach Japanese.",
+"I speak Korean.",
+"I go to Japan."
+],
+answer:0,
+explanation:"私は日本語を勉強します means I study Japanese."
+}
+
+]
+
+}
+
+};
+
+
+/* =========================
+   QUIZ VARIABLES
+========================= */
+
+
+let questions=[];
+
+let currentQuestion=0;
+
+let score=0;
+
+let answered=false;
+
+
+/* =========================
+   START QUIZ
+========================= */
+
+
+function startQuiz(){
+
+const language=
+document.getElementById("language").value;
+
+const level=
+document.getElementById("level").value;
+
+
+/* Get selected questions */
+
+if(
+quizData[language] &&
+quizData[language][level]
+){
+
+questions=[
+...quizData[language][level]
+];
+
+}else{
+
+/* fallback */
+
+questions=[
+...quizData[language].A1
+];
+
+}
+
+
+/* Shuffle */
+
+questions.sort(()=>Math.random()-0.5);
+
+
+/* Reset */
+
+currentQuestion=0;
+
+score=0;
+
+answered=false;
+
+
+/* Show quiz */
+
+document.getElementById("settings").style.display="none";
+
+document.getElementById("result").style.display="none";
+
+document.getElementById("quizBox").style.display="block";
+
+
+showQuestion();
+
+}
+
+
+/* =========================
+   SHOW QUESTION
+========================= */
+
+
+function showQuestion(){
+
+answered=false;
+
+const q=questions[currentQuestion];
+
+document.getElementById("questionNumber").textContent=
+"Question "+(currentQuestion+1)+" / "+questions.length;
+
+document.getElementById("score").textContent=score;
+
+document.getElementById("question").textContent=q.q;
+
+
+/* Progress */
+
+const progress=
+((currentQuestion)/questions.length)*100;
+
+document.getElementById("progressBar").style.width=
+progress+"%";
+
+
+/* Clear options */
+
+const options=
+document.getElementById("options");
+
+options.innerHTML="";
+
+
+q.options.forEach((option,index)=>{
+
+const button=
+document.createElement("button");
+
+button.className="option";
+
+button.textContent=option;
+
+button.onclick=
+()=>checkAnswer(index,button);
+
+options.appendChild(button);
+
+});
+
+
+document.getElementById("explanation").style.display="none";
+
+document.getElementById("nextButton").style.display="none";
+
+}
+
+
+/* =========================
+   CHECK ANSWER
+========================= */
+
+
+function checkAnswer(selected,button){
+
+if(answered)return;
+
+answered=true;
+
+const q=questions[currentQuestion];
+
+const allOptions=
+document.querySelectorAll(".option");
+
+
+allOptions.forEach(option=>{
+option.classList.add("disabled");
+});
+
+
+if(selected===q.answer){
+
+button.classList.add("correct");
+
+score++;
+
+}else{
+
+button.classList.add("wrong");
+
+allOptions[q.answer].classList.add("correct");
+
+}
+
+
+/* Explanation */
+
+const explanation=
+document.getElementById("explanation");
+
+explanation.innerHTML=
+"<strong>💡 Explanation:</strong> "+
+q.explanation;
+
+explanation.style.display="block";
+
+
+document.getElementById("score").textContent=score;
+
+document.getElementById("nextButton").style.display="inline-block";
+
+}
+
+
+/* =========================
+   NEXT QUESTION
+========================= */
+
+
+function nextQuestion(){
+
+currentQuestion++;
+
+if(currentQuestion<questions.length){
+
+showQuestion();
+
+}else{
+
+finishQuiz();
+
+}
+
+}
+
+
+/* =========================
+   FINISH QUIZ
+========================= */
+
+
+function finishQuiz(){
+
+document.getElementById("quizBox").style.display="none";
+
+document.getElementById("result").style.display="block";
+
+
+const percentage=
+Math.round((score/questions.length)*100);
+
+
+document.getElementById("resultScore").textContent=
+percentage+"%";
+
+document.getElementById("correctAnswers").textContent=
+score;
+
+document.getElementById("wrongAnswers").textContent=
+questions.length-score;
+
+document.getElementById("totalQuestions").textContent=
+questions.length;
+
+
+/* Performance message */
+
+let message="";
+
+
+if(percentage===100){
+
+message="🏆 Perfect! Excellent work! You have mastered this quiz.";
+
+}else if(percentage>=80){
+
+message="🌟 Excellent! Your language skills are very strong.";
+
+}else if(percentage>=60){
+
+message="👍 Good job! Keep practicing to improve further.";
+
+}else if(percentage>=40){
+
+message="📚 Keep studying. You are making progress!";
+
+}else{
+
+message="💪 Don't give up! Review the lessons and try again.";
+
+}
+
+
+document.getElementById("resultMessage").textContent=
+message;
+
+}
+
+
+/* =========================
+   RESTART
+========================= */
+
+
+function restartQuiz(){
+
+document.getElementById("result").style.display="none";
+
+document.getElementById("settings").style.display="block";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* =========================
+   TEXT TO SPEECH
+========================= */
+
+
+function speakText(text,language){
+
+if("speechSynthesis" in window){
+
+const speech=
+new SpeechSynthesisUtterance(text);
+
+speech.lang=language;
+
+speech.rate=0.8;
+
+window.speechSynthesis.cancel();
+
+window.speechSynthesis.speak(speech);
+
+}
+
+}
+
+</script>
+
+
+</body>
+
+  </html>
