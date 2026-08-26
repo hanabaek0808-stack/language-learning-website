@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stories | LinguaPath</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#20242c;
+line-height:1.7;
+}
+
+header{
+background:linear-gradient(135deg,#263a8b,#5267c9);
+color:white;
+text-align:center;
+padding:42px 20px;
+}
+
+header h1{
+font-size:38px;
+margin-bottom:8px;
+}
+
+header p{
+font-size:17px;
+}
+
+nav{
+background:white;
+padding:16px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:20;
+}
+
+nav a{
+color:#263a8b;
+text-decoration:none;
+font-weight:bold;
+margin:0 10px;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:35px 18px;
+}
+
+
+/* HERO */
+
+.hero{
+background:white;
+padding:30px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+margin-bottom:30px;
+}
+
+.hero h2{
+color:#263a8b;
+font-size:30px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#666;
+}
+
+
+/* FILTERS */
+
+.filters{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+margin-bottom:30px;
+}
+
+.filters h2{
+text-align:center;
+color:#263a8b;
+margin-bottom:20px;
+}
+
+.filter-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.filter label{
+display:block;
+font-weight:bold;
+margin-bottom:7px;
+}
+
+select{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:9px;
+font-size:15px;
+background:white;
+}
+
+.filter-button{
+text-align:center;
+margin-top:20px;
+}
+
+button{
+background:#263a8b;
+color:white;
+border:none;
+padding:11px 18px;
+border-radius:9px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#17245f;
+}
+
+
+/* STORY CARDS */
+
+.story-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.story-card{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+transition:.2s;
+}
+
+.story-card:hover{
+transform:translateY(-4px);
+}
+
+.story-icon{
+font-size:40px;
+margin-bottom:8px;
+}
+
+.story-card h3{
+color:#263a8b;
+font-size:23px;
+margin-bottom:6px;
+}
+
+.level-badge{
+display:inline-block;
+background:#eef1ff;
+color:#263a8b;
+padding:5px 10px;
+border-radius:20px;
+font-size:13px;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.story-card p{
+color:#666;
+margin-bottom:15px;
+}
+
+.read-button{
+display:inline-block;
+background:#263a8b;
+color:white;
+padding:10px 16px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+
+/* READER */
+
+.reader{
+display:none;
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+margin-top:30px;
+}
+
+.reader-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+}
+
+.reader-header h2{
+color:#263a8b;
+}
+
+.timer{
+background:#f0f2fa;
+padding:8px 12px;
+border-radius:8px;
+font-weight:bold;
+color:#263a8b;
+}
+
+.story-text{
+font-size:19px;
+line-height:1.9;
+margin:20px 0;
+}
+
+.story-text p{
+margin-bottom:18px;
+}
+
+.highlight{
+background:#fff3b8;
+padding:2px 4px;
+border-radius:4px;
+}
+
+.reader-tools{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:20px;
+}
+
+.secondary{
+background:#555;
+}
+
+.secondary:hover{
+background:#333;
+}
+
+
+/* VOCABULARY */
+
+.story-vocab{
+margin-top:30px;
+padding-top:25px;
+border-top:1px solid #eee;
+}
+
+.story-vocab h3{
+color:#263a8b;
+margin-bottom:15px;
+}
+
+.vocab-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.vocab-item{
+background:#f7f8fc;
+padding:15px;
+border-radius:10px;
+}
+
+.vocab-item strong{
+color:#263a8b;
+}
+
+
+/* QUESTIONS */
+
+.questions{
+margin-top:30px;
+padding-top:25px;
+border-top:1px solid #eee;
+}
+
+.questions h3{
+color:#263a8b;
+margin-bottom:15px;
+}
+
+.question-box{
+background:#f7f8fc;
+padding:18px;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+.question-box p{
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.question-option{
+display:block;
+width:100%;
+text-align:left;
+background:white;
+color:#333;
+border:1px solid #ddd;
+margin:7px 0;
+}
+
+.question-option:hover{
+background:#eef1ff;
+}
+
+.correct{
+background:#dff5e5 !important;
+border-color:#299447 !important;
+}
+
+.wrong{
+background:#fde2e2 !important;
+border-color:#d33 !important;
+}
+
+
+/* RESULT */
+
+.story-result{
+display:none;
+margin-top:20px;
+background:#eef1ff;
+padding:20px;
+border-radius:12px;
+text-align:center;
+}
+
+.story-result h3{
+color:#263a8b;
+font-size:25px;
+}
+
+
+/* EMPTY */
+
+.empty{
+display:none;
+text-align:center;
+background:white;
+padding:30px;
+border-radius:15px;
+color:#666;
+}
+
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+margin-top:45px;
+}
+
+.feature{
+background:white;
+padding:23px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.feature-icon{
+font-size:34px;
+margin-bottom:8px;
+}
+
+.feature h3{
+color:#263a8b;
+margin-bottom:7px;
+}
+
+.feature p{
+color:#666;
+}
+
+
+/* FOOTER */
+
+footer{
+margin-top:50px;
+background:#202b55;
+color:white;
+text-align:center;
+padding:28px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.filter-grid,
+.features{
+grid-template-columns:1fr 1fr;
+}
+
+.story-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:550px){
+
+.filter-grid,
+.features,
+.vocab-grid{
+grid-template-columns:1fr;
+}
+
+.reader-header{
+flex-direction:column;
+align-items:flex-start;
+}
+
+nav a{
+display:inline-block;
+margin:5px;
+}
+
+.story-text{
+font-size:17px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>📖 LinguaPath Stories</h1>
+
+<p>Improve your language skills through stories.</p>
+
+</header>
+
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="vocabulary.html">📚 Vocabulary</a>
+
+<a href="stories.html">📖 Stories</a>
+
+<a href="quizzes.html">🧠 Quizzes</a>
+
+</nav>
+
+
+<main class="container">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h2>📚 Learn Through Stories</h2>
+
+<p>
+Read stories, learn vocabulary, listen to pronunciation,
+and test your understanding.
+</p>
+
+</section>
+
+
+<!-- FILTERS -->
+
+<section class="filters">
+
+<h2>🎯 Choose Your Reading Level</h2>
+
+<div class="filter-grid">
+
+
+<div class="filter">
+
+<label for="language">
+🌍 Language
+</label>
+
+<select id="language">
+
+<option value="english">🇬🇧 English</option>
+
+<option value="arabic">🇸🇦 Arabic</option>
+
+<option value="chinese">🇨🇳 Chinese</option>
+
+<option value="korean">🇰🇷 Korean</option>
+
+<option value="japanese">🇯🇵 Japanese</option>
+
+</select>
+
+</div>
+
+
+<div class="filter">
+
+<label for="level">
+📊 Level
+</label>
+
+<select id="level">
+
+<option value="A1">A1 — Beginner</option>
+
+<option value="A2">A2 — Elementary</option>
+
+<option value="B1">B1 — Intermediate</option>
+
+<option value="B2">B2 — Upper Intermediate</option>
+
+<option value="C1">C1 — Advanced</option>
+
+<option value="C2">C2 — Mastery</option>
+
+</select>
+
+</div>
+
+
+<div class="filter">
+
+<label for="type">
+📖 Story Type
+</label>
+
+<select id="type">
+
+<option value="all">All Stories</option>
+
+<option value="daily">Daily Life</option>
+
+<option value="adventure">Adventure</option>
+
+<option value="moral">Moral Story</option>
+
+<option value="culture">Culture</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="filter-button">
+
+<button onclick="filterStories()">
+🔍 Find Stories
+</button>
+
+</div>
+
+</section>
+
+
+<!-- STORY LIST -->
+
+<section>
+
+<div class="story-grid" id="storyGrid">
+
+
+<div class="story-card"
+data-language="english"
+data-level="A1"
+data-type="daily">
+
+<div class="story-icon">☀️</div>
+
+<span class="level-badge">English • A1</span>
+
+<h3>A New Day</h3>
+
+<p>
+A simple story about a student starting a new day.
+</p>
+
+<button class="read-button"
+onclick="openStory('newDay')">
+
+📖 Read Story
+
+</button>
+
+</div>
+
+
+<div class="story-card"
+data-language="english"
+data-level="A2"
+data-type="moral">
+
+<div class="story-icon">🌱</div>
+
+<span class="level-badge">English • A2</span>
+
+<h3>The Little Seed</h3>
+
+<p>
+A short story about patience, hope and growth.
+</p>
+
+<button class="read-button"
+onclick="openStory('seed')">
+
+📖 Read Story
+
+</button>
+
+</div>
+
+
+<div class="story-card"
+data-language="english"
+data-level="B1"
+data-type="adventure">
+
+<div class="story-icon">🗺️</div>
+
+<span class="level-badge">English • B1</span>
+
+<h3>The Hidden Path</h3>
+
+<p>
+An adventurous story about courage and discovery.
+</p>
+
+<button class="read-button"
+onclick="openStory('path')">
+
+📖 Read Story
+
+</button>
+
+</div>
+
+
+<div class="story-card"
+data-language="japanese"
+data-level="A1"
+data-type="daily">
+
+<div class="story-icon">🌸</div>
+
+<span class="level-badge">Japanese • A1</span>
+
+<h3>わたしの一日</h3>
+
+<p>
+A simple Japanese story about everyday life.
+</p>
+
+<button class="read-button"
+onclick="openStory('japaneseDay')">
+
+📖 Read Story
+
+</button>
+
+</div>
+
+
+<div class="story-card"
+data-language="korean"
+data-level="A1"
+data-type="daily">
+
+<div class="story-icon">🌸</div>
+
+<span class="level-badge">Korean • A1</span>
+
+<h3>나의 하루</h3>
+
+<p>
+A beginner Korean story about a normal day.
+</p>
+
+<button class="read-button"
+onclick="openStory('koreanDay')">
+
+📖 Read Story
+
+</button>
+
+</div>
+
+
+<div class="story-card"
+data-language="chinese"
+data-level="A1"
+data-type="daily">
+
+<div class="story-icon">🏫</div>
+
+<span class="level-badge">Chinese • A1</span>
+
+<h3>我的学校</h3>
+
+<p>
+A beginner Chinese story about school life.
+</p>
+
+<button class="read-button"
+onclick="openStory('chineseSchool')">
+
+📖 Read Story
+
+</button>
+
+</div>
+
+
+<div class="story-card"
+data-language="arabic"
+data-level="A1"
+data-type="daily">
+
+<div class="story-icon">🏠</div>
+
+<span class="level-badge">Arabic • A1</span>
+
+<h3>يومي</h3>
+
+<p>
+A simple Arabic story about a person's day.
+</p>
+
+<button class="read-button"
+onclick="openStory('arabicDay')">
+
+📖 Read Story
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<div class="empty" id="empty">
+
+<h3>📚 No stories found</h3>
+
+<p>
+Try another language or level.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- READER -->
+
+<section class="reader" id="reader">
+
+<div class="reader-header">
+
+<h2 id="storyTitle">
+Story
+</h2>
+
+<div class="timer">
+⏱️ <span id="timer">00:00</span>
+</div>
+
+</div>
+
+
+<div class="reader-tools">
+
+<button onclick="speakStory()">
+🔊 Listen
+</button>
+
+<button class="secondary" onclick="stopSpeaking()">
+⏹ Stop
+</button>
+
+<button class="secondary" onclick="bookmarkStory()">
+🔖 Bookmark
+</button>
+
+<button class="secondary" onclick="closeStory()">
+✖ Close
+</button>
+
+</div>
+
+
+<div class="story-text" id="storyText">
+</div>
+
+
+<!-- VOCABULARY -->
+
+<div class="story-vocab">
+
+<h3>📚 Story Vocabulary</h3>
+
+<div class="vocab-grid" id="storyVocabulary">
+</div>
+
+</div>
+
+
+<!-- QUESTIONS -->
+
+<div class="questions">
+
+<h3>🧠 Check Your Understanding</h3>
+
+<div id="questionsContainer">
+</div>
+
+</div>
+
+
+<div class="story-result" id="storyResult">
+
+<h3 id="storyResultTitle">
+🎉 Well Done!
+</h3>
+
+<p id="storyResultText">
+</p>
+
+</div>
+
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+
+<div class="feature">
+
+<div class="feature-icon">
+📖
+</div>
+
+<h3>Reading</h3>
+
+<p>
+Read stories matched to your language level.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🔊
+</div>
+
+<h3>Listening</h3>
+
+<p>
+Listen to the story using your device's voice system.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+📚
+</div>
+
+<h3>Vocabulary</h3>
+
+<p>
+Learn useful words directly from each story.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🧠
+</div>
+
+<h3>Comprehension</h3>
+
+<p>
+Answer questions to check what you understood.
+</p>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<h3>🌍 LinguaPath</h3>
+
+<p>Learn • Practice • Improve</p>
+
+<p>© 2026 LinguaPath</p>
+
+</footer>
+
+
+<script>
+
+
+/* =========================
+   STORY DATABASE
+========================= */
+
+const stories={
+
+
+newDay:{
+
+title:"☀️ A New Day",
+
+language:"en-US",
+
+text:`
+
+<p>
+Emma wakes up early in the morning.
+She opens the window and sees the bright sun.
+</p>
+
+<p>
+She gets ready for school and eats breakfast with her family.
+After breakfast, she puts her books in her bag.
+</p>
+
+<p>
+Emma walks to school with her friend.
+She feels happy because she is ready to learn something new.
+</p>
+
+`,
+
+vocabulary:[
+
+["bright","full of light"],
+["ready","prepared"],
+["learn","to gain knowledge"],
+["friend","a person you like and trust"]
+
+],
+
+questions:[
+
+{
+q:"When does Emma wake up?",
+options:["At night","Early in the morning","At noon","In the evening"],
+answer:1
+},
+
+{
+q:"Where does Emma go?",
+options:["The park","The shop","School","The library"],
+answer:2
+},
+
+{
+q:"How does Emma feel?",
+options:["Angry","Sad","Happy","Tired"],
+answer:2
+}
+
+]
+
+},
+
+
+seed:{
+
+title:"🌱 The Little Seed",
+
+language:"en-US",
+
+text:`
+
+<p>
+A little seed was lying under the soil.
+It wanted to become a beautiful plant.
+</p>
+
+<p>
+Every day, the seed received water and sunlight.
+At first, nothing seemed to happen.
+</p>
+
+<p>
+The seed did not give up.
+After many days, a small green leaf appeared.
+</p>
+
+<p>
+The little seed learned that good things often need time and patience.
+</p>
+
+`,
+
+vocabulary:[
+
+["soil","earth where plants grow"],
+["sunlight","light from the sun"],
+["patience","the ability to wait calmly"],
+["appear","to become visible"]
+
+],
+
+questions:[
+
+{
+q:"Where was the seed?",
+options:["In the sky","Under the soil","In a river","On a table"],
+answer:1
+},
+
+{
+q:"What did the seed receive?",
+options:["Snow","Water and sunlight","Food","Books"],
+answer:1
+},
+
+{
+q:"What did the seed learn?",
+options:[
+"Never wait",
+"Patience is important",
+"Plants need no water",
+"Time is useless"
+],
+answer:1
+}
+
+]
+
+},
+
+
+path:{
+
+title:"🗺️ The Hidden Path",
+
+language:"en-US",
+
+text:`
+
+<p>
+Daniel loved exploring the forest near his village.
+One afternoon, he noticed a narrow path between two large trees.
+</p>
+
+<p>
+He had never seen the path before.
+Although he was nervous, he decided to follow it.
+</p>
+
+<p>
+After walking for several minutes, Daniel discovered a beautiful lake.
+The water was clear and surrounded by flowers.
+</p>
+
+<p>
+Daniel realized that sometimes courage can lead us to wonderful discoveries.
+</p>
+
+`,
+
+vocabulary:[
+
+["exploring","looking around to discover something"],
+["narrow","not wide"],
+["nervous","worried or afraid"],
+["discovery","something found for the first time"]
+
+],
+
+questions:[
+
+{
+q:"Where did Daniel explore?",
+options:["A city","A forest","A school","A beach"],
+answer:1
+},
+
+{
+q:"What did Daniel discover?",
+options:["A house","A mountain","A lake","A school"],
+answer:2
+},
+
+{
+q:"What lesson did Daniel learn?",
+options:[
+"Courage can lead to discoveries",
+"Never explore",
+"Forests are dangerous",
+"Always stay home"
+],
+answer:0
+}
+
+]
+
+},
+
+
+japaneseDay:{
+
+title:"🌸 わたしの一日",
+
+language:"ja-JP",
+
+text:`
+
+<p>
+わたしは あさ 7じに おきます。
+</p>
+
+<p>
+あさごはんを たべて、がっこうへ いきます。
+</p>
+
+<p>
+がっこうで にほんごを べんきょうします。
+</p>
+
+<p>
+ごご、いえに かえります。
+</p>
+
+`,
+
+vocabulary:[
+
+["あさ","morning"],
+["がっこう","school"],
+["べんきょう","study"],
+["いえ","home"]
+
+],
+
+questions:[
+
+{
+q:"What time does the person wake up?",
+options:["6 o'clock","7 o'clock","8 o'clock","9 o'clock"],
+answer:1
+},
+
+{
+q:"Where does the person go?",
+options:["School","Park","Shop","Hospital"],
+answer:0
+}
+
+]
+
+},
+
+
+koreanDay:{
+
+title:"🌸 나의 하루",
+
+language:"ko-KR",
+
+text:`
+
+<p>
+저는 아침 7시에 일어납니다.
+</p>
+
+<p>
+아침을 먹고 학교에 갑니다.
+</p>
+
+<p>
+학교에서 한국어를 공부합니다.
+</p>
+
+<p>
+오후에 집에 돌아옵니다.
+</p>
+
+`,
+
+vocabulary:[
+
+["아침","morning"],
+["학교","school"],
+["공부하다","to study"],
+["집","home"]
+
+],
+
+questions:[
+
+{
+q:"What time does the person wake up?",
+options:["6","7","8","9"],
+answer:1
+},
+
+{
+q:"What does the person study?",
+options:["English","Chinese","Korean","Japanese"],
+answer:2
+}
+
+]
+
+},
+
+
+chineseSchool:{
+
+title:"🏫 我的学校",
+
+language:"zh-CN",
+
+text:`
+
+<p>
+我每天早上去学校。
+</p>
+
+<p>
+学校很大，也很漂亮。
+</p>
+
+<p>
+我喜欢在学校学习中文。
+</p>
+
+<p>
+我的老师很好，同学们也很友好。
+</p>
+
+`,
+
+vocabulary:[
+
+["学校","school"],
+["漂亮","beautiful"],
+["学习","to study"],
+["老师","teacher"]
+
+],
+
+questions:[
+
+{
+q:"Where does the person go every morning?",
+options:["Home","School","Park","Shop"],
+answer:1
+},
+
+{
+q:"What does the person study?",
+options:["English","Korean","Chinese","Arabic"],
+answer:2
+}
+
+]
+
+},
+
+
+arabicDay:{
+
+title:"🏠 يومي",
+
+language:"ar-SA",
+
+text:`
+
+<p dir="rtl">
+أستيقظ في الصباح وأتناول الفطور مع عائلتي.
+</p>
+
+<p dir="rtl">
+بعد ذلك أذهب إلى المدرسة.
+</p>
+
+<p dir="rtl">
+أدرس اللغة العربية وأتعلم كلمات جديدة.
+</p>
+
+<p dir="rtl">
+في المساء أعود إلى البيت وأقرأ كتابًا.
+</p>
+
+`,
+
+vocabulary:[
+
+["الصباح","morning"],
+["العائلة","family"],
+["المدرسة","school"],
+["كتاب","book"]
+
+],
+
+questions:[
+
+{
+q:"Where does the person go?",
+options:["School","Market","Park","Hospital"],
+answer:0
+},
+
+{
+q:"What does the person read?",
+options:["A newspaper","A book","A letter","A magazine"],
+answer:1
+}
+
+]
+
+}
+
+};
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+let currentStory=null;
+
+let storyTimer=0;
+
+let timerInterval=null;
+
+let storyScore=0;
+
+let answeredQuestions=0;
+
+
+/* =========================
+   FILTER STORIES
+========================= */
+
+function filterStories(){
+
+const language=
+document.getElementById("language").value;
+
+const level=
+document.getElementById("level").value;
+
+const type=
+document.getElementById("type").value;
+
+const cards=
+document.querySelectorAll(".story-card");
+
+let found=0;
+
+cards.forEach(card=>{
+
+const matchLanguage=
+card.dataset.language===language;
+
+const matchLevel=
+card.dataset.level===level;
+
+const matchType=
+type==="all" ||
+card.dataset.type===type;
+
+if(matchLanguage && matchLevel && matchType){
+
+card.style.display="block";
+
+found++;
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+
+document.getElementById("empty").style.display=
+found===0 ? "block":"none";
+
+}
+
+
+/* =========================
+   OPEN STORY
+========================= */
+
+function openStory(id){
+
+currentStory=stories[id];
+
+storyScore=0;
+
+answeredQuestions=0;
+
+
+/* Title */
+
+document.getElementById("storyTitle").textContent=
+currentStory.title;
+
+
+/* Story */
+
+document.getElementById("storyText").innerHTML=
+currentStory.text;
+
+
+/* Vocabulary */
+
+const vocab=
+document.getElementById("storyVocabulary");
+
+vocab.innerHTML="";
+
+currentStory.vocabulary.forEach(item=>{
+
+const div=
+document.createElement("div");
+
+div.className="vocab-item";
+
+div.innerHTML=
+"<strong>"+item[0]+"</strong><br>"+item[1];
+
+vocab.appendChild(div);
+
+});
+
+
+/* Questions */
+
+const questions=
+document.getElementById("questionsContainer");
+
+questions.innerHTML="";
+
+
+currentStory.questions.forEach((question,index)=>{
+
+const box=
+document.createElement("div");
+
+box.className="question-box";
+
+box.innerHTML=
+"<p>"+(index+1)+". "+question.q+"</p>";
+
+question.options.forEach((option,i)=>{
+
+const button=
+document.createElement("button");
+
+button.className="question-option";
+
+button.textContent=option;
+
+button.onclick=function(){
+
+answerQuestion(
+button,
+i,
+question.answer,
+box
+);
+
+};
+
+box.appendChild(button);
+
+});
+
+questions.appendChild(box);
+
+});
+
+
+document.getElementById("storyResult").style.display="none";
+
+document.getElementById("reader").style.display="block";
+
+
+/* Timer */
+
+startTimer();
+
+
+/* Scroll */
+
+document.getElementById("reader")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* =========================
+   ANSWER QUESTION
+========================= */
+
+function answerQuestion(
+button,
+selected,
+correct,
+box
+){
+
+const buttons=
+box.querySelectorAll(".question-option");
+
+buttons.forEach(btn=>{
+btn.disabled=true;
+});
+
+
+if(selected===correct){
+
+button.classList.add("correct");
+
+storyScore++;
+
+}else{
+
+button.classList.add("wrong");
+
+buttons[correct].classList.add("correct");
+
+}
+
+answeredQuestions++;
+
+
+if(answeredQuestions===
+currentStory.questions.length){
+
+showStoryResult();
+
+}
+
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+function showStoryResult(){
+
+const result=
+document.getElementById("storyResult");
+
+const percentage=
+Math.round(
+(storyScore/currentStory.questions.length)*100
+);
+
+
+document.getElementById("storyResultTitle")
+.textContent=
+percentage>=80
+?"🏆 Excellent!"
+:"📚 Keep Practicing!";
+
+
+document.getElementById("storyResultText")
+.textContent=
+"You scored "+storyScore+
+" out of "+
+currentStory.questions.length+
+" ("+percentage+"%).";
+
+
+result.style.display="block";
+
+}
+
+
+/* =========================
+   TEXT TO SPEECH
+========================= */
+
+function speakStory(){
+
+if(!currentStory)return;
+
+if("speechSynthesis" in window){
+
+const temp=
+document.createElement("div");
+
+temp.innerHTML=
+currentStory.text;
+
+const text=
+temp.innerText;
+
+const speech=
+new SpeechSynthesisUtterance(text);
+
+speech.lang=
+currentStory.language;
+
+speech.rate=.75;
+
+window.speechSynthesis.cancel();
+
+window.speechSynthesis.speak(speech);
+
+}
+
+}
+
+
+/* =========================
+   STOP SPEECH
+========================= */
+
+function stopSpeaking(){
+
+if("speechSynthesis" in window){
+
+window.speechSynthesis.cancel();
+
+}
+
+}
+
+
+/* =========================
+   BOOKMARK
+========================= */
+
+function bookmarkStory(){
+
+if(!currentStory)return;
+
+localStorage.setItem(
+"linguapathBookmark",
+currentStory.title
+);
+
+alert("🔖 Story bookmarked!");
+
+}
+
+
+/* =========================
+   CLOSE
+========================= */
+
+function closeStory(){
+
+stopSpeaking();
+
+clearInterval(timerInterval);
+
+document.getElementById("reader").style.display="none";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* =========================
+   TIMER
+========================= */
+
+function startTimer(){
+
+clearInterval(timerInterval);
+
+storyTimer=0;
+
+document.getElementById("timer").textContent=
+"00:00";
+
+
+timerInterval=
+setInterval(()=>{
+
+storyTimer++;
+
+const minutes=
+Math.floor(storyTimer/60);
+
+const seconds=
+storyTimer%60;
+
+document.getElementById("timer").textContent=
+String(minutes).padStart(2,"0")+
+":"+
+String(seconds).padStart(2,"0");
+
+},1000);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
