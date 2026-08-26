@@ -10,10 +10,18 @@
 
 <style>
 
+/* =========================
+   GLOBAL
+========================= */
+
 *{
 box-sizing:border-box;
 margin:0;
 padding:0;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
@@ -21,17 +29,32 @@ font-family:Arial,sans-serif;
 background:#f5f7fb;
 color:#20242c;
 line-height:1.6;
+transition:.3s;
 }
 
+body.dark{
+background:#171a21;
+color:#f1f1f1;
+}
+
+a{
+text-decoration:none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-background:linear-gradient(135deg,#bc002d,#e85d75);
+background:linear-gradient(135deg,#bc002d,#e83e5b);
 color:white;
 text-align:center;
-padding:40px 20px;
+padding:45px 20px;
 }
 
 header h1{
-font-size:36px;
+font-size:40px;
 margin-bottom:8px;
 }
 
@@ -39,59 +62,125 @@ header p{
 font-size:17px;
 }
 
+
+/* =========================
+   NAVIGATION
+========================= */
+
 nav{
 background:white;
-padding:16px;
+padding:15px;
 text-align:center;
 box-shadow:0 2px 8px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+body.dark nav{
+background:#222630;
 }
 
 nav a{
 color:#bc002d;
-text-decoration:none;
 font-weight:bold;
-margin:0 10px;
+margin:0 8px;
 }
 
 nav a:hover{
 text-decoration:underline;
 }
 
+
+/* =========================
+   CONTAINER
+========================= */
+
 .container{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
-padding:30px 18px;
+padding:35px 18px;
 }
 
-.back{
-display:inline-block;
-margin-bottom:25px;
-color:#bc002d;
-text-decoration:none;
-font-weight:bold;
-}
 
-.intro{
+/* =========================
+   HERO
+========================= */
+
+.hero{
+background:white;
+padding:32px;
+border-radius:18px;
 text-align:center;
-margin-bottom:35px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+margin-bottom:40px;
 }
 
-.intro h2{
+body.dark .hero,
+body.dark .card,
+body.dark .level,
+body.dark .vocab-card,
+body.dark .grammar-box,
+body.dark .quiz-box,
+body.dark .reading-box,
+body.dark .progress-box,
+body.dark .script-card{
+background:#222630;
+}
+
+.hero h2{
 color:#bc002d;
 font-size:30px;
-margin-bottom:8px;
+margin-bottom:10px;
 }
 
-.intro p{
+.hero p{
 color:#666;
+}
+
+body.dark p{
+color:#ccc;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn,
+button{
+display:inline-block;
+background:#bc002d;
+color:white;
+border:none;
+padding:10px 16px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+margin:4px;
+}
+
+.btn:hover,
+button:hover{
+background:#8e0022;
+}
+
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section{
+margin-top:50px;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:22px;
+margin-bottom:25px;
 }
 
 .section-title h2{
+font-size:28px;
 color:#bc002d;
 margin-bottom:8px;
 }
@@ -101,20 +190,27 @@ color:#666;
 }
 
 
-/* LEVELS */
+/* =========================
+   JLPT LEVELS
+========================= */
 
 .levels{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
+grid-template-columns:repeat(5,1fr);
+gap:15px;
 }
 
 .level{
 background:white;
-padding:23px;
+padding:22px 15px;
 border-radius:16px;
 text-align:center;
-box-shadow:0 4px 14px rgba(0,0,0,.08);
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+transition:.2s;
+}
+
+.level:hover{
+transform:translateY(-5px);
 }
 
 .level h3{
@@ -125,13 +221,60 @@ margin-bottom:6px;
 
 .level p{
 color:#666;
+font-size:14px;
 }
 
 
-/* VOCABULARY */
+/* =========================
+   JAPANESE SCRIPTS
+========================= */
 
-.vocabulary{
-margin-top:45px;
+.scripts{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.script-card{
+background:white;
+padding:25px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.script-card h3{
+color:#bc002d;
+margin-bottom:10px;
+}
+
+.script-symbol{
+font-size:38px;
+font-weight:bold;
+margin:10px;
+}
+
+.script-card p{
+color:#666;
+}
+
+
+/* =========================
+   VOCABULARY
+========================= */
+
+.search-box{
+text-align:center;
+margin-bottom:20px;
+}
+
+.search-box input{
+width:90%;
+max-width:500px;
+padding:13px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
 }
 
 .words{
@@ -140,68 +283,123 @@ grid-template-columns:repeat(2,1fr);
 gap:18px;
 }
 
-.word{
+.vocab-card{
 background:white;
-padding:22px;
+padding:23px;
 border-radius:16px;
-box-shadow:0 4px 14px rgba(0,0,0,.08);
+box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
-.word h3{
+.vocab-card h3{
 color:#bc002d;
-font-size:27px;
-margin-bottom:3px;
+margin-bottom:4px;
+}
+
+.japanese{
+font-size:30px;
+font-weight:bold;
 }
 
 .romaji{
 color:#777;
 font-style:italic;
-margin-bottom:7px;
 }
 
 .meaning{
-font-size:18px;
 font-weight:bold;
-margin-bottom:9px;
+margin:7px 0;
 }
 
 .example{
 color:#555;
-margin-bottom:12px;
+margin:8px 0;
 }
 
-button{
-background:#bc002d;
-color:white;
-border:none;
-padding:9px 14px;
-border-radius:8px;
-cursor:pointer;
-}
-
-button:hover{
-background:#970023;
+.example-jp{
+font-size:20px;
+font-weight:bold;
 }
 
 
-/* PHRASES */
+/* =========================
+   GRAMMAR
+========================= */
 
-.phrases{
-margin-top:45px;
+.grammar-box{
 background:white;
 padding:28px;
 border-radius:16px;
-box-shadow:0 4px 14px rgba(0,0,0,.08);
+box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
-.phrases h2{
+.grammar-item{
+padding:18px 0;
+border-bottom:1px solid #eee;
+}
+
+.grammar-item:last-child{
+border-bottom:none;
+}
+
+.grammar-item h3{
 color:#bc002d;
-text-align:center;
-margin-bottom:18px;
+margin-bottom:6px;
+}
+
+.formula{
+background:#f7e8ec;
+padding:12px;
+border-radius:8px;
+font-weight:bold;
+margin:8px 0;
+}
+
+body.dark .formula{
+background:#38242a;
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:16px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.card h3{
+color:#bc002d;
+margin-bottom:6px;
+}
+
+.particle{
+font-size:28px;
+font-weight:bold;
+}
+
+
+/* =========================
+   PHRASES
+========================= */
+
+.phrases{
+background:white;
+padding:28px;
+border-radius:16px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .phrase{
-padding:14px 0;
+padding:16px 0;
 border-bottom:1px solid #eee;
 }
 
@@ -209,29 +407,122 @@ border-bottom:1px solid #eee;
 border-bottom:none;
 }
 
-.japanese{
-font-size:22px;
+.phrase-jp{
+font-size:25px;
 font-weight:bold;
 color:#bc002d;
 }
 
-.romaji-text{
-color:#777;
+.phrase-romaji{
 font-style:italic;
+color:#777;
+}
+
+.phrase-meaning{
+margin:4px 0 10px;
+}
+
+
+/* =========================
+   READING
+========================= */
+
+.reading-box{
+background:white;
+padding:28px;
+border-radius:16px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.reading-text{
+font-size:20px;
+line-height:2;
+margin:15px 0;
 }
 
 .translation{
-color:#555;
+background:#f5f5f5;
+padding:15px;
+border-radius:10px;
+}
+
+body.dark .translation{
+background:#30343e;
 }
 
 
-/* FEATURES */
+/* =========================
+   QUIZ
+========================= */
+
+.quiz-box{
+background:white;
+padding:28px;
+border-radius:16px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.quiz-question{
+font-size:25px;
+font-weight:bold;
+margin:15px;
+}
+
+.quiz-option{
+display:block;
+width:90%;
+max-width:450px;
+margin:8px auto;
+background:#bc002d;
+color:white;
+border:none;
+padding:12px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.quiz-result{
+font-weight:bold;
+margin-top:15px;
+font-size:18px;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-box{
+background:white;
+padding:28px;
+border-radius:16px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.progress-bar{
+background:#ddd;
+height:18px;
+border-radius:20px;
+overflow:hidden;
+margin:12px 0;
+}
+
+.progress-fill{
+height:100%;
+width:35%;
+background:#bc002d;
+}
+
+
+/* =========================
+   STUDY FEATURES
+========================= */
 
 .features{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:18px;
-margin-top:45px;
 }
 
 .feature{
@@ -239,7 +530,7 @@ background:white;
 padding:25px;
 border-radius:16px;
 text-align:center;
-box-shadow:0 4px 12px rgba(0,0,0,.07);
+box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .feature h3{
@@ -248,35 +539,59 @@ margin-bottom:8px;
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-margin-top:45px;
+margin-top:50px;
 background:#202b55;
 color:white;
 text-align:center;
-padding:28px;
+padding:30px;
 }
 
 
-/* MOBILE */
+/* =========================
+   DARK MODE BUTTON
+========================= */
 
-@media(max-width:700px){
+.dark-btn{
+position:fixed;
+right:15px;
+bottom:15px;
+z-index:200;
+border-radius:50%;
+width:48px;
+height:48px;
+padding:0;
+}
 
-.levels,
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+.levels{
+grid-template-columns:repeat(3,1fr);
+}
+
+.scripts,
+.particles,
 .features{
 grid-template-columns:1fr 1fr;
 }
 
-.words{
-grid-template-columns:1fr;
 }
 
-}
-
-@media(max-width:450px){
+@media(max-width:600px){
 
 .levels,
+.scripts,
+.words,
+.particles,
 .features{
 grid-template-columns:1fr;
 }
@@ -284,6 +599,14 @@ grid-template-columns:1fr;
 nav a{
 display:inline-block;
 margin:5px;
+}
+
+header h1{
+font-size:32px;
+}
+
+.japanese{
+font-size:28px;
 }
 
 }
@@ -298,9 +621,11 @@ margin:5px;
 
 <header>
 
-<h1>🇯🇵 Japanese</h1>
+<h1>🇯🇵 日本語 Japanese</h1>
 
-<p>Learn Japanese vocabulary, phrases and pronunciation.</p>
+<p>
+Learn Japanese vocabulary, grammar, writing, listening, reading and speaking.
+</p>
 
 </header>
 
@@ -308,44 +633,49 @@ margin:5px;
 <nav>
 
 <a href="index.html">🏠 Home</a>
-
 <a href="vocabulary.html">📚 Vocabulary</a>
-
 <a href="stories.html">📖 Stories</a>
-
 <a href="quizzes.html">🧠 Quizzes</a>
+<a href="japanese.html">🇯🇵 Japanese</a>
 
 </nav>
 
 
-<div class="container">
+<main class="container">
 
 
-<a class="back" href="index.html">
-← Back to LinguaPath
-</a>
+<!-- HERO -->
 
+<section class="hero">
 
-<section class="intro">
-
-<h2>🇯🇵 Learn Japanese</h2>
+<h2>🌸 Welcome to Japanese</h2>
 
 <p>
-Learn useful Japanese words and everyday expressions step by step.
+Build your Japanese skills step by step — from learning
+Hiragana and Katakana to advanced JLPT preparation.
 </p>
+
+<br>
+
+<a href="#levels" class="btn">📊 JLPT Levels</a>
+<a href="#scripts" class="btn">🈁 Learn Scripts</a>
+<a href="#vocabulary" class="btn">📚 Vocabulary</a>
+<a href="#grammar" class="btn">✏️ Grammar</a>
 
 </section>
 
 
-<!-- LEVELS -->
+<!-- JLPT LEVELS -->
 
-<section>
+<section class="section" id="levels">
 
 <div class="section-title">
 
-<h2>📊 Japanese Levels</h2>
+<h2>📊 Japanese JLPT Levels</h2>
 
-<p>Choose a level for your Japanese learning journey.</p>
+<p>
+Follow the Japanese learning path from N5 beginner to N1 advanced.
+</p>
 
 </div>
 
@@ -354,17 +684,17 @@ Learn useful Japanese words and everyday expressions step by step.
 
 <div class="level">
 <h3>N5</h3>
-<p>Beginner</p>
+<p>Basic Japanese</p>
 </div>
 
 <div class="level">
 <h3>N4</h3>
-<p>Elementary</p>
+<p>Elementary Japanese</p>
 </div>
 
 <div class="level">
 <h3>N3</h3>
-<p>Intermediate</p>
+<p>Intermediate Japanese</p>
 </div>
 
 <div class="level">
@@ -374,13 +704,335 @@ Learn useful Japanese words and everyday expressions step by step.
 
 <div class="level">
 <h3>N1</h3>
-<p>Advanced</p>
+<p>Advanced Japanese</p>
 </div>
 
-<div class="level">
-<h3>Mastery</h3>
-<p>Fluent Japanese</p>
 </div>
+
+</section>
+
+
+<!-- WRITING SYSTEM -->
+
+<section class="section" id="scripts">
+
+<div class="section-title">
+
+<h2>🈁 Japanese Writing System</h2>
+
+<p>
+Master the three major writing systems used in Japanese.
+</p>
+
+</div>
+
+
+<div class="scripts">
+
+
+<div class="script-card">
+
+<h3>ひらがな</h3>
+
+<div class="script-symbol">
+あいうえお
+</div>
+
+<p>
+Hiragana is mainly used for native Japanese words,
+grammar endings and particles.
+</p>
+
+<a href="#hiragana" class="btn">
+Practice
+</a>
+
+</div>
+
+
+<div class="script-card">
+
+<h3>カタカナ</h3>
+
+<div class="script-symbol">
+アイウエオ
+</div>
+
+<p>
+Katakana is commonly used for foreign words,
+names and loanwords.
+</p>
+
+<a href="#katakana" class="btn">
+Practice
+</a>
+
+</div>
+
+
+<div class="script-card">
+
+<h3>漢字</h3>
+
+<div class="script-symbol">
+日本語
+</div>
+
+<p>
+Kanji are Chinese-origin characters used throughout
+Japanese writing.
+</p>
+
+<a href="#kanji" class="btn">
+Learn Kanji
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- HIRAGANA -->
+
+<section class="section" id="hiragana">
+
+<div class="section-title">
+
+<h2>🌸 Hiragana Basics</h2>
+
+<p>Start with the five basic Japanese vowel sounds.</p>
+
+</div>
+
+
+<div class="particles">
+
+<div class="card">
+
+<div class="particle">あ</div>
+
+<h3>a</h3>
+
+<p>Example: あさ</p>
+
+<button onclick="speak('あ')">🔊 Listen</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="particle">い</div>
+
+<h3>i</h3>
+
+<p>Example: いえ</p>
+
+<button onclick="speak('い')">🔊 Listen</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="particle">う</div>
+
+<h3>u</h3>
+
+<p>Example: うみ</p>
+
+<button onclick="speak('う')">🔊 Listen</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="particle">え</div>
+
+<h3>e</h3>
+
+<p>Example: えき</p>
+
+<button onclick="speak('え')">🔊 Listen</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="particle">お</div>
+
+<h3>o</h3>
+
+<p>Example: おちゃ</p>
+
+<button onclick="speak('お')">🔊 Listen</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- KATAKANA -->
+
+<section class="section" id="katakana">
+
+<div class="section-title">
+
+<h2>🔤 Katakana Basics</h2>
+
+<p>Learn the basic Katakana vowel sounds.</p>
+
+</div>
+
+
+<div class="particles">
+
+<div class="card">
+<div class="particle">ア</div>
+<h3>a</h3>
+<p>Example: アメリカ</p>
+<button onclick="speak('ア')">🔊 Listen</button>
+</div>
+
+<div class="card">
+<div class="particle">イ</div>
+<h3>i</h3>
+<p>Example: イギリス</p>
+<button onclick="speak('イ')">🔊 Listen</button>
+</div>
+
+<div class="card">
+<div class="particle">ウ</div>
+<h3>u</h3>
+<p>Example: ウイルス</p>
+<button onclick="speak('ウ')">🔊 Listen</button>
+</div>
+
+<div class="card">
+<div class="particle">エ</div>
+<h3>e</h3>
+<p>Example: エアコン</p>
+<button onclick="speak('エ')">🔊 Listen</button>
+</div>
+
+<div class="card">
+<div class="particle">オ</div>
+<h3>o</h3>
+<p>Example: オレンジ</p>
+<button onclick="speak('オ')">🔊 Listen</button>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- KANJI -->
+
+<section class="section" id="kanji">
+
+<div class="section-title">
+
+<h2>🈶 Essential Kanji</h2>
+
+<p>Start building your Kanji vocabulary.</p>
+
+</div>
+
+
+<div class="words">
+
+
+<div class="vocab-card">
+
+<div class="japanese">日</div>
+
+<div class="romaji">
+ひ / hi
+</div>
+
+<div class="meaning">
+Sun / Day
+</div>
+
+<p class="example">
+日本 — にほん — Japan
+</p>
+
+<button onclick="speak('日')">🔊 Listen</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<div class="japanese">本</div>
+
+<div class="romaji">
+ほん / hon
+</div>
+
+<div class="meaning">
+Book / Origin
+</div>
+
+<p class="example">
+日本 — にほん — Japan
+</p>
+
+<button onclick="speak('本')">🔊 Listen</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<div class="japanese">人</div>
+
+<div class="romaji">
+ひと / hito
+</div>
+
+<div class="meaning">
+Person
+</div>
+
+<p class="example">
+日本人 — にほんじん — Japanese person
+</p>
+
+<button onclick="speak('人')">🔊 Listen</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<div class="japanese">学</div>
+
+<div class="romaji">
+がく / gaku
+</div>
+
+<div class="meaning">
+Study / Learning
+</div>
+
+<p class="example">
+学生 — がくせい — Student
+</p>
+
+<button onclick="speak('学')">🔊 Listen</button>
+
+</div>
+
 
 </div>
 
@@ -389,34 +1041,50 @@ Learn useful Japanese words and everyday expressions step by step.
 
 <!-- VOCABULARY -->
 
-<section class="vocabulary">
+<section class="section" id="vocabulary">
 
 <div class="section-title">
 
-<h2>📚 Basic Japanese Vocabulary</h2>
+<h2>📚 Essential Japanese Vocabulary</h2>
 
-<p>Learn common Japanese words.</p>
+<p>Search and practice useful Japanese words.</p>
 
 </div>
 
 
-<div class="words">
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="🔍 Search Japanese vocabulary..."
+onkeyup="searchWords()"
+>
+
+</div>
 
 
-<div class="word">
+<div class="words" id="wordList">
 
-<h3>こんにちは</h3>
+
+<div class="vocab-card">
+
+<h3>Hello</h3>
+
+<div class="japanese">
+こんにちは
+</div>
 
 <div class="romaji">
 Konnichiwa
 </div>
 
 <div class="meaning">
-Hello
+Hello / Good afternoon
 </div>
 
 <p class="example">
-<b>Example:</b> こんにちは！お元気ですか？
+こんにちは！お元気ですか？
 </p>
 
 <button onclick="speak('こんにちは')">
@@ -426,9 +1094,13 @@ Hello
 </div>
 
 
-<div class="word">
+<div class="vocab-card">
 
-<h3>ありがとう</h3>
+<h3>Thank You</h3>
+
+<div class="japanese">
+ありがとう
+</div>
 
 <div class="romaji">
 Arigatou
@@ -439,7 +1111,7 @@ Thank you
 </div>
 
 <p class="example">
-<b>Example:</b> ありがとう！
+ありがとう！
 </p>
 
 <button onclick="speak('ありがとう')">
@@ -449,32 +1121,13 @@ Thank you
 </div>
 
 
-<div class="word">
+<div class="vocab-card">
 
-<h3>さようなら</h3>
+<h3>Friend</h3>
 
-<div class="romaji">
-Sayounara
+<div class="japanese">
+友達
 </div>
-
-<div class="meaning">
-Goodbye
-</div>
-
-<p class="example">
-<b>Example:</b> さようなら。また明日。
-</p>
-
-<button onclick="speak('さようなら')">
-🔊 Listen
-</button>
-
-</div>
-
-
-<div class="word">
-
-<h3>友達</h3>
 
 <div class="romaji">
 Tomodachi
@@ -485,7 +1138,7 @@ Friend
 </div>
 
 <p class="example">
-<b>Example:</b> 彼は私の友達です。
+私の友達です。
 </p>
 
 <button onclick="speak('友達')">
@@ -495,9 +1148,13 @@ Friend
 </div>
 
 
-<div class="word">
+<div class="vocab-card">
 
-<h3>学校</h3>
+<h3>School</h3>
+
+<div class="japanese">
+学校
+</div>
 
 <div class="romaji">
 Gakkou
@@ -508,7 +1165,7 @@ School
 </div>
 
 <p class="example">
-<b>Example:</b> 私は学校へ行きます。
+学校へ行きます。
 </p>
 
 <button onclick="speak('学校')">
@@ -518,23 +1175,54 @@ School
 </div>
 
 
-<div class="word">
+<div class="vocab-card">
 
-<h3>好き</h3>
+<h3>Water</h3>
+
+<div class="japanese">
+水
+</div>
 
 <div class="romaji">
-Suki
+Mizu
 </div>
 
 <div class="meaning">
-Like / Favorite
+Water
 </div>
 
 <p class="example">
-<b>Example:</b> 私は日本語が好きです。
+水をください。
 </p>
 
-<button onclick="speak('好き')">
+<button onclick="speak('水')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>Food</h3>
+
+<div class="japanese">
+食べ物
+</div>
+
+<div class="romaji">
+Tabemono
+</div>
+
+<div class="meaning">
+Food
+</div>
+
+<p class="example">
+日本の食べ物が好きです。
+</p>
+
+<button onclick="speak('食べ物')">
 🔊 Listen
 </button>
 
@@ -546,28 +1234,249 @@ Like / Favorite
 </section>
 
 
-<!-- COMMON PHRASES -->
+<!-- GRAMMAR -->
 
-<section class="phrases">
+<section class="section" id="grammar">
 
-<h2>💬 Common Japanese Phrases</h2>
+<div class="section-title">
+
+<h2>✏️ Japanese Grammar</h2>
+
+<p>Learn essential Japanese sentence structures.</p>
+
+</div>
+
+
+<div class="grammar-box">
+
+
+<div class="grammar-item">
+
+<h3>1. Basic Sentence</h3>
+
+<div class="formula">
+Topic + は + Information
+</div>
+
+<p>
+私は学生です。
+</p>
+
+<p>
+Watashi wa gakusei desu.
+</p>
+
+<p>
+<strong>Meaning:</strong> I am a student.
+</p>
+
+</div>
+
+
+<div class="grammar-item">
+
+<h3>2. Object Particle を</h3>
+
+<div class="formula">
+Object + を + Verb
+</div>
+
+<p>
+水を飲みます。
+</p>
+
+<p>
+Mizu o nomimasu.
+</p>
+
+<p>
+<strong>Meaning:</strong> I drink water.
+</p>
+
+</div>
+
+
+<div class="grammar-item">
+
+<h3>3. Location Particle で</h3>
+
+<div class="formula">
+Place + で + Action
+</div>
+
+<p>
+学校で勉強します。
+</p>
+
+<p>
+Gakkou de benkyou shimasu.
+</p>
+
+<p>
+<strong>Meaning:</strong> I study at school.
+</p>
+
+</div>
+
+
+<div class="grammar-item">
+
+<h3>4. Question Pattern</h3>
+
+<div class="formula">
+Sentence + か？
+</div>
+
+<p>
+学生ですか？
+</p>
+
+<p>
+Gakusei desu ka?
+</p>
+
+<p>
+<strong>Meaning:</strong> Are you a student?
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- PARTICLES -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>🔤 Essential Japanese Particles</h2>
+
+<p>Particles are one of the most important parts of Japanese grammar.</p>
+
+</div>
+
+
+<div class="particles">
+
+
+<div class="card">
+
+<div class="particle">は</div>
+
+<h3>wa</h3>
+
+<p>Marks the topic.</p>
+
+<p>私は学生です。</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="particle">が</div>
+
+<h3>ga</h3>
+
+<p>Often marks the subject.</p>
+
+<p>猫がいます。</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="particle">を</div>
+
+<h3>o</h3>
+
+<p>Marks the direct object.</p>
+
+<p>本を読みます。</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="particle">に</div>
+
+<h3>ni</h3>
+
+<p>Indicates destination, time or target.</p>
+
+<p>学校に行きます。</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="particle">で</div>
+
+<h3>de</h3>
+
+<p>Indicates where an action happens.</p>
+
+<p>学校で勉強します。</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="particle">の</div>
+
+<h3>no</h3>
+
+<p>Shows possession or relationship.</p>
+
+<p>私の本です。</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- PHRASES -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>💬 Everyday Japanese</h2>
+
+<p>Useful expressions for real conversations.</p>
+
+</div>
+
+
+<div class="phrases">
 
 
 <div class="phrase">
 
-<div class="japanese">
-お元気ですか？
+<div class="phrase-jp">
+おはようございます。
 </div>
 
-<div class="romaji-text">
-Ogenki desu ka?
+<div class="phrase-romaji">
+Ohayou gozaimasu.
 </div>
 
-<div class="translation">
-How are you?
+<div class="phrase-meaning">
+Good morning.
 </div>
 
-<button onclick="speak('お元気ですか？')">
+<button onclick="speak('おはようございます')">
 🔊 Listen
 </button>
 
@@ -576,19 +1485,19 @@ How are you?
 
 <div class="phrase">
 
-<div class="japanese">
-私は元気です。
+<div class="phrase-jp">
+ありがとうございます。
 </div>
 
-<div class="romaji-text">
-Watashi wa genki desu.
+<div class="phrase-romaji">
+Arigatou gozaimasu.
 </div>
 
-<div class="translation">
-I am fine.
+<div class="phrase-meaning">
+Thank you very much.
 </div>
 
-<button onclick="speak('私は元気です。')">
+<button onclick="speak('ありがとうございます')">
 🔊 Listen
 </button>
 
@@ -597,19 +1506,19 @@ I am fine.
 
 <div class="phrase">
 
-<div class="japanese">
-私は……です。
+<div class="phrase-jp">
+すみません。
 </div>
 
-<div class="romaji-text">
-Watashi wa ... desu.
+<div class="phrase-romaji">
+Sumimasen.
 </div>
 
-<div class="translation">
-I am...
+<div class="phrase-meaning">
+Excuse me / I'm sorry.
 </div>
 
-<button onclick="speak('私はです')">
+<button onclick="speak('すみません')">
 🔊 Listen
 </button>
 
@@ -618,37 +1527,16 @@ I am...
 
 <div class="phrase">
 
-<div class="japanese">
-お願いします。
-</div>
-
-<div class="romaji-text">
-Onegaishimasu.
-</div>
-
-<div class="translation">
-Please / I request your help.
-</div>
-
-<button onclick="speak('お願いします')">
-🔊 Listen
-</button>
-
-</div>
-
-
-<div class="phrase">
-
-<div class="japanese">
+<div class="phrase-jp">
 わかりません。
 </div>
 
-<div class="romaji-text">
+<div class="phrase-romaji">
 Wakarimasen.
 </div>
 
-<div class="translation">
-I don't understand.
+<div class="phrase-meaning">
+I don't understand / I don't know.
 </div>
 
 <button onclick="speak('わかりません')">
@@ -658,19 +1546,189 @@ I don't understand.
 </div>
 
 
+<div class="phrase">
+
+<div class="phrase-jp">
+お願いします。
+</div>
+
+<div class="phrase-romaji">
+Onegaishimasu.
+</div>
+
+<div class="phrase-meaning">
+Please.
+</div>
+
+<button onclick="speak('お願いします')">
+🔊 Listen
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- READING -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>📖 Japanese Reading Practice</h2>
+
+<p>Read a short beginner-level Japanese passage.</p>
+
+</div>
+
+
+<div class="reading-box">
+
+<div class="reading-text">
+
+私は学生です。<br>
+毎日、日本語を勉強します。<br>
+日本語はおもしろいです。
+
+</div>
+
+
+<div class="translation">
+
+<strong>Romaji:</strong><br>
+
+Watashi wa gakusei desu.
+Mainichi, nihongo o benkyou shimasu.
+Nihongo wa omoshiroi desu.
+
+<br><br>
+
+<strong>English:</strong><br>
+
+I am a student.
+I study Japanese every day.
+Japanese is interesting.
+
+</div>
+
+
+<br>
+
+<button onclick="speak('私は学生です。毎日、日本語を勉強します。日本語はおもしろいです。')">
+🔊 Listen to Reading
+</button>
+
+</div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>🧠 Japanese Mini Quiz</h2>
+
+<p>Test what you have learned.</p>
+
+</div>
+
+
+<div class="quiz-box">
+
+<div class="quiz-question">
+What does 「ありがとう」 mean?
+</div>
+
+
+<button class="quiz-option"
+onclick="checkAnswer(this,true)">
+Thank you
+</button>
+
+
+<button class="quiz-option"
+onclick="checkAnswer(this,false)">
+Good morning
+</button>
+
+
+<button class="quiz-option"
+onclick="checkAnswer(this,false)">
+Goodbye
+</button>
+
+
+<div id="quizResult" class="quiz-result"></div>
+
+</div>
+
+</section>
+
+
+<!-- PROGRESS -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>📈 Learning Progress</h2>
+
+<p>Track your Japanese learning journey.</p>
+
+</div>
+
+
+<div class="progress-box">
+
+<p><strong>Japanese Beginner Progress</strong></p>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<p>
+35% completed — Keep learning! 🌸
+</p>
+
+<button onclick="increaseProgress()">
++ Complete Lesson
+</button>
+
+</div>
+
 </section>
 
 
 <!-- FEATURES -->
 
-<section class="features">
+<section class="section">
+
+<div class="section-title">
+
+<h2>🚀 Japanese Learning Tools</h2>
+
+<p>Build all four language skills.</p>
+
+</div>
+
+
+<div class="features">
+
 
 <div class="feature">
 
 <h3>📚 Vocabulary</h3>
 
 <p>
-Build your Japanese vocabulary.
+Learn Japanese words with meanings, examples and pronunciation.
 </p>
 
 </div>
@@ -678,10 +1736,43 @@ Build your Japanese vocabulary.
 
 <div class="feature">
 
-<h3>📖 Stories</h3>
+<h3>✏️ Grammar</h3>
 
 <p>
-Read Japanese stories and learn vocabulary in context.
+Understand particles, sentence structures and essential grammar.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>🎧 Listening</h3>
+
+<p>
+Listen to Japanese words and sentences using your device.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>🗣️ Speaking</h3>
+
+<p>
+Repeat Japanese phrases aloud and improve your pronunciation.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>📖 Reading</h3>
+
+<p>
+Practice Hiragana, Katakana, Kanji and beginner passages.
 </p>
 
 </div>
@@ -692,15 +1783,52 @@ Read Japanese stories and learn vocabulary in context.
 <h3>🧠 Quizzes</h3>
 
 <p>
-Test your Japanese knowledge.
+Test vocabulary and grammar knowledge with interactive questions.
 </p>
+
+</div>
+
 
 </div>
 
 </section>
 
 
+<!-- STUDY PLAN -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>🗓️ Recommended Study Plan</h2>
+
+<p>A simple daily routine for Japanese beginners.</p>
+
 </div>
+
+
+<div class="grammar-box">
+
+<p>🌸 <strong>10 min:</strong> Hiragana / Katakana</p>
+
+<p>📚 <strong>15 min:</strong> Vocabulary</p>
+
+<p>✏️ <strong>15 min:</strong> Grammar</p>
+
+<p>🈶 <strong>10 min:</strong> Kanji</p>
+
+<p>🎧 <strong>10 min:</strong> Listening</p>
+
+<p>🗣️ <strong>10 min:</strong> Speaking</p>
+
+<p>🧠 <strong>10 min:</strong> Quiz / Review</p>
+
+</div>
+
+</section>
+
+
+</main>
 
 
 <footer>
@@ -709,16 +1837,31 @@ Test your Japanese knowledge.
 
 <p>Learn • Practice • Improve</p>
 
+<p>Japanese • 日本語 • 日本語を学ぼう</p>
+
 <p>© 2026 LinguaPath</p>
 
 </footer>
 
 
+<!-- DARK MODE -->
+
+<button class="dark-btn" onclick="toggleDark()">
+🌙
+</button>
+
+
 <script>
+
+/* =========================
+   JAPANESE SPEECH
+========================= */
 
 function speak(text){
 
 if("speechSynthesis" in window){
+
+window.speechSynthesis.cancel();
 
 const speech =
 new SpeechSynthesisUtterance(text);
@@ -727,9 +1870,103 @@ speech.lang="ja-JP";
 
 speech.rate=0.8;
 
+speech.pitch=1;
+
 window.speechSynthesis.speak(speech);
 
 }
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchWords(){
+
+const input =
+document.getElementById("search").value.toLowerCase();
+
+const cards =
+document.querySelectorAll("#wordList .vocab-card");
+
+cards.forEach(function(card){
+
+const text =
+card.innerText.toLowerCase();
+
+if(text.includes(input)){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+function checkAnswer(button,correct){
+
+const result =
+document.getElementById("quizResult");
+
+if(correct){
+
+result.innerHTML="✅ Correct! Great job!";
+
+}else{
+
+result.innerHTML="❌ Not quite. Try again!";
+
+}
+
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+let progress=35;
+
+function increaseProgress(){
+
+if(progress<100){
+
+progress += 10;
+
+if(progress>100){
+progress=100;
+}
+
+document.querySelector(".progress-fill").style.width =
+progress+"%";
+
+document.querySelector(".progress-box p:last-of-type").innerText =
+progress+"% completed — Keep learning! 🌸";
+
+}
+
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+function toggleDark(){
+
+document.body.classList.toggle("dark");
 
 }
 
