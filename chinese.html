@@ -16,22 +16,32 @@ margin:0;
 padding:0;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:Arial,sans-serif;
 background:#f5f7fb;
 color:#20242c;
-line-height:1.6;
+line-height:1.7;
+transition:.3s;
+}
+
+body.dark{
+background:#17191f;
+color:#eee;
 }
 
 header{
 background:linear-gradient(135deg,#de2910,#f36c4f);
 color:white;
 text-align:center;
-padding:40px 20px;
+padding:45px 20px;
 }
 
 header h1{
-font-size:38px;
+font-size:42px;
 margin-bottom:8px;
 }
 
@@ -41,16 +51,31 @@ font-size:17px;
 
 nav{
 background:white;
-padding:16px;
+padding:15px;
 text-align:center;
-box-shadow:0 2px 8px rgba(0,0,0,.08);
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+body.dark nav,
+body.dark .card,
+body.dark .section-box,
+body.dark .word,
+body.dark .quiz,
+body.dark .conversation,
+body.dark .reading,
+body.dark .progress-box{
+background:#242832;
+color:#eee;
 }
 
 nav a{
 color:#de2910;
 text-decoration:none;
 font-weight:bold;
-margin:0 10px;
+margin:0 8px;
 }
 
 nav a:hover{
@@ -58,17 +83,17 @@ text-decoration:underline;
 }
 
 .container{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
 padding:30px 18px;
 }
 
 .back{
+color:#de2910;
+font-weight:bold;
+text-decoration:none;
 display:inline-block;
 margin-bottom:25px;
-color:#de2910;
-text-decoration:none;
-font-weight:bold;
 }
 
 .intro{
@@ -78,34 +103,123 @@ margin-bottom:35px;
 
 .intro h2{
 color:#de2910;
-font-size:30px;
-margin-bottom:8px;
+font-size:31px;
 }
 
 .intro p{
 color:#666;
 }
 
+body.dark .intro p,
+body.dark p{
+color:#ccc;
+}
 
-/* LEVELS */
 
-.levels-section{
-margin-top:25px;
+/* BUTTONS */
+
+.btn{
+display:inline-block;
+background:#de2910;
+color:white;
+padding:10px 16px;
+border-radius:9px;
+border:none;
+cursor:pointer;
+font-weight:bold;
+text-decoration:none;
+margin:4px;
+}
+
+.btn:hover{
+background:#b8200c;
+}
+
+.secondary{
+background:#555;
+}
+
+
+/* SECTION */
+
+.section{
+margin-top:50px;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:22px;
+margin-bottom:25px;
 }
 
 .section-title h2{
 color:#de2910;
-margin-bottom:8px;
+margin-bottom:7px;
 }
 
 .section-title p{
 color:#666;
 }
+
+
+/* DASHBOARD */
+
+.dashboard{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+}
+
+.stat{
+background:white;
+padding:20px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 4px 13px rgba(0,0,0,.07);
+}
+
+.stat-icon{
+font-size:30px;
+}
+
+.stat h3{
+color:#de2910;
+font-size:25px;
+}
+
+
+/* LEARNING PATH */
+
+.path{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+}
+
+.card{
+background:white;
+padding:23px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-3px);
+transition:.2s;
+}
+
+.card-icon{
+font-size:35px;
+margin-bottom:8px;
+}
+
+.card h3{
+color:#de2910;
+margin-bottom:7px;
+}
+
+
+/* HSK */
 
 .levels{
 display:grid;
@@ -117,30 +231,134 @@ gap:18px;
 background:white;
 padding:23px;
 border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
 text-align:center;
-box-shadow:0 4px 14px rgba(0,0,0,.08);
 }
 
 .level h3{
+font-size:27px;
 color:#de2910;
-font-size:24px;
-margin-bottom:6px;
 }
 
 .level p{
 color:#666;
 }
 
+.progress{
+height:9px;
+background:#ddd;
+border-radius:10px;
+margin-top:12px;
+overflow:hidden;
+}
+
+.progress span{
+display:block;
+height:100%;
+background:#de2910;
+}
+
+
+/* PINYIN */
+
+.section-box{
+background:white;
+padding:28px;
+border-radius:17px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+}
+
+.pinyin-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.pinyin{
+background:#f5f7fb;
+padding:20px;
+border-radius:13px;
+text-align:center;
+}
+
+.pinyin h3{
+color:#de2910;
+}
+
+.pinyin-big{
+font-size:28px;
+font-weight:bold;
+}
+
+
+/* TONES */
+
+.tones{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:12px;
+}
+
+.tone{
+background:white;
+padding:20px 10px;
+border-radius:14px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.tone h3{
+color:#de2910;
+}
+
+.tone-example{
+font-size:30px;
+font-weight:bold;
+}
+
+
+/* CHARACTERS */
+
+.characters{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:15px;
+}
+
+.character{
+background:white;
+padding:20px 10px;
+border-radius:14px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.character-symbol{
+font-size:48px;
+font-weight:bold;
+color:#de2910;
+}
+
+.stroke{
+font-size:13px;
+color:#777;
+}
+
 
 /* VOCABULARY */
 
-.vocabulary{
-margin-top:45px;
+.search{
+width:100%;
+padding:14px;
+border:2px solid #ddd;
+border-radius:10px;
+font-size:16px;
+margin-bottom:20px;
 }
 
 .words{
 display:grid;
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(3,1fr);
 gap:18px;
 }
 
@@ -148,152 +366,347 @@ gap:18px;
 background:white;
 padding:22px;
 border-radius:16px;
-box-shadow:0 4px 14px rgba(0,0,0,.08);
+box-shadow:0 4px 13px rgba(0,0,0,.07);
 }
 
 .word h3{
-color:#de2910;
-font-size:30px;
-margin-bottom:3px;
-}
-
-.pinyin{
-color:#777;
-font-style:italic;
-margin-bottom:7px;
-}
-
-.meaning{
-font-size:18px;
-font-weight:bold;
-margin-bottom:9px;
-}
-
-.example{
-color:#555;
-margin-bottom:12px;
-}
-
-button{
-background:#de2910;
-color:white;
-border:none;
-padding:9px 14px;
-border-radius:8px;
-cursor:pointer;
-font-weight:bold;
-}
-
-button:hover{
-background:#b8200c;
-}
-
-
-/* PHRASES */
-
-.phrases{
-margin-top:45px;
-background:white;
-padding:28px;
-border-radius:16px;
-box-shadow:0 4px 14px rgba(0,0,0,.08);
-}
-
-.phrases h2{
-color:#de2910;
-text-align:center;
-margin-bottom:18px;
-}
-
-.phrase{
-padding:14px 0;
-border-bottom:1px solid #eee;
-}
-
-.phrase:last-child{
-border-bottom:none;
-}
-
-.chinese{
-font-size:25px;
-font-weight:bold;
+font-size:31px;
 color:#de2910;
 }
 
 .pinyin-text{
-color:#777;
 font-style:italic;
+color:#777;
 }
 
-.translation{
-color:#555;
-margin-bottom:10px;
+.meaning{
+font-weight:bold;
+font-size:18px;
+}
+
+.category{
+font-size:13px;
+color:#de2910;
+font-weight:bold;
+}
+
+.example{
+margin:10px 0;
+}
+
+.word button{
+margin-top:5px;
 }
 
 
-/* FEATURES */
+/* GRAMMAR */
 
-.features{
+.grammar{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(2,1fr);
 gap:18px;
-margin-top:45px;
 }
 
-.feature{
+.grammar-card{
 background:white;
-padding:25px;
-border-radius:16px;
+padding:23px;
+border-radius:15px;
+box-shadow:0 4px 13px rgba(0,0,0,.07);
+}
+
+.grammar-card h3{
+color:#de2910;
+}
+
+.formula{
+background:#f5f7fb;
+padding:12px;
+border-radius:9px;
+font-weight:bold;
+margin:10px 0;
+}
+
+
+/* MEASURE WORDS */
+
+.measures{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+
+.measure{
+background:white;
+padding:20px;
+border-radius:15px;
 text-align:center;
 box-shadow:0 4px 12px rgba(0,0,0,.07);
 }
 
-.feature h3{
+.measure-symbol{
+font-size:32px;
+font-weight:bold;
 color:#de2910;
-margin-bottom:8px;
 }
 
-.feature p{
-color:#666;
+
+/* CONVERSATION */
+
+.conversation{
+background:white;
+padding:28px;
+border-radius:17px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+}
+
+.dialogue{
+padding:13px 0;
+border-bottom:1px solid #ddd;
+}
+
+.dialogue:last-child{
+border-bottom:none;
+}
+
+.speaker{
+font-weight:bold;
+color:#de2910;
+}
+
+.chinese-line{
+font-size:22px;
+font-weight:bold;
+}
+
+.pinyin-line{
+font-style:italic;
+color:#777;
+}
+
+
+/* READING */
+
+.reading{
+background:white;
+padding:28px;
+border-radius:17px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+}
+
+.reading-text{
+font-size:23px;
+font-weight:bold;
+line-height:2;
+}
+
+.reading-pinyin{
+color:#777;
+font-style:italic;
+margin:12px 0;
+}
+
+
+/* FLASHCARDS */
+
+.flashcard{
+background:white;
+padding:35px;
+border-radius:17px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.flash-character{
+font-size:65px;
+font-weight:bold;
+color:#de2910;
+}
+
+.flash-answer{
+display:none;
+margin:15px;
+}
+
+
+/* QUIZ */
+
+.quiz{
+background:white;
+padding:28px;
+border-radius:17px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+text-align:center;
+}
+
+.quiz-option{
+display:block;
+width:100%;
+max-width:500px;
+margin:10px auto;
+padding:13px;
+border:2px solid #ddd;
+background:white;
+border-radius:10px;
+cursor:pointer;
+}
+
+.quiz-option:hover{
+background:#f5f7fb;
+}
+
+.result{
+font-weight:bold;
+margin-top:15px;
+}
+
+
+/* DAILY */
+
+.daily{
+background:linear-gradient(135deg,#de2910,#f36c4f);
+color:white;
+padding:30px;
+border-radius:17px;
+text-align:center;
+}
+
+.daily h2{
+font-size:28px;
+}
+
+.daily .btn{
+background:white;
+color:#de2910;
+}
+
+
+/* ACHIEVEMENTS */
+
+.achievements{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+
+.badge{
+background:white;
+padding:22px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.badge-icon{
+font-size:40px;
+}
+
+.badge h3{
+color:#de2910;
+}
+
+
+/* PROGRESS */
+
+.progress-box{
+background:white;
+padding:28px;
+border-radius:17px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+}
+
+.progress-row{
+margin:15px 0;
+}
+
+.progress-label{
+display:flex;
+justify-content:space-between;
+font-weight:bold;
+}
+
+.progress-bar{
+height:12px;
+background:#ddd;
+border-radius:10px;
+overflow:hidden;
+}
+
+.progress-bar span{
+display:block;
+height:100%;
+background:#de2910;
+}
+
+
+/* SETTINGS */
+
+.settings{
+text-align:center;
+margin-top:30px;
 }
 
 
 /* FOOTER */
 
 footer{
-margin-top:45px;
+margin-top:55px;
 background:#202b55;
 color:white;
 text-align:center;
-padding:28px;
+padding:30px;
 }
 
 
 /* MOBILE */
 
-@media(max-width:700px){
+@media(max-width:850px){
+
+.dashboard,
+.path,
+.achievements{
+grid-template-columns:repeat(2,1fr);
+}
 
 .levels,
-.features{
-grid-template-columns:1fr 1fr;
+.pinyin-grid,
+.words,
+.grammar,
+.measures{
+grid-template-columns:repeat(2,1fr);
 }
 
-.words{
-grid-template-columns:1fr;
+.characters{
+grid-template-columns:repeat(3,1fr);
+}
+
+.tones{
+grid-template-columns:repeat(3,1fr);
 }
 
 }
 
-@media(max-width:450px){
+@media(max-width:500px){
 
+.dashboard,
+.path,
 .levels,
-.features{
+.pinyin-grid,
+.characters,
+.tones,
+.words,
+.grammar,
+.measures,
+.achievements{
 grid-template-columns:1fr;
 }
 
 nav a{
 display:inline-block;
 margin:5px;
+}
+
+header h1{
+font-size:32px;
 }
 
 }
@@ -308,9 +721,12 @@ margin:5px;
 
 <header>
 
-<h1>🇨🇳 Chinese</h1>
+<h1>🇨🇳 Mandarin Chinese</h1>
 
-<p>Learn Chinese vocabulary, phrases and pronunciation.</p>
+<p>
+Learn Chinese through Pinyin, tones, characters,
+grammar, vocabulary, listening, speaking and reading.
+</p>
 
 </header>
 
@@ -318,79 +734,461 @@ margin:5px;
 <nav>
 
 <a href="index.html">🏠 Home</a>
-
 <a href="vocabulary.html">📚 Vocabulary</a>
-
 <a href="stories.html">📖 Stories</a>
-
 <a href="quizzes.html">🧠 Quizzes</a>
+
+<a href="#pinyin">🔤 Pinyin</a>
+<a href="#tones">🎵 Tones</a>
+<a href="#characters">🀄 Characters</a>
+<a href="#grammar">✏️ Grammar</a>
 
 </nav>
 
 
-<div class="container">
+<main class="container">
 
 
-<a class="back" href="index.html">
+<a href="index.html" class="back">
 ← Back to LinguaPath
 </a>
 
 
 <section class="intro">
 
-<h2>🇨🇳 Learn Chinese</h2>
+<h2>🇨🇳 Your Mandarin Learning Journey</h2>
 
 <p>
-Learn useful Chinese words, expressions and pronunciation step by step.
+A structured Chinese-learning system from pronunciation
+to advanced communication.
 </p>
 
 </section>
 
 
-<!-- LEVELS -->
+<!-- DASHBOARD -->
 
-<section class="levels-section">
+<section class="section">
+
+<div class="dashboard">
+
+<div class="stat">
+<div class="stat-icon">🔥</div>
+<h3>7 Days</h3>
+<p>Learning Streak</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">⭐</div>
+<h3 id="xp">120</h3>
+<p>XP Earned</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">📚</div>
+<h3>86</h3>
+<p>Words Learned</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🎯</div>
+<h3>72%</h3>
+<p>Overall Progress</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LEARNING PATH -->
+
+<section class="section">
 
 <div class="section-title">
 
-<h2>📊 Chinese Levels</h2>
+<h2>🛤️ Complete Chinese Learning Path</h2>
 
-<p>Choose a level for your Chinese learning journey.</p>
+<p>Build every major Mandarin skill step by step.</p>
+
+</div>
+
+
+<div class="path">
+
+
+<div class="card">
+<div class="card-icon">🔤</div>
+<h3>Pinyin</h3>
+<p>Learn initials, finals and syllable combinations.</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">🎵</div>
+<h3>Tones</h3>
+<p>Master Mandarin's four tones and neutral tone.</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">🀄</div>
+<h3>Characters</h3>
+<p>Recognize and write Simplified Chinese characters.</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">📚</div>
+<h3>Vocabulary</h3>
+<p>Build practical vocabulary by topic and level.</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">✏️</div>
+<h3>Grammar</h3>
+<p>Understand Chinese sentence structures.</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">🔢</div>
+<h3>Measure Words</h3>
+<p>Learn classifiers used with Chinese nouns.</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">🎧</div>
+<h3>Listening</h3>
+<p>Train your ears with Mandarin audio practice.</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">💬</div>
+<h3>Speaking</h3>
+<p>Practice real-life conversations.</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">📖</div>
+<h3>Reading</h3>
+<p>Progress from characters to complete passages.</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">✍️</div>
+<h3>Writing</h3>
+<p>Practice characters and sentence construction.</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">🧠</div>
+<h3>Memory</h3>
+<p>Use flashcards and spaced revision.</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">🏆</div>
+<h3>Achievements</h3>
+<p>Earn XP and badges as you learn.</p>
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- HSK -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>📊 HSK Progression</h2>
+
+<p>Move from beginner Chinese toward advanced proficiency.</p>
 
 </div>
 
 
 <div class="levels">
 
+
 <div class="level">
 <h3>HSK 1</h3>
-<p>Beginner</p>
+<p>Beginner foundations</p>
+<div class="progress"><span style="width:90%"></span></div>
 </div>
+
 
 <div class="level">
 <h3>HSK 2</h3>
-<p>Elementary</p>
+<p>Basic communication</p>
+<div class="progress"><span style="width:75%"></span></div>
 </div>
+
 
 <div class="level">
 <h3>HSK 3</h3>
-<p>Intermediate</p>
+<p>Everyday communication</p>
+<div class="progress"><span style="width:55%"></span></div>
 </div>
+
 
 <div class="level">
 <h3>HSK 4</h3>
-<p>Upper Intermediate</p>
+<p>Intermediate communication</p>
+<div class="progress"><span style="width:35%"></span></div>
 </div>
+
 
 <div class="level">
 <h3>HSK 5</h3>
-<p>Advanced</p>
+<p>Advanced communication</p>
+<div class="progress"><span style="width:20%"></span></div>
 </div>
+
 
 <div class="level">
 <h3>HSK 6</h3>
-<p>Advanced Mastery</p>
+<p>Advanced mastery</p>
+<div class="progress"><span style="width:10%"></span></div>
 </div>
+
+
+</div>
+
+</section>
+
+
+<!-- PINYIN -->
+
+<section class="section" id="pinyin">
+
+<div class="section-title">
+
+<h2>🔤 Pinyin Academy</h2>
+
+<p>Learn the building blocks of Mandarin pronunciation.</p>
+
+</div>
+
+
+<div class="section-box">
+
+<div class="pinyin-grid">
+
+
+<div class="pinyin">
+
+<h3>Initials</h3>
+
+<div class="pinyin-big">
+b · p · m · f
+</div>
+
+<p>Beginning consonant sounds.</p>
+
+</div>
+
+
+<div class="pinyin">
+
+<h3>Finals</h3>
+
+<div class="pinyin-big">
+a · ai · an · ang
+</div>
+
+<p>Vowel and ending combinations.</p>
+
+</div>
+
+
+<div class="pinyin">
+
+<h3>Syllables</h3>
+
+<div class="pinyin-big">
+nǐ · hǎo
+</div>
+
+<p>Complete Mandarin syllables.</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TONES -->
+
+<section class="section" id="tones">
+
+<div class="section-title">
+
+<h2>🎵 Mandarin Tone Lab</h2>
+
+<p>Practice the tones that can change the meaning of a word.</p>
+
+</div>
+
+
+<div class="tones">
+
+
+<div class="tone">
+<h3>1st Tone</h3>
+<div class="tone-example">mā</div>
+<p>High and level</p>
+<button class="btn" onclick="speak('妈')">🔊 Hear</button>
+</div>
+
+
+<div class="tone">
+<h3>2nd Tone</h3>
+<div class="tone-example">má</div>
+<p>Rising</p>
+<button class="btn" onclick="speak('麻')">🔊 Hear</button>
+</div>
+
+
+<div class="tone">
+<h3>3rd Tone</h3>
+<div class="tone-example">mǎ</div>
+<p>Falling-rising</p>
+<button class="btn" onclick="speak('马')">🔊 Hear</button>
+</div>
+
+
+<div class="tone">
+<h3>4th Tone</h3>
+<div class="tone-example">mà</div>
+<p>Falling</p>
+<button class="btn" onclick="speak('骂')">🔊 Hear</button>
+</div>
+
+
+<div class="tone">
+<h3>Neutral</h3>
+<div class="tone-example">ma</div>
+<p>Light and unstressed</p>
+<button class="btn" onclick="speak('吗')">🔊 Hear</button>
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- CHARACTERS -->
+
+<section class="section" id="characters">
+
+<div class="section-title">
+
+<h2>🀄 Character Academy</h2>
+
+<p>Start recognizing high-frequency Simplified Chinese characters.</p>
+
+</div>
+
+
+<div class="characters">
+
+
+<div class="character">
+<div class="character-symbol">人</div>
+<strong>rén</strong>
+<p>person</p>
+<div class="stroke">Common character</div>
+</div>
+
+
+<div class="character">
+<div class="character-symbol">我</div>
+<strong>wǒ</strong>
+<p>I / me</p>
+<div class="stroke">Common character</div>
+</div>
+
+
+<div class="character">
+<div class="character-symbol">你</div>
+<strong>nǐ</strong>
+<p>you</p>
+<div class="stroke">Common character</div>
+</div>
+
+
+<div class="character">
+<div class="character-symbol">好</div>
+<strong>hǎo</strong>
+<p>good</p>
+<div class="stroke">Common character</div>
+</div>
+
+
+<div class="character">
+<div class="character-symbol">学</div>
+<strong>xué</strong>
+<p>learn</p>
+<div class="stroke">Common character</div>
+</div>
+
+
+<div class="character">
+<div class="character-symbol">生</div>
+<strong>shēng</strong>
+<p>life / student</p>
+<div class="stroke">Common character</div>
+</div>
+
+
+<div class="character">
+<div class="character-symbol">中</div>
+<strong>zhōng</strong>
+<p>middle / China context</p>
+<div class="stroke">Common character</div>
+</div>
+
+
+<div class="character">
+<div class="character-symbol">文</div>
+<strong>wén</strong>
+<p>language / writing</p>
+<div class="stroke">Common character</div>
+</div>
+
+
+<div class="character">
+<div class="character-symbol">书</div>
+<strong>shū</strong>
+<p>book</p>
+<div class="stroke">Common character</div>
+</div>
+
+
+<div class="character">
+<div class="character-symbol">水</div>
+<strong>shuǐ</strong>
+<p>water</p>
+<div class="stroke">Common character</div>
+</div>
+
 
 </div>
 
@@ -399,25 +1197,34 @@ Learn useful Chinese words, expressions and pronunciation step by step.
 
 <!-- VOCABULARY -->
 
-<section class="vocabulary">
+<section class="section">
 
 <div class="section-title">
 
-<h2>📚 Basic Chinese Vocabulary</h2>
+<h2>📚 Smart Vocabulary</h2>
 
-<p>Learn common Chinese words with Pinyin and examples.</p>
+<p>Search and practice useful Chinese vocabulary.</p>
 
 </div>
 
 
-<div class="words">
+<input
+type="text"
+class="search"
+id="wordSearch"
+placeholder="🔍 Search Chinese vocabulary..."
+onkeyup="searchWords()"
+>
+
+
+<div class="words" id="wordList">
 
 
 <div class="word">
 
 <h3>你好</h3>
 
-<div class="pinyin">
+<div class="pinyin-text">
 Nǐ hǎo
 </div>
 
@@ -425,11 +1232,15 @@ Nǐ hǎo
 Hello
 </div>
 
+<div class="category">
+GREETING
+</div>
+
 <p class="example">
-<b>Example:</b> 你好！很高兴认识你。
+你好！很高兴认识你。
 </p>
 
-<button onclick="speak('你好')">
+<button class="btn" onclick="speak('你好')">
 🔊 Listen
 </button>
 
@@ -440,7 +1251,7 @@ Hello
 
 <h3>谢谢</h3>
 
-<div class="pinyin">
+<div class="pinyin-text">
 Xièxie
 </div>
 
@@ -448,11 +1259,15 @@ Xièxie
 Thank you
 </div>
 
+<div class="category">
+DAILY LIFE
+</div>
+
 <p class="example">
-<b>Example:</b> 谢谢你！
+谢谢你的帮助。
 </p>
 
-<button onclick="speak('谢谢')">
+<button class="btn" onclick="speak('谢谢')">
 🔊 Listen
 </button>
 
@@ -463,7 +1278,7 @@ Thank you
 
 <h3>朋友</h3>
 
-<div class="pinyin">
+<div class="pinyin-text">
 Péngyou
 </div>
 
@@ -471,11 +1286,15 @@ Péngyou
 Friend
 </div>
 
+<div class="category">
+PEOPLE
+</div>
+
 <p class="example">
-<b>Example:</b> 他是我的朋友。
+他是我的朋友。
 </p>
 
-<button onclick="speak('朋友')">
+<button class="btn" onclick="speak('朋友')">
 🔊 Listen
 </button>
 
@@ -486,7 +1305,7 @@ Friend
 
 <h3>学校</h3>
 
-<div class="pinyin">
+<div class="pinyin-text">
 Xuéxiào
 </div>
 
@@ -494,11 +1313,15 @@ Xuéxiào
 School
 </div>
 
+<div class="category">
+EDUCATION
+</div>
+
 <p class="example">
-<b>Example:</b> 我去学校。
+我每天去学校。
 </p>
 
-<button onclick="speak('学校')">
+<button class="btn" onclick="speak('学校')">
 🔊 Listen
 </button>
 
@@ -507,21 +1330,25 @@ School
 
 <div class="word">
 
-<h3>水</h3>
+<h3>学习</h3>
 
-<div class="pinyin">
-Shuǐ
+<div class="pinyin-text">
+Xuéxí
 </div>
 
 <div class="meaning">
-Water
+To study / learn
+</div>
+
+<div class="category">
+EDUCATION
 </div>
 
 <p class="example">
-<b>Example:</b> 请给我水。
+我学习中文。
 </p>
 
-<button onclick="speak('水')">
+<button class="btn" onclick="speak('学习')">
 🔊 Listen
 </button>
 
@@ -532,19 +1359,23 @@ Water
 
 <h3>喜欢</h3>
 
-<div class="pinyin">
+<div class="pinyin-text">
 Xǐhuan
 </div>
 
 <div class="meaning">
-Like
+To like
+</div>
+
+<div class="category">
+DAILY LIFE
 </div>
 
 <p class="example">
-<b>Example:</b> 我喜欢学习中文。
+我喜欢中国菜。
 </p>
 
-<button onclick="speak('喜欢')">
+<button class="btn" onclick="speak('喜欢')">
 🔊 Listen
 </button>
 
@@ -556,163 +1387,595 @@ Like
 </section>
 
 
-<!-- COMMON PHRASES -->
+<!-- SENTENCE PATTERNS -->
 
-<section class="phrases">
+<section class="section">
 
-<h2>💬 Common Chinese Phrases</h2>
+<div class="section-title">
 
+<h2>🧩 Sentence Builder</h2>
 
-<div class="phrase">
-
-<div class="chinese">
-你好！
-</div>
-
-<div class="pinyin-text">
-Nǐ hǎo!
-</div>
-
-<div class="translation">
-Hello!
-</div>
-
-<button onclick="speak('你好')">
-🔊 Listen
-</button>
+<p>Learn Chinese through reusable sentence patterns.</p>
 
 </div>
 
 
-<div class="phrase">
+<div class="grammar">
 
-<div class="chinese">
-你好吗？
+
+<div class="grammar-card">
+
+<h3>Basic Sentence</h3>
+
+<div class="formula">
+Subject + Verb + Object
 </div>
 
-<div class="pinyin-text">
-Nǐ hǎo ma?
-</div>
+<p><strong>我学习中文。</strong></p>
 
-<div class="translation">
-How are you?
-</div>
+<p>Wǒ xuéxí Zhōngwén.</p>
 
-<button onclick="speak('你好吗')">
-🔊 Listen
-</button>
-
-</div>
-
-
-<div class="phrase">
-
-<div class="chinese">
-我很好。
-</div>
-
-<div class="pinyin-text">
-Wǒ hěn hǎo.
-</div>
-
-<div class="translation">
-I am fine.
-</div>
-
-<button onclick="speak('我很好')">
-🔊 Listen
-</button>
+<p>I study Chinese.</p>
 
 </div>
 
 
-<div class="phrase">
+<div class="grammar-card">
 
-<div class="chinese">
-我的名字是……
+<h3>Yes/No Question</h3>
+
+<div class="formula">
+Statement + 吗？
 </div>
 
-<div class="pinyin-text">
-Wǒ de míngzi shì...
-</div>
+<p><strong>你学习中文吗？</strong></p>
 
-<div class="translation">
-My name is...
-</div>
+<p>Nǐ xuéxí Zhōngwén ma?</p>
 
-<button onclick="speak('我的名字是')">
-🔊 Listen
-</button>
+<p>Do you study Chinese?</p>
 
 </div>
 
 
-<div class="phrase">
+<div class="grammar-card">
 
-<div class="chinese">
-我不明白。
+<h3>Negation</h3>
+
+<div class="formula">
+Subject + 不 + Verb
 </div>
 
-<div class="pinyin-text">
-Wǒ bù míngbai.
-</div>
+<p><strong>我不喝咖啡。</strong></p>
 
-<div class="translation">
-I don't understand.
-</div>
+<p>Wǒ bù hē kāfēi.</p>
 
-<button onclick="speak('我不明白')">
-🔊 Listen
-</button>
+<p>I don't drink coffee.</p>
 
 </div>
 
+
+<div class="grammar-card">
+
+<h3>Possession</h3>
+
+<div class="formula">
+Person + 的 + Noun
+</div>
+
+<p><strong>我的书。</strong></p>
+
+<p>Wǒ de shū.</p>
+
+<p>My book.</p>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- FEATURES -->
+<!-- MEASURE WORDS -->
 
-<section class="features">
+<section class="section">
 
+<div class="section-title">
 
-<div class="feature">
+<h2>🔢 Measure Words</h2>
 
-<h3>📚 Vocabulary</h3>
-
-<p>
-Build your Chinese vocabulary from beginner to advanced levels.
-</p>
+<p>Learn important Chinese classifiers.</p>
 
 </div>
 
 
-<div class="feature">
+<div class="measures">
 
-<h3>📖 Stories</h3>
 
-<p>
-Read Chinese stories and learn new words in context.
-</p>
-
+<div class="measure">
+<div class="measure-symbol">个</div>
+<h3>gè</h3>
+<p>General measure word</p>
+<p>一个人</p>
 </div>
 
 
-<div class="feature">
-
-<h3>🧠 Quizzes</h3>
-
-<p>
-Test your Chinese knowledge and practice what you learn.
-</p>
-
+<div class="measure">
+<div class="measure-symbol">本</div>
+<h3>běn</h3>
+<p>Books</p>
+<p>一本书</p>
 </div>
 
+
+<div class="measure">
+<div class="measure-symbol">张</div>
+<h3>zhāng</h3>
+<p>Flat objects</p>
+<p>一张纸</p>
+</div>
+
+
+<div class="measure">
+<div class="measure-symbol">杯</div>
+<h3>bēi</h3>
+<p>Cups / glasses</p>
+<p>一杯水</p>
+</div>
+
+
+</div>
 
 </section>
 
 
+<!-- CONVERSATION -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>💬 Real Conversation</h2>
+
+<p>Practice a complete beginner conversation.</p>
+
 </div>
+
+
+<div class="conversation">
+
+
+<div class="dialogue">
+
+<div class="speaker">A</div>
+
+<div class="chinese-line">
+你好！你叫什么名字？
+</div>
+
+<div class="pinyin-line">
+Nǐ hǎo! Nǐ jiào shénme míngzi?
+</div>
+
+<p>Hello! What is your name?</p>
+
+<button class="btn" onclick="speak('你好！你叫什么名字？')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="dialogue">
+
+<div class="speaker">B</div>
+
+<div class="chinese-line">
+你好！我叫李明。
+</div>
+
+<div class="pinyin-line">
+Nǐ hǎo! Wǒ jiào Lǐ Míng.
+</div>
+
+<p>Hello! My name is Li Ming.</p>
+
+<button class="btn" onclick="speak('你好！我叫李明。')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="dialogue">
+
+<div class="speaker">A</div>
+
+<div class="chinese-line">
+你学习中文吗？
+</div>
+
+<div class="pinyin-line">
+Nǐ xuéxí Zhōngwén ma?
+</div>
+
+<p>Do you study Chinese?</p>
+
+<button class="btn" onclick="speak('你学习中文吗？')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="dialogue">
+
+<div class="speaker">B</div>
+
+<div class="chinese-line">
+是的，我学习中文。
+</div>
+
+<div class="pinyin-line">
+Shì de, wǒ xuéxí Zhōngwén.
+</div>
+
+<p>Yes, I study Chinese.</p>
+
+<button class="btn" onclick="speak('是的，我学习中文。')">
+🔊 Listen
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- READING -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>📖 Reading Practice</h2>
+
+<p>Read a short beginner-level Chinese passage.</p>
+
+</div>
+
+
+<div class="reading">
+
+<div class="reading-text">
+
+我叫王明。我是学生。
+我每天学习中文，也喜欢看书。
+星期六，我和朋友一起去公园。
+
+</div>
+
+<div class="reading-pinyin">
+
+Wǒ jiào Wáng Míng. Wǒ shì xuésheng.
+Wǒ měitiān xuéxí Zhōngwén,
+yě xǐhuan kàn shū.
+Xīngqīliù, wǒ hé péngyou
+yìqǐ qù gōngyuán.
+
+</div>
+
+<p>
+My name is Wang Ming. I am a student.
+I study Chinese every day and also like reading.
+On Saturday, I go to the park with my friends.
+</p>
+
+<br>
+
+<button class="btn"
+onclick="speak('我叫王明。我是学生。我每天学习中文，也喜欢看书。星期六，我和朋友一起去公园。')">
+
+🔊 Listen to Passage
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FLASHCARD -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>🧠 Flashcard Practice</h2>
+
+<p>Test your memory before revealing the answer.</p>
+
+</div>
+
+
+<div class="flashcard">
+
+<div class="flash-character">
+学习
+</div>
+
+<p>What does this word mean?</p>
+
+<button class="btn" onclick="showAnswer()">
+👁️ Show Answer
+</button>
+
+<div class="flash-answer" id="flashAnswer">
+
+<strong>Xuéxí</strong>
+
+<br>
+
+To study / learn
+
+<br>
+
+<button class="btn" onclick="speak('学习')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>🧠 Quick Chinese Quiz</h2>
+
+<p>Choose the correct meaning.</p>
+
+</div>
+
+
+<div class="quiz">
+
+<h3>What does “朋友” mean?</h3>
+
+
+<button class="quiz-option"
+onclick="answerQuiz(false)">
+School
+</button>
+
+
+<button class="quiz-option"
+onclick="answerQuiz(true)">
+Friend
+</button>
+
+
+<button class="quiz-option"
+onclick="answerQuiz(false)">
+Water
+</button>
+
+
+<button class="quiz-option"
+onclick="answerQuiz(false)">
+Teacher
+</button>
+
+
+<div class="result" id="quizResult"></div>
+
+</div>
+
+</section>
+
+
+<!-- DAILY CHALLENGE -->
+
+<section class="section">
+
+<div class="daily">
+
+<h2>🔥 Daily Chinese Challenge</h2>
+
+<p>
+Learn 5 new words, practice 3 sentences,
+listen to one dialogue and complete today's quiz.
+</p>
+
+<button class="btn" onclick="startChallenge()">
+🚀 Start Challenge
+</button>
+
+<p id="challengeResult"></p>
+
+</div>
+
+</section>
+
+
+<!-- PROGRESS -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>📈 Learning Progress</h2>
+
+<p>Track your development across major skills.</p>
+
+</div>
+
+
+<div class="progress-box">
+
+
+<div class="progress-row">
+
+<div class="progress-label">
+<span>Pinyin</span>
+<span>90%</span>
+</div>
+
+<div class="progress-bar">
+<span style="width:90%"></span>
+</div>
+
+</div>
+
+
+<div class="progress-row">
+
+<div class="progress-label">
+<span>Vocabulary</span>
+<span>75%</span>
+</div>
+
+<div class="progress-bar">
+<span style="width:75%"></span>
+</div>
+
+</div>
+
+
+<div class="progress-row">
+
+<div class="progress-label">
+<span>Grammar</span>
+<span>65%</span>
+</div>
+
+<div class="progress-bar">
+<span style="width:65%"></span>
+</div>
+
+</div>
+
+
+<div class="progress-row">
+
+<div class="progress-label">
+<span>Listening</span>
+<span>55%</span>
+</div>
+
+<div class="progress-bar">
+<span style="width:55%"></span>
+</div>
+
+</div>
+
+
+<div class="progress-row">
+
+<div class="progress-label">
+<span>Speaking</span>
+<span>45%</span>
+</div>
+
+<div class="progress-bar">
+<span style="width:45%"></span>
+</div>
+
+</div>
+
+
+<div class="progress-row">
+
+<div class="progress-label">
+<span>Reading</span>
+<span>60%</span>
+</div>
+
+<div class="progress-bar">
+<span style="width:60%"></span>
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ACHIEVEMENTS -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>🏆 Achievements</h2>
+
+<p>Keep learning and unlock new achievements.</p>
+
+</div>
+
+
+<div class="achievements">
+
+
+<div class="badge">
+<div class="badge-icon">🔥</div>
+<h3>7-Day Streak</h3>
+<p>Practice for seven days.</p>
+</div>
+
+
+<div class="badge">
+<div class="badge-icon">🔤</div>
+<h3>Pinyin Master</h3>
+<p>Complete Pinyin foundations.</p>
+</div>
+
+
+<div class="badge">
+<div class="badge-icon">🀄</div>
+<h3>Character Starter</h3>
+<p>Learn your first 50 characters.</p>
+</div>
+
+
+<div class="badge">
+<div class="badge-icon">💬</div>
+<h3>First Conversation</h3>
+<p>Complete a speaking lesson.</p>
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- SETTINGS -->
+
+<section class="settings">
+
+<button class="btn" onclick="toggleDarkMode()">
+🌙 Dark Mode
+</button>
+
+<button class="btn" onclick="speak('欢迎来到 LinguaPath。让我们一起学习中文。')">
+🔊 Test Chinese Voice
+</button>
+
+</section>
+
+
+</main>
 
 
 <footer>
@@ -721,12 +1984,17 @@ Test your Chinese knowledge and practice what you learn.
 
 <p>Learn • Practice • Improve</p>
 
+<p>🇨🇳 Mandarin Chinese Learning System</p>
+
 <p>© 2026 LinguaPath</p>
 
 </footer>
 
 
 <script>
+
+
+/* TEXT TO SPEECH */
 
 function speak(text){
 
@@ -736,7 +2004,6 @@ const speech =
 new SpeechSynthesisUtterance(text);
 
 speech.lang="zh-CN";
-
 speech.rate=0.8;
 
 window.speechSynthesis.cancel();
@@ -744,6 +2011,100 @@ window.speechSynthesis.cancel();
 window.speechSynthesis.speak(speech);
 
 }
+
+}
+
+
+/* SEARCH */
+
+function searchWords(){
+
+const input =
+document.getElementById("wordSearch")
+.value.toLowerCase();
+
+const words =
+document.querySelectorAll(".word");
+
+words.forEach(function(word){
+
+const text =
+word.innerText.toLowerCase();
+
+word.style.display =
+text.includes(input)
+? "block"
+: "none";
+
+});
+
+}
+
+
+/* FLASHCARD */
+
+function showAnswer(){
+
+const answer =
+document.getElementById("flashAnswer");
+
+if(answer.style.display==="block"){
+
+answer.style.display="none";
+
+}else{
+
+answer.style.display="block";
+
+}
+
+}
+
+
+/* QUIZ */
+
+function answerQuiz(correct){
+
+const result =
+document.getElementById("quizResult");
+
+if(correct){
+
+result.innerHTML =
+"✅ Correct! +10 XP";
+
+let xp =
+document.getElementById("xp");
+
+xp.innerText =
+parseInt(xp.innerText)+10;
+
+}else{
+
+result.innerHTML =
+"❌ Not quite. Try again!";
+
+}
+
+}
+
+
+/* DAILY CHALLENGE */
+
+function startChallenge(){
+
+document.getElementById("challengeResult")
+.innerHTML =
+"🎉 Challenge started! Complete today's lessons to earn XP.";
+
+}
+
+
+/* DARK MODE */
+
+function toggleDarkMode(){
+
+document.body.classList.toggle("dark");
 
 }
 
