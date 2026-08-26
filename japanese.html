@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Japanese | LinguaPath</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#20242c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#bc002d,#e85d75);
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+font-size:36px;
+margin-bottom:8px;
+}
+
+header p{
+font-size:17px;
+}
+
+nav{
+background:white;
+padding:16px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+nav a{
+color:#bc002d;
+text-decoration:none;
+font-weight:bold;
+margin:0 10px;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 18px;
+}
+
+.back{
+display:inline-block;
+margin-bottom:25px;
+color:#bc002d;
+text-decoration:none;
+font-weight:bold;
+}
+
+.intro{
+text-align:center;
+margin-bottom:35px;
+}
+
+.intro h2{
+color:#bc002d;
+font-size:30px;
+margin-bottom:8px;
+}
+
+.intro p{
+color:#666;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:22px;
+}
+
+.section-title h2{
+color:#bc002d;
+margin-bottom:8px;
+}
+
+.section-title p{
+color:#666;
+}
+
+
+/* LEVELS */
+
+.levels{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.level{
+background:white;
+padding:23px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.level h3{
+color:#bc002d;
+font-size:24px;
+margin-bottom:6px;
+}
+
+.level p{
+color:#666;
+}
+
+
+/* VOCABULARY */
+
+.vocabulary{
+margin-top:45px;
+}
+
+.words{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.word{
+background:white;
+padding:22px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.word h3{
+color:#bc002d;
+font-size:27px;
+margin-bottom:3px;
+}
+
+.romaji{
+color:#777;
+font-style:italic;
+margin-bottom:7px;
+}
+
+.meaning{
+font-size:18px;
+font-weight:bold;
+margin-bottom:9px;
+}
+
+.example{
+color:#555;
+margin-bottom:12px;
+}
+
+button{
+background:#bc002d;
+color:white;
+border:none;
+padding:9px 14px;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#970023;
+}
+
+
+/* PHRASES */
+
+.phrases{
+margin-top:45px;
+background:white;
+padding:28px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.phrases h2{
+color:#bc002d;
+text-align:center;
+margin-bottom:18px;
+}
+
+.phrase{
+padding:14px 0;
+border-bottom:1px solid #eee;
+}
+
+.phrase:last-child{
+border-bottom:none;
+}
+
+.japanese{
+font-size:22px;
+font-weight:bold;
+color:#bc002d;
+}
+
+.romaji-text{
+color:#777;
+font-style:italic;
+}
+
+.translation{
+color:#555;
+}
+
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:45px;
+}
+
+.feature{
+background:white;
+padding:25px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.feature h3{
+color:#bc002d;
+margin-bottom:8px;
+}
+
+
+/* FOOTER */
+
+footer{
+margin-top:45px;
+background:#202b55;
+color:white;
+text-align:center;
+padding:28px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.levels,
+.features{
+grid-template-columns:1fr 1fr;
+}
+
+.words{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:450px){
+
+.levels,
+.features{
+grid-template-columns:1fr;
+}
+
+nav a{
+display:inline-block;
+margin:5px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>🇯🇵 Japanese</h1>
+
+<p>Learn Japanese vocabulary, phrases and pronunciation.</p>
+
+</header>
+
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="vocabulary.html">📚 Vocabulary</a>
+
+<a href="stories.html">📖 Stories</a>
+
+<a href="quizzes.html">🧠 Quizzes</a>
+
+</nav>
+
+
+<div class="container">
+
+
+<a class="back" href="index.html">
+← Back to LinguaPath
+</a>
+
+
+<section class="intro">
+
+<h2>🇯🇵 Learn Japanese</h2>
+
+<p>
+Learn useful Japanese words and everyday expressions step by step.
+</p>
+
+</section>
+
+
+<!-- LEVELS -->
+
+<section>
+
+<div class="section-title">
+
+<h2>📊 Japanese Levels</h2>
+
+<p>Choose a level for your Japanese learning journey.</p>
+
+</div>
+
+
+<div class="levels">
+
+<div class="level">
+<h3>N5</h3>
+<p>Beginner</p>
+</div>
+
+<div class="level">
+<h3>N4</h3>
+<p>Elementary</p>
+</div>
+
+<div class="level">
+<h3>N3</h3>
+<p>Intermediate</p>
+</div>
+
+<div class="level">
+<h3>N2</h3>
+<p>Upper Intermediate</p>
+</div>
+
+<div class="level">
+<h3>N1</h3>
+<p>Advanced</p>
+</div>
+
+<div class="level">
+<h3>Mastery</h3>
+<p>Fluent Japanese</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VOCABULARY -->
+
+<section class="vocabulary">
+
+<div class="section-title">
+
+<h2>📚 Basic Japanese Vocabulary</h2>
+
+<p>Learn common Japanese words.</p>
+
+</div>
+
+
+<div class="words">
+
+
+<div class="word">
+
+<h3>こんにちは</h3>
+
+<div class="romaji">
+Konnichiwa
+</div>
+
+<div class="meaning">
+Hello
+</div>
+
+<p class="example">
+<b>Example:</b> こんにちは！お元気ですか？
+</p>
+
+<button onclick="speak('こんにちは')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>ありがとう</h3>
+
+<div class="romaji">
+Arigatou
+</div>
+
+<div class="meaning">
+Thank you
+</div>
+
+<p class="example">
+<b>Example:</b> ありがとう！
+</p>
+
+<button onclick="speak('ありがとう')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>さようなら</h3>
+
+<div class="romaji">
+Sayounara
+</div>
+
+<div class="meaning">
+Goodbye
+</div>
+
+<p class="example">
+<b>Example:</b> さようなら。また明日。
+</p>
+
+<button onclick="speak('さようなら')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>友達</h3>
+
+<div class="romaji">
+Tomodachi
+</div>
+
+<div class="meaning">
+Friend
+</div>
+
+<p class="example">
+<b>Example:</b> 彼は私の友達です。
+</p>
+
+<button onclick="speak('友達')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>学校</h3>
+
+<div class="romaji">
+Gakkou
+</div>
+
+<div class="meaning">
+School
+</div>
+
+<p class="example">
+<b>Example:</b> 私は学校へ行きます。
+</p>
+
+<button onclick="speak('学校')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>好き</h3>
+
+<div class="romaji">
+Suki
+</div>
+
+<div class="meaning">
+Like / Favorite
+</div>
+
+<p class="example">
+<b>Example:</b> 私は日本語が好きです。
+</p>
+
+<button onclick="speak('好き')">
+🔊 Listen
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- COMMON PHRASES -->
+
+<section class="phrases">
+
+<h2>💬 Common Japanese Phrases</h2>
+
+
+<div class="phrase">
+
+<div class="japanese">
+お元気ですか？
+</div>
+
+<div class="romaji-text">
+Ogenki desu ka?
+</div>
+
+<div class="translation">
+How are you?
+</div>
+
+<button onclick="speak('お元気ですか？')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="phrase">
+
+<div class="japanese">
+私は元気です。
+</div>
+
+<div class="romaji-text">
+Watashi wa genki desu.
+</div>
+
+<div class="translation">
+I am fine.
+</div>
+
+<button onclick="speak('私は元気です。')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="phrase">
+
+<div class="japanese">
+私は……です。
+</div>
+
+<div class="romaji-text">
+Watashi wa ... desu.
+</div>
+
+<div class="translation">
+I am...
+</div>
+
+<button onclick="speak('私はです')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="phrase">
+
+<div class="japanese">
+お願いします。
+</div>
+
+<div class="romaji-text">
+Onegaishimasu.
+</div>
+
+<div class="translation">
+Please / I request your help.
+</div>
+
+<button onclick="speak('お願いします')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="phrase">
+
+<div class="japanese">
+わかりません。
+</div>
+
+<div class="romaji-text">
+Wakarimasen.
+</div>
+
+<div class="translation">
+I don't understand.
+</div>
+
+<button onclick="speak('わかりません')">
+🔊 Listen
+</button>
+
+</div>
+
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+<div class="feature">
+
+<h3>📚 Vocabulary</h3>
+
+<p>
+Build your Japanese vocabulary.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>📖 Stories</h3>
+
+<p>
+Read Japanese stories and learn vocabulary in context.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>🧠 Quizzes</h3>
+
+<p>
+Test your Japanese knowledge.
+</p>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<footer>
+
+<h3>🌍 LinguaPath</h3>
+
+<p>Learn • Practice • Improve</p>
+
+<p>© 2026 LinguaPath</p>
+
+</footer>
+
+
+<script>
+
+function speak(text){
+
+if("speechSynthesis" in window){
+
+const speech =
+new SpeechSynthesisUtterance(text);
+
+speech.lang="ja-JP";
+
+speech.rate=0.8;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+}
+
+</script>
+
+
+</body>
+
+  </html>
