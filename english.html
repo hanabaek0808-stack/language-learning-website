@@ -23,8 +23,6 @@ body {
   line-height: 1.6;
 }
 
-/* HEADER */
-
 header {
   background: linear-gradient(135deg, #263a8b, #5267c9);
   color: white;
@@ -41,13 +39,14 @@ header p {
   font-size: 17px;
 }
 
-/* NAVIGATION */
-
 nav {
   background: white;
   padding: 16px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 nav a {
@@ -61,15 +60,11 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* CONTAINER */
-
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 35px 18px;
 }
-
-/* INTRO */
 
 .intro {
   text-align: center;
@@ -86,8 +81,6 @@ nav a:hover {
   color: #666;
 }
 
-/* TOPICS */
-
 .topics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -100,6 +93,11 @@ nav a:hover {
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  transition: 0.2s;
+}
+
+.topic:hover {
+  transform: translateY(-4px);
 }
 
 .topic-icon {
@@ -117,8 +115,6 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
-/* BUTTON */
-
 .btn {
   display: inline-block;
   background: #263a8b;
@@ -133,10 +129,8 @@ nav a:hover {
   background: #17245f;
 }
 
-/* LEVELS */
-
-.level-section {
-  margin-top: 45px;
+.section {
+  margin-top: 50px;
 }
 
 .section-title {
@@ -177,10 +171,75 @@ nav a:hover {
   color: #666;
 }
 
-/* QUICK LINKS */
+.words {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.word-card {
+  background: white;
+  padding: 22px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.word-card h3 {
+  color: #263a8b;
+  margin-bottom: 5px;
+}
+
+.word {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.meaning {
+  color: #555;
+}
+
+.example {
+  margin-top: 8px;
+  font-style: italic;
+  color: #666;
+}
+
+.phrases {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.phrase-card {
+  background: white;
+  padding: 22px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.phrase-card h3 {
+  color: #263a8b;
+  margin-bottom: 6px;
+}
+
+.grammar {
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.grammar h3 {
+  color: #263a8b;
+  margin-bottom: 10px;
+}
+
+.grammar p {
+  margin-bottom: 10px;
+}
 
 .quick {
-  margin-top: 45px;
+  margin-top: 50px;
   background: white;
   padding: 28px;
   border-radius: 16px;
@@ -203,8 +262,6 @@ nav a:hover {
   margin: 5px;
 }
 
-/* FOOTER */
-
 footer {
   margin-top: 45px;
   background: #202b55;
@@ -213,12 +270,12 @@ footer {
   padding: 28px;
 }
 
-/* MOBILE */
-
 @media (max-width: 650px) {
 
   .topics,
-  .levels {
+  .levels,
+  .words,
+  .phrases {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -227,7 +284,9 @@ footer {
 @media (max-width: 430px) {
 
   .topics,
-  .levels {
+  .levels,
+  .words,
+  .phrases {
     grid-template-columns: 1fr;
   }
 
@@ -242,22 +301,17 @@ footer {
 
 </head>
 
-
 <body>
 
-
-<!-- HEADER -->
 
 <header>
 
 <h1>🇬🇧 English</h1>
 
-<p>Learn English vocabulary, grammar, reading and more.</p>
+<p>Learn English vocabulary, grammar, reading and communication.</p>
 
 </header>
 
-
-<!-- NAVIGATION -->
 
 <nav>
 
@@ -275,15 +329,13 @@ footer {
 <main class="container">
 
 
-<!-- INTRO -->
-
 <section class="intro">
 
 <h2>🌍 Learn English</h2>
 
 <p>
 Improve your English step by step through vocabulary,
-stories, grammar and practice.
+grammar, stories, listening and practice.
 </p>
 
 </section>
@@ -339,7 +391,7 @@ Read Stories
 <h3>Quizzes</h3>
 
 <p>
-Test your English knowledge and practice
+Test your English vocabulary and practice
 what you have learned.
 </p>
 
@@ -357,12 +409,12 @@ Take Quiz
 <h3>Grammar</h3>
 
 <p>
-Learn English grammar rules with simple
+Learn basic grammar rules with simple
 examples and explanations.
 </p>
 
-<a href="#" class="btn">
-Coming Soon
+<a href="#grammar" class="btn">
+Learn Grammar
 </a>
 
 </div>
@@ -375,12 +427,12 @@ Coming Soon
 <h3>Listening</h3>
 
 <p>
-Improve pronunciation and listening skills
-through English practice.
+Practice common English expressions and
+improve your understanding.
 </p>
 
-<a href="#" class="btn">
-Coming Soon
+<a href="#phrases" class="btn">
+Practice
 </a>
 
 </div>
@@ -393,12 +445,12 @@ Coming Soon
 <h3>Speaking</h3>
 
 <p>
-Practice useful English expressions and
+Learn useful English expressions for
 everyday conversations.
 </p>
 
-<a href="#" class="btn">
-Coming Soon
+<a href="#phrases" class="btn">
+Practice Speaking
 </a>
 
 </div>
@@ -411,72 +463,263 @@ Coming Soon
 
 <!-- LEVELS -->
 
-<section class="level-section">
+<section class="section">
 
 <div class="section-title">
 
 <h2>📊 English Levels</h2>
 
-<p>
-Choose the level that matches your English ability.
-</p>
+<p>Choose the level that matches your English ability.</p>
 
 </div>
 
 
 <div class="levels">
 
-
 <div class="level">
-
 <h3>A1</h3>
-
 <p>Beginner</p>
-
 </div>
 
-
 <div class="level">
-
 <h3>A2</h3>
-
 <p>Elementary</p>
-
 </div>
 
-
 <div class="level">
-
 <h3>B1</h3>
-
 <p>Intermediate</p>
-
 </div>
 
-
 <div class="level">
-
 <h3>B2</h3>
-
 <p>Upper Intermediate</p>
-
 </div>
 
-
 <div class="level">
-
 <h3>C1</h3>
-
 <p>Advanced</p>
+</div>
+
+<div class="level">
+<h3>C2</h3>
+<p>Mastery</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COMMON WORDS -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>📚 Common English Vocabulary</h2>
+
+<p>Start with useful everyday words.</p>
 
 </div>
 
 
-<div class="level">
+<div class="words">
 
-<h3>C2</h3>
 
-<p>Mastery</p>
+<div class="word-card">
+
+<div class="word">Improve</div>
+
+<h3>Meaning</h3>
+
+<p class="meaning">
+To make something better.
+</p>
+
+<p class="example">
+Example: I want to improve my English.
+</p>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">Opportunity</div>
+
+<h3>Meaning</h3>
+
+<p class="meaning">
+A good chance to do something.
+</p>
+
+<p class="example">
+Example: Education gives us many opportunities.
+</p>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">Confident</div>
+
+<h3>Meaning</h3>
+
+<p class="meaning">
+Feeling sure about your abilities.
+</p>
+
+<p class="example">
+Example: She feels confident when speaking English.
+</p>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">Important</div>
+
+<h3>Meaning</h3>
+
+<p class="meaning">
+Having great value or significance.
+</p>
+
+<p class="example">
+Example: Learning vocabulary is important.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- GRAMMAR -->
+
+<section class="section" id="grammar">
+
+<div class="section-title">
+
+<h2>✏️ Basic Grammar</h2>
+
+<p>Learn some important English grammar patterns.</p>
+
+</div>
+
+
+<div class="grammar">
+
+<h3>Present Simple</h3>
+
+<p>
+We use the present simple for habits,
+facts and regular actions.
+</p>
+
+<p>
+<strong>Example:</strong>
+I study English every day.
+</p>
+
+<hr>
+
+<br>
+
+<h3>Past Simple</h3>
+
+<p>
+We use the past simple for completed actions
+in the past.
+</p>
+
+<p>
+<strong>Example:</strong>
+I studied English yesterday.
+</p>
+
+<hr>
+
+<br>
+
+<h3>Future Simple</h3>
+
+<p>
+We use the future simple for actions
+that will happen in the future.
+</p>
+
+<p>
+<strong>Example:</strong>
+I will study English tomorrow.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- EVERYDAY PHRASES -->
+
+<section class="section" id="phrases">
+
+<div class="section-title">
+
+<h2>💬 Everyday English</h2>
+
+<p>Useful expressions for daily communication.</p>
+
+</div>
+
+
+<div class="phrases">
+
+
+<div class="phrase-card">
+
+<h3>Hello!</h3>
+
+<p>Used when greeting someone.</p>
+
+<p><strong>Example:</strong> Hello! How are you?</p>
+
+</div>
+
+
+<div class="phrase-card">
+
+<h3>How are you?</h3>
+
+<p>Used to ask someone about their well-being.</p>
+
+<p><strong>Example:</strong> How are you today?</p>
+
+</div>
+
+
+<div class="phrase-card">
+
+<h3>Thank you.</h3>
+
+<p>Used to express gratitude.</p>
+
+<p><strong>Example:</strong> Thank you for your help.</p>
+
+</div>
+
+
+<div class="phrase-card">
+
+<h3>Could you help me?</h3>
+
+<p>A polite way to ask for help.</p>
+
+<p><strong>Example:</strong> Could you help me with this?</p>
 
 </div>
 
@@ -492,9 +735,7 @@ Choose the level that matches your English ability.
 
 <h2>🚀 Start Learning</h2>
 
-<p>
-Choose what you want to practice today.
-</p>
+<p>Choose what you want to practice today.</p>
 
 <a href="vocabulary.html" class="btn">
 📚 Vocabulary
@@ -513,8 +754,6 @@ Choose what you want to practice today.
 
 </main>
 
-
-<!-- FOOTER -->
 
 <footer>
 
