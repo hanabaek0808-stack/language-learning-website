@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chinese | LinguaPath</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#20242c;
+  line-height:1.6;
+}
+
+header{
+  background:linear-gradient(135deg,#de2910,#ff6b4a);
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+}
+
+header h1{
+  font-size:36px;
+  margin-bottom:8px;
+}
+
+header p{
+  font-size:17px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:30px 18px;
+}
+
+.back{
+  display:inline-block;
+  margin-bottom:25px;
+  color:#c92312;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.intro{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.intro h2{
+  color:#c92312;
+  margin-bottom:8px;
+}
+
+
+/* LEVELS */
+
+.levels{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.level{
+  background:white;
+  padding:25px 18px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.level h3{
+  color:#c92312;
+  font-size:25px;
+  margin-bottom:7px;
+}
+
+.level p{
+  color:#666;
+}
+
+
+/* VOCABULARY */
+
+.vocabulary{
+  margin-top:40px;
+}
+
+.vocabulary h2{
+  text-align:center;
+  color:#c92312;
+  margin-bottom:20px;
+}
+
+.words{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.word{
+  background:white;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.word h3{
+  color:#c92312;
+  font-size:26px;
+  margin-bottom:4px;
+}
+
+.pinyin{
+  color:#777;
+  font-style:italic;
+  margin-bottom:8px;
+}
+
+.meaning{
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.example{
+  color:#555;
+  margin-bottom:12px;
+}
+
+button{
+  background:#c92312;
+  color:white;
+  border:none;
+  padding:9px 14px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#a51d0e;
+}
+
+
+/* PHRASES */
+
+.phrases{
+  margin-top:40px;
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.phrases h2{
+  color:#c92312;
+  margin-bottom:15px;
+  text-align:center;
+}
+
+.phrase{
+  padding:14px 0;
+  border-bottom:1px solid #eee;
+}
+
+.phrase:last-child{
+  border-bottom:none;
+}
+
+.chinese{
+  font-size:21px;
+  font-weight:bold;
+  color:#c92312;
+}
+
+.pinyin-text{
+  color:#777;
+  font-style:italic;
+}
+
+.translation{
+  color:#555;
+}
+
+
+/* FOOTER */
+
+footer{
+  margin-top:45px;
+  background:#202b55;
+  color:white;
+  text-align:center;
+  padding:28px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.levels{
+  grid-template-columns:1fr 1fr;
+}
+
+.words{
+  grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:450px){
+
+.levels{
+  grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>🇨🇳 Chinese</h1>
+
+<p>
+Learn Chinese vocabulary, phrases and pronunciation.
+</p>
+
+</header>
+
+
+<div class="container">
+
+
+<a class="back" href="index.html">
+← Back to LinguaPath
+</a>
+
+
+<div class="intro">
+
+<h2>🇨🇳 Learn Chinese</h2>
+
+<p>
+Start learning Mandarin Chinese step by step.
+</p>
+
+</div>
+
+
+<!-- LEVELS -->
+
+<section>
+
+<div class="levels">
+
+<div class="level">
+<h3>HSK 1</h3>
+<p>Beginner</p>
+</div>
+
+<div class="level">
+<h3>HSK 2</h3>
+<p>Elementary</p>
+</div>
+
+<div class="level">
+<h3>HSK 3</h3>
+<p>Intermediate</p>
+</div>
+
+<div class="level">
+<h3>HSK 4</h3>
+<p>Upper Intermediate</p>
+</div>
+
+<div class="level">
+<h3>HSK 5</h3>
+<p>Advanced</p>
+</div>
+
+<div class="level">
+<h3>HSK 6</h3>
+<p>Mastery</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VOCABULARY -->
+
+<section class="vocabulary">
+
+<h2>📚 Basic Chinese Vocabulary</h2>
+
+
+<div class="words">
+
+
+<div class="word">
+
+<h3>你好</h3>
+
+<div class="pinyin">
+Nǐ hǎo
+</div>
+
+<div class="meaning">
+Hello
+</div>
+
+<p class="example">
+<b>Example:</b> 你好！你好吗？
+</p>
+
+<button onclick="speak('你好')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>谢谢</h3>
+
+<div class="pinyin">
+Xièxiè
+</div>
+
+<div class="meaning">
+Thank you
+</div>
+
+<p class="example">
+<b>Example:</b> 谢谢你的帮助。
+</p>
+
+<button onclick="speak('谢谢')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>再见</h3>
+
+<div class="pinyin">
+Zàijiàn
+</div>
+
+<div class="meaning">
+Goodbye
+</div>
+
+<p class="example">
+<b>Example:</b> 再见，明天见！
+</p>
+
+<button onclick="speak('再见')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>朋友</h3>
+
+<div class="pinyin">
+Péngyou
+</div>
+
+<div class="meaning">
+Friend
+</div>
+
+<p class="example">
+<b>Example:</b> 他是我的朋友。
+</p>
+
+<button onclick="speak('朋友')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>学习</h3>
+
+<div class="pinyin">
+Xuéxí
+</div>
+
+<div class="meaning">
+To study / learn
+</div>
+
+<p class="example">
+<b>Example:</b> 我喜欢学习中文。
+</p>
+
+<button onclick="speak('学习')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>爱</h3>
+
+<div class="pinyin">
+Ài
+</div>
+
+<div class="meaning">
+Love
+</div>
+
+<p class="example">
+<b>Example:</b> 我爱我的家人。
+</p>
+
+<button onclick="speak('爱')">
+🔊 Listen
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- COMMON PHRASES -->
+
+<section class="phrases">
+
+<h2>💬 Common Chinese Phrases</h2>
+
+
+<div class="phrase">
+
+<div class="chinese">
+你好吗？
+</div>
+
+<div class="pinyin-text">
+Nǐ hǎo ma?
+</div>
+
+<div class="translation">
+How are you?
+</div>
+
+<button onclick="speak('你好吗？')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="phrase">
+
+<div class="chinese">
+我很好。
+</div>
+
+<div class="pinyin-text">
+Wǒ hěn hǎo.
+</div>
+
+<div class="translation">
+I am very well.
+</div>
+
+<button onclick="speak('我很好。')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="phrase">
+
+<div class="chinese">
+我叫……
+</div>
+
+<div class="pinyin-text">
+Wǒ jiào...
+</div>
+
+<div class="translation">
+My name is...
+</div>
+
+<button onclick="speak('我叫')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="phrase">
+
+<div class="chinese">
+请问……
+</div>
+
+<div class="pinyin-text">
+Qǐngwèn...
+</div>
+
+<div class="translation">
+Excuse me / May I ask...
+</div>
+
+<button onclick="speak('请问')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="phrase">
+
+<div class="chinese">
+多少钱？
+</div>
+
+<div class="pinyin-text">
+Duōshao qián?
+</div>
+
+<div class="translation">
+How much does it cost?
+</div>
+
+<button onclick="speak('多少钱？')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="phrase">
+
+<div class="chinese">
+我不明白。
+</div>
+
+<div class="pinyin-text">
+Wǒ bù míngbai.
+</div>
+
+<div class="translation">
+I don't understand.
+</div>
+
+<button onclick="speak('我不明白。')">
+🔊 Listen
+</button>
+
+</div>
+
+
+</section>
+
+
+</div>
+
+
+<footer>
+
+<h3>🌍 LinguaPath</h3>
+
+<p>Learn • Practice • Improve</p>
+
+<p>© 2026 LinguaPath</p>
+
+</footer>
+
+
+<script>
+
+function speak(text){
+
+if("speechSynthesis" in window){
+
+const speech =
+new SpeechSynthesisUtterance(text);
+
+speech.lang="zh-CN";
+
+speech.rate=0.8;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+}
+
+</script>
+
+
+</body>
+
+  </html>
