@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -43,6 +44,9 @@ nav {
   padding: 16px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 nav a {
@@ -89,6 +93,11 @@ nav a:hover {
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  transition: 0.2s;
+}
+
+.topic:hover {
+  transform: translateY(-4px);
 }
 
 .topic-icon {
@@ -162,6 +171,73 @@ nav a:hover {
   color: #666;
 }
 
+.content-section {
+  margin-top: 50px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.content-card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.content-card h3 {
+  color: #263a8b;
+  margin-bottom: 8px;
+}
+
+.content-card p {
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.italian-word {
+  font-size: 23px;
+  font-weight: bold;
+  color: #20242c;
+}
+
+.grammar-box {
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.grammar-box h3 {
+  color: #263a8b;
+  margin-bottom: 8px;
+}
+
+.grammar-box p {
+  margin-bottom: 12px;
+}
+
+.phrases {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.phrase {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.phrase h3 {
+  color: #263a8b;
+  margin-bottom: 6px;
+}
+
 .quick {
   margin-top: 45px;
   background: white;
@@ -197,7 +273,9 @@ footer {
 @media (max-width: 650px) {
 
   .topics,
-  .levels {
+  .levels,
+  .cards,
+  .phrases {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -206,7 +284,9 @@ footer {
 @media (max-width: 430px) {
 
   .topics,
-  .levels {
+  .levels,
+  .cards,
+  .phrases {
     grid-template-columns: 1fr;
   }
 
@@ -256,6 +336,9 @@ stories, grammar and practice.
 
 </section>
 
+
+<!-- TOPICS -->
+
 <section>
 
 <div class="topics">
@@ -277,6 +360,7 @@ Learn Vocabulary
 
 </div>
 
+
 <div class="topic">
 
 <div class="topic-icon">📖</div>
@@ -293,6 +377,7 @@ Read Stories
 </a>
 
 </div>
+
 
 <div class="topic">
 
@@ -311,6 +396,7 @@ Take Quiz
 
 </div>
 
+
 <div class="topic">
 
 <div class="topic-icon">✏️</div>
@@ -322,11 +408,12 @@ Learn Italian grammar rules with simple
 examples and explanations.
 </p>
 
-<a href="#" class="btn">
-Coming Soon
+<a href="#grammar" class="btn">
+Learn Grammar
 </a>
 
 </div>
+
 
 <div class="topic">
 
@@ -335,14 +422,16 @@ Coming Soon
 <h3>Listening</h3>
 
 <p>
-Improve Italian pronunciation and listening skills.
+Practice Italian expressions and improve
+your listening skills.
 </p>
 
-<a href="#" class="btn">
-Coming Soon
+<a href="#phrases" class="btn">
+Practice
 </a>
 
 </div>
+
 
 <div class="topic">
 
@@ -351,12 +440,12 @@ Coming Soon
 <h3>Speaking</h3>
 
 <p>
-Practice useful Italian expressions and
+Practice useful Italian expressions for
 everyday conversations.
 </p>
 
-<a href="#" class="btn">
-Coming Soon
+<a href="#phrases" class="btn">
+Practice Speaking
 </a>
 
 </div>
@@ -364,6 +453,9 @@ Coming Soon
 </div>
 
 </section>
+
+
+<!-- LEVELS -->
 
 <section class="level-section">
 
@@ -413,6 +505,221 @@ Choose the level that matches your Italian ability.
 
 </section>
 
+
+<!-- ITALIAN VOCABULARY -->
+
+<section class="content-section">
+
+<div class="section-title">
+
+<h2>📚 Common Italian Vocabulary</h2>
+
+<p>
+Start with useful everyday Italian words.
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="content-card">
+
+<div class="italian-word">Ciao</div>
+
+<h3>Meaning</h3>
+
+<p>Hello / Goodbye</p>
+
+<p>
+<strong>Example:</strong> Ciao! Come stai?
+</p>
+
+</div>
+
+
+<div class="content-card">
+
+<div class="italian-word">Grazie</div>
+
+<h3>Meaning</h3>
+
+<p>Thank you</p>
+
+<p>
+<strong>Example:</strong> Grazie per il tuo aiuto.
+</p>
+
+</div>
+
+
+<div class="content-card">
+
+<div class="italian-word">Amico</div>
+
+<h3>Meaning</h3>
+
+<p>Friend</p>
+
+<p>
+<strong>Example:</strong> Lui è mio amico.
+</p>
+
+</div>
+
+
+<div class="content-card">
+
+<div class="italian-word">Imparare</div>
+
+<h3>Meaning</h3>
+
+<p>To learn</p>
+
+<p>
+<strong>Example:</strong> Voglio imparare l'italiano.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GRAMMAR -->
+
+<section class="content-section" id="grammar">
+
+<div class="section-title">
+
+<h2>✏️ Basic Italian Grammar</h2>
+
+<p>
+Learn important Italian grammar patterns.
+</p>
+
+</div>
+
+<div class="grammar-box">
+
+<h3>Present Tense</h3>
+
+<p>
+The present tense is used for actions happening now
+or things that happen regularly.
+</p>
+
+<p>
+<strong>Example:</strong> Io studio italiano.
+</p>
+
+<hr>
+
+<br>
+
+<h3>Past Tense</h3>
+
+<p>
+The past tense is used for completed actions.
+</p>
+
+<p>
+<strong>Example:</strong> Ho studiato italiano.
+</p>
+
+<hr>
+
+<br>
+
+<h3>Future Tense</h3>
+
+<p>
+The future tense is used for actions that will happen.
+</p>
+
+<p>
+<strong>Example:</strong> Studierò italiano domani.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- EVERYDAY PHRASES -->
+
+<section class="content-section" id="phrases">
+
+<div class="section-title">
+
+<h2>💬 Everyday Italian</h2>
+
+<p>
+Useful expressions for daily communication.
+</p>
+
+</div>
+
+<div class="phrases">
+
+<div class="phrase">
+
+<h3>Ciao!</h3>
+
+<p>Meaning: Hello! / Goodbye!</p>
+
+<p>
+<strong>Example:</strong> Ciao! Come stai?
+</p>
+
+</div>
+
+
+<div class="phrase">
+
+<h3>Come stai?</h3>
+
+<p>Meaning: How are you?</p>
+
+<p>
+<strong>Example:</strong> Ciao, come stai?
+</p>
+
+</div>
+
+
+<div class="phrase">
+
+<h3>Grazie mille.</h3>
+
+<p>Meaning: Thank you very much.</p>
+
+<p>
+<strong>Example:</strong> Grazie mille per il tuo aiuto.
+</p>
+
+</div>
+
+
+<div class="phrase">
+
+<h3>Puoi aiutarmi?</h3>
+
+<p>Meaning: Can you help me?</p>
+
+<p>
+<strong>Example:</strong> Puoi aiutarmi, per favore?
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUICK LINKS -->
+
 <section class="quick">
 
 <h2>🚀 Start Learning Italian</h2>
@@ -437,6 +744,7 @@ Choose what you want to practice today.
 
 </main>
 
+
 <footer>
 
 <h3>🌍 LinguaPath</h3>
@@ -449,4 +757,4 @@ Choose what you want to practice today.
 
 </body>
 
-</html>
+  </html>
