@@ -28,7 +28,7 @@ header {
   background: linear-gradient(135deg, #263a8b, #5267c9);
   color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: 45px 20px;
 }
 
 header h1 {
@@ -208,23 +208,60 @@ button:hover {
 /* PDF SECTION */
 
 .pdf-section {
-  margin-top: 45px;
+  margin-top: 55px;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 22px;
+  margin-bottom: 25px;
 }
 
 .section-title h2 {
   color: #263a8b;
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 8px;
 }
 
 .section-title p {
   color: #666;
 }
+
+/* PDF LANGUAGE FILTER */
+
+.pdf-filter {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  margin-bottom: 25px;
+}
+
+.pdf-filter label {
+  display: block;
+  color: #263a8b;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.pdf-filter select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  background: white;
+}
+
+/* PDF COUNT */
+
+.pdf-count {
+  text-align: center;
+  color: #666;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* PDF GRID */
 
 .pdf-grid {
   display: grid;
@@ -238,16 +275,33 @@ button:hover {
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  transition: 0.2s;
+}
+
+.pdf-card:hover {
+  transform: translateY(-4px);
+}
+
+.pdf-icon {
+  font-size: 38px;
+  margin-bottom: 8px;
 }
 
 .pdf-card h3 {
   color: #263a8b;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
-.pdf-card p {
+.pdf-level {
   color: #666;
   margin-bottom: 15px;
+}
+
+.pdf-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .pdf-button {
@@ -255,14 +309,23 @@ button:hover {
   background: #263a8b;
   color: white;
   text-decoration: none;
-  padding: 10px 16px;
+  padding: 10px 14px;
   border-radius: 8px;
+  font-size: 14px;
+}
+
+.pdf-button:hover {
+  background: #17245f;
+}
+
+.download-button {
+  background: #5267c9;
 }
 
 /* QUIZ */
 
 .quiz {
-  margin-top: 45px;
+  margin-top: 50px;
   background: white;
   padding: 30px;
   border-radius: 16px;
@@ -423,21 +486,21 @@ onkeyup="searchWords()">
 
 <option value="urdu">🇵🇰 Urdu</option>
 
-<option value="arabic">🇸🇦 Arabic</option>
-
 <option value="spanish">🇪🇸 Spanish</option>
 
 <option value="french">🇫🇷 French</option>
 
-<option value="german">🇩🇪 German</option>
+<option value="italian">🇮🇹 Italian</option>
 
 <option value="chinese">🇨🇳 Chinese</option>
-
-<option value="turkish">🇹🇷 Turkish</option>
 
 <option value="korean">🇰🇷 Korean</option>
 
 <option value="japanese">🇯🇵 Japanese</option>
+
+<option value="german">🇩🇪 German</option>
+
+<option value="arabic">🇸🇦 Arabic</option>
 
 </select>
 
@@ -463,14 +526,14 @@ onkeyup="searchWords()">
 
 <div class="translation"
 data-urdu="سلام"
-data-arabic="مرحبا"
 data-spanish="Hola"
 data-french="Bonjour"
-data-german="Hallo"
+data-italian="Ciao"
 data-chinese="你好"
-data-turkish="Merhaba"
 data-korean="안녕하세요"
-data-japanese="こんにちは">
+data-japanese="こんにちは"
+data-german="Hallo"
+data-arabic="مرحبا">
 
 سلام
 
@@ -509,14 +572,14 @@ data-japanese="こんにちは">
 
 <div class="translation"
 data-urdu="خوبصورت"
-data-arabic="جميل"
 data-spanish="Hermoso"
 data-french="Beau"
-data-german="Schön"
+data-italian="Bello"
 data-chinese="美丽"
-data-turkish="Güzel"
 data-korean="아름다운"
-data-japanese="美しい">
+data-japanese="美しい"
+data-german="Schön"
+data-arabic="جميل">
 
 خوبصورت
 
@@ -555,14 +618,14 @@ data-japanese="美しい">
 
 <div class="translation"
 data-urdu="خوش"
-data-arabic="سعيد"
 data-spanish="Feliz"
 data-french="Heureux"
-data-german="Glücklich"
+data-italian="Felice"
 data-chinese="快乐"
-data-turkish="Mutlu"
 data-korean="행복한"
-data-japanese="幸せな">
+data-japanese="幸せな"
+data-german="Glücklich"
+data-arabic="سعيد">
 
 خوش
 
@@ -601,14 +664,14 @@ data-japanese="幸せな">
 
 <div class="translation"
 data-urdu="سیکھنا"
-data-arabic="يتعلم"
 data-spanish="Aprender"
 data-french="Apprendre"
-data-german="Lernen"
+data-italian="Imparare"
 data-chinese="学习"
-data-turkish="Öğrenmek"
 data-korean="배우다"
-data-japanese="学ぶ">
+data-japanese="学ぶ"
+data-german="Lernen"
+data-arabic="يتعلم">
 
 سیکھنا
 
@@ -647,14 +710,14 @@ data-japanese="学ぶ">
 
 <div class="translation"
 data-urdu="بہتر کرنا"
-data-arabic="يحسن"
 data-spanish="Mejorar"
 data-french="Améliorer"
-data-german="Verbessern"
+data-italian="Migliorare"
 data-chinese="改善"
-data-turkish="Geliştirmek"
 data-korean="향상시키다"
-data-japanese="改善する">
+data-japanese="改善する"
+data-german="Verbessern"
+data-arabic="يحسن">
 
 بہتر کرنا
 
@@ -693,14 +756,14 @@ data-japanese="改善する">
 
 <div class="translation"
 data-urdu="موقع"
-data-arabic="فرصة"
 data-spanish="Oportunidad"
 data-french="Occasion"
-data-german="Gelegenheit"
+data-italian="Opportunità"
 data-chinese="机会"
-data-turkish="Fırsat"
 data-korean="기회"
-data-japanese="機会">
+data-japanese="機会"
+data-german="Gelegenheit"
+data-arabic="فرصة">
 
 موقع
 
@@ -739,14 +802,14 @@ data-japanese="機会">
 
 <div class="translation"
 data-urdu="اہم / نمایاں"
-data-arabic="مهم"
 data-spanish="Significativo"
 data-french="Significatif"
-data-german="Bedeutend"
+data-italian="Significativo"
 data-chinese="重要的"
-data-turkish="Önemli"
 data-korean="중요한"
-data-japanese="重要な">
+data-japanese="重要な"
+data-german="Bedeutend"
+data-arabic="مهم">
 
 اہم / نمایاں
 
@@ -785,14 +848,14 @@ data-japanese="重要な">
 
 <div class="translation"
 data-urdu="قائل کرنے والا"
-data-arabic="مقنع"
 data-spanish="Convincente"
 data-french="Convaincant"
-data-german="Überzeugend"
+data-italian="Avvincente"
 data-chinese="引人注目的"
-data-turkish="İkna edici"
 data-korean="설득력 있는"
-data-japanese="説得力のある">
+data-japanese="説得力のある"
+data-german="Überzeugend"
+data-arabic="مقنع">
 
 قائل کرنے والا
 
@@ -831,14 +894,14 @@ data-japanese="説得力のある">
 
 <div class="translation"
 data-urdu="نہایت محتاط / باریک بین"
-data-arabic="دقيق"
 data-spanish="Meticuloso"
 data-french="Méticuleux"
-data-german="Sorgfältig"
+data-italian="Meticoloso"
 data-chinese="一丝不苟的"
-data-turkish="Titiz"
 data-korean="꼼꼼한"
-data-japanese="細心な">
+data-japanese="細心な"
+data-german="Sorgfältig"
+data-arabic="دقيق">
 
 نہایت محتاط / باریک بین
 
@@ -865,115 +928,60 @@ data-japanese="細心な">
 </div>
 
 
-<!-- PDF SECTION -->
+<!-- PDF LIBRARY -->
 
 <section class="pdf-section">
 
 <div class="section-title">
 
-<h2>📄 Vocabulary Resources</h2>
+<h2>📚 Vocabulary PDF Library</h2>
 
 <p>
-Free LinguaPath vocabulary resources organized by level.
+54 vocabulary PDFs covering 9 languages and all six levels.
 </p>
 
 </div>
 
 
-<div class="pdf-grid">
+<div class="pdf-filter">
 
+<label for="pdfLanguage">
+🌍 Choose a Language
+</label>
 
-<div class="pdf-card">
+<select id="pdfLanguage" onchange="showPDFs()">
 
-<h3>📘 A1 Vocabulary</h3>
+<option value="all">🌍 All Languages</option>
 
-<p>
-Beginner words, meanings and everyday expressions.
-</p>
+<option value="English">🇬🇧 English</option>
 
-<a class="pdf-button" href="#">
-📥 PDF Coming Soon
-</a>
+<option value="Spanish">🇪🇸 Spanish</option>
 
-</div>
+<option value="French">🇫🇷 French</option>
 
+<option value="Italian">🇮🇹 Italian</option>
 
-<div class="pdf-card">
+<option value="Chinese">🇨🇳 Chinese</option>
 
-<h3>📗 A2 Vocabulary</h3>
+<option value="Korean">🇰🇷 Korean</option>
 
-<p>
-Elementary vocabulary for everyday communication.
-</p>
+<option value="Japanese">🇯🇵 Japanese</option>
 
-<a class="pdf-button" href="#">
-📥 PDF Coming Soon
-</a>
+<option value="German">🇩🇪 German</option>
 
-</div>
+<option value="Arabic">🇸🇦 Arabic</option>
 
-
-<div class="pdf-card">
-
-<h3>📙 B1 Vocabulary</h3>
-
-<p>
-Intermediate words and useful expressions.
-</p>
-
-<a class="pdf-button" href="#">
-📥 PDF Coming Soon
-</a>
+</select>
 
 </div>
 
 
-<div class="pdf-card">
-
-<h3>📕 B2 Vocabulary</h3>
-
-<p>
-Upper-intermediate vocabulary for stronger English.
-</p>
-
-<a class="pdf-button" href="#">
-📥 PDF Coming Soon
-</a>
-
+<div class="pdf-count" id="pdfCount">
+Showing all 54 vocabulary PDFs
 </div>
 
 
-<div class="pdf-card">
-
-<h3>📓 C1 Vocabulary</h3>
-
-<p>
-Advanced academic and professional vocabulary.
-</p>
-
-<a class="pdf-button" href="#">
-📥 PDF Coming Soon
-</a>
-
-</div>
-
-
-<div class="pdf-card">
-
-<h3>📔 C2 Vocabulary</h3>
-
-<p>
-Mastery-level vocabulary and sophisticated expressions.
-</p>
-
-<a class="pdf-button" href="#">
-📥 PDF Coming Soon
-</a>
-
-</div>
-
-
-</div>
+<div class="pdf-grid" id="pdfGrid"></div>
 
 </section>
 
@@ -1012,7 +1020,7 @@ Start Quiz 🚀
 
 <script>
 
-/* LANGUAGE */
+/* LANGUAGE TRANSLATION */
 
 function changeLanguage() {
 
@@ -1059,7 +1067,7 @@ function speak(word) {
 }
 
 
-/* FAVORITE */
+/* FAVORITES */
 
 function favorite(button) {
 
@@ -1131,7 +1139,207 @@ function searchWords() {
 
 }
 
+
+/* LANGUAGES */
+
+const languages = [
+
+  {
+    name: "English",
+    flag: "🇬🇧"
+  },
+
+  {
+    name: "Spanish",
+    flag: "🇪🇸"
+  },
+
+  {
+    name: "French",
+    flag: "🇫🇷"
+  },
+
+  {
+    name: "Italian",
+    flag: "🇮🇹"
+  },
+
+  {
+    name: "Chinese",
+    flag: "🇨🇳"
+  },
+
+  {
+    name: "Korean",
+    flag: "🇰🇷"
+  },
+
+  {
+    name: "Japanese",
+    flag: "🇯🇵"
+  },
+
+  {
+    name: "German",
+    flag: "🇩🇪"
+  },
+
+  {
+    name: "Arabic",
+    flag: "🇸🇦"
+  }
+
+];
+
+
+/* LEVELS */
+
+const levels = [
+
+  {
+    code: "A1",
+    name: "Beginner"
+  },
+
+  {
+    code: "A2",
+    name: "Elementary"
+  },
+
+  {
+    code: "B1",
+    name: "Intermediate"
+  },
+
+  {
+    code: "B2",
+    name: "Upper Intermediate"
+  },
+
+  {
+    code: "C1",
+    name: "Advanced"
+  },
+
+  {
+    code: "C2",
+    name: "Mastery"
+  }
+
+];
+
+
+/* CREATE 54 PDF CARDS */
+
+function showPDFs() {
+
+  const selectedLanguage =
+    document.getElementById("pdfLanguage").value;
+
+  const grid =
+    document.getElementById("pdfGrid");
+
+  const count =
+    document.getElementById("pdfCount");
+
+  grid.innerHTML = "";
+
+  let total = 0;
+
+
+  languages.forEach(function(language) {
+
+    if (
+      selectedLanguage !== "all" &&
+      selectedLanguage !== language.name
+    ) {
+
+      return;
+
+    }
+
+
+    levels.forEach(function(level) {
+
+      total++;
+
+
+      const fileName =
+        language.name + "-" + level.code + ".pdf";
+
+
+      const card =
+        document.createElement("div");
+
+      card.className = "pdf-card";
+
+
+      card.innerHTML = `
+
+        <div class="pdf-icon">
+          📄
+        </div>
+
+        <h3>
+          ${language.flag} ${language.name}
+        </h3>
+
+        <div class="pdf-level">
+          ${level.code} — ${level.name}
+        </div>
+
+        <div class="pdf-buttons">
+
+          <a
+            class="pdf-button"
+            href="pdfs/${fileName}"
+            target="_blank"
+          >
+            👁️ View PDF
+          </a>
+
+          <a
+            class="pdf-button download-button"
+            href="pdfs/${fileName}"
+            download
+          >
+            ⬇️ Download
+          </a>
+
+        </div>
+
+      `;
+
+
+      grid.appendChild(card);
+
+    });
+
+  });
+
+
+  if (selectedLanguage === "all") {
+
+    count.textContent =
+      "Showing all 54 vocabulary PDFs";
+
+  } else {
+
+    count.textContent =
+      "Showing 6 PDFs for " +
+      selectedLanguage;
+
+  }
+
+}
+
+
+/* LOAD PDF LIBRARY */
+
+showPDFs();
+
 </script>
 
 </body>
+
   </html>
