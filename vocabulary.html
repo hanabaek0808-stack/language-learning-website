@@ -1556,6 +1556,783 @@ function searchWords() {
 <html lang="en">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vocabulary | LinguaPath</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #20242c;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #263a8b, #5267c9);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 18px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #263a8b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.intro h2 {
+  color: #263a8b;
+  margin-bottom: 8px;
+}
+
+.search-box {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filters select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  background: white;
+}
+
+.words {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.word {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.word h3 {
+  color: #263a8b;
+  font-size: 25px;
+  margin-bottom: 3px;
+}
+
+.level {
+  display: inline-block;
+  background: #eef1ff;
+  color: #263a8b;
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pronunciation {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.translation {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.example {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+button {
+  background: #263a8b;
+  color: white;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #17245f;
+}
+
+.favorite {
+  background: #e5e5e5;
+  color: #333;
+}
+
+.favorite.active {
+  background: #ffd54f;
+  color: #222;
+}
+
+.quiz {
+  margin-top: 40px;
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  text-align: center;
+}
+
+.quiz h2 {
+  color: #263a8b;
+  margin-bottom: 8px;
+}
+
+.quiz a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.quiz button {
+  padding: 12px 22px;
+}
+
+footer {
+  margin-top: 45px;
+  background: #202b55;
+  color: white;
+  text-align: center;
+  padding: 28px;
+}
+
+@media (max-width: 650px) {
+
+  .words {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>📚 Vocabulary</h1>
+
+<p>
+Learn words, meanings, pronunciation and translations.
+</p>
+
+</header>
+
+<div class="container">
+
+<a class="back" href="index.html">
+← Back to LinguaPath
+</a>
+
+<div class="intro">
+
+<h2>🌍 Build Your Vocabulary</h2>
+
+<p>
+Search for a word, choose your level and learn its meaning.
+</p>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="🔎 Search for a word..."
+onkeyup="searchWords()">
+
+</div>
+
+
+<!-- FILTERS -->
+
+<div class="filters">
+
+<select id="levelFilter" onchange="filterWords()">
+
+<option value="all">📊 All Levels</option>
+
+<option value="A1">A1 - Beginner</option>
+
+<option value="A2">A2 - Elementary</option>
+
+<option value="B1">B1 - Intermediate</option>
+
+<option value="B2">B2 - Upper Intermediate</option>
+
+<option value="C1">C1 - Advanced</option>
+
+<option value="C2">C2 - Mastery</option>
+
+</select>
+
+
+<select id="language" onchange="changeLanguage()">
+
+<option value="urdu">🇵🇰 Urdu</option>
+
+<option value="arabic">🇸🇦 Arabic</option>
+
+<option value="spanish">🇪🇸 Spanish</option>
+
+<option value="french">🇫🇷 French</option>
+
+<option value="german">🇩🇪 German</option>
+
+<option value="chinese">🇨🇳 Chinese</option>
+
+<option value="turkish">🇹🇷 Turkish</option>
+
+<option value="korean">🇰🇷 Korean</option>
+
+<option value="japanese">🇯🇵 Japanese</option>
+
+</select>
+
+</div>
+
+
+<!-- WORDS -->
+
+<div class="words">
+
+
+<div class="word" data-level="A1">
+
+<span class="level">A1</span>
+
+<h3>Hello</h3>
+
+<div class="pronunciation">/həˈləʊ/</div>
+
+<div class="translation"
+data-urdu="سلام"
+data-arabic="مرحبا"
+data-spanish="Hola"
+data-french="Bonjour"
+data-german="Hallo"
+data-chinese="你好"
+data-turkish="Merhaba"
+data-korean="안녕하세요"
+data-japanese="こんにちは">سلام</div>
+
+<p class="example">
+<b>Example:</b> Hello! How are you?
+</p>
+
+<div class="buttons">
+
+<button onclick="speak('Hello')">🔊 Listen</button>
+
+<button class="favorite" onclick="favorite(this)">
+❤️ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="word" data-level="A1">
+
+<span class="level">A1</span>
+
+<h3>Beautiful</h3>
+
+<div class="pronunciation">/ˈbjuːtɪfəl/</div>
+
+<div class="translation"
+data-urdu="خوبصورت"
+data-arabic="جميل"
+data-spanish="Hermoso"
+data-french="Beau"
+data-german="Schön"
+data-chinese="美丽"
+data-turkish="Güzel"
+data-korean="아름다운"
+data-japanese="美しい">خوبصورت</div>
+
+<p class="example">
+<b>Example:</b> The garden is beautiful.
+</p>
+
+<div class="buttons">
+
+<button onclick="speak('Beautiful')">🔊 Listen</button>
+
+<button class="favorite" onclick="favorite(this)">
+❤️ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="word" data-level="A1">
+
+<span class="level">A1</span>
+
+<h3>Happy</h3>
+
+<div class="pronunciation">/ˈhæpi/</div>
+
+<div class="translation"
+data-urdu="خوش"
+data-arabic="سعيد"
+data-spanish="Feliz"
+data-french="Heureux"
+data-german="Glücklich"
+data-chinese="快乐"
+data-turkish="Mutlu"
+data-korean="행복한"
+data-japanese="幸せな">خوش</div>
+
+<p class="example">
+<b>Example:</b> She is very happy today.
+</p>
+
+<div class="buttons">
+
+<button onclick="speak('Happy')">🔊 Listen</button>
+
+<button class="favorite" onclick="favorite(this)">
+❤️ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="word" data-level="A2">
+
+<span class="level">A2</span>
+
+<h3>Learn</h3>
+
+<div class="pronunciation">/lɜːrn/</div>
+
+<div class="translation"
+data-urdu="سیکھنا"
+data-arabic="يتعلم"
+data-spanish="Aprender"
+data-french="Apprendre"
+data-german="Lernen"
+data-chinese="学习"
+data-turkish="Öğrenmek"
+data-korean="배우다"
+data-japanese="学ぶ">سیکھنا</div>
+
+<p class="example">
+<b>Example:</b> I want to learn English.
+</p>
+
+<div class="buttons">
+
+<button onclick="speak('Learn')">🔊 Listen</button>
+
+<button class="favorite" onclick="favorite(this)">
+❤️ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="word" data-level="A2">
+
+<span class="level">A2</span>
+
+<h3>Improve</h3>
+
+<div class="pronunciation">/ɪmˈpruːv/</div>
+
+<div class="translation"
+data-urdu="بہتر کرنا"
+data-arabic="يحسن"
+data-spanish="Mejorar"
+data-french="Améliorer"
+data-german="Verbessern"
+data-chinese="改善"
+data-turkish="Geliştirmek"
+data-korean="향상시키다"
+data-japanese="改善する">بہتر کرنا</div>
+
+<p class="example">
+<b>Example:</b> I want to improve my English.
+</p>
+
+<div class="buttons">
+
+<button onclick="speak('Improve')">🔊 Listen</button>
+
+<button class="favorite" onclick="favorite(this)">
+❤️ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="word" data-level="B1">
+
+<span class="level">B1</span>
+
+<h3>Opportunity</h3>
+
+<div class="pronunciation">/ˌɒpərˈtjuːnəti/</div>
+
+<div class="translation"
+data-urdu="موقع"
+data-arabic="فرصة"
+data-spanish="Oportunidad"
+data-french="Occasion"
+data-german="Gelegenheit"
+data-chinese="机会"
+data-turkish="Fırsat"
+data-korean="기회"
+data-japanese="機会">موقع</div>
+
+<p class="example">
+<b>Example:</b> This is a great opportunity to learn.
+</p>
+
+<div class="buttons">
+
+<button onclick="speak('Opportunity')">🔊 Listen</button>
+
+<button class="favorite" onclick="favorite(this)">
+❤️ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="word" data-level="B2">
+
+<span class="level">B2</span>
+
+<h3>Significant</h3>
+
+<div class="pronunciation">/sɪɡˈnɪfɪkənt/</div>
+
+<div class="translation"
+data-urdu="اہم / نمایاں"
+data-arabic="مهم"
+data-spanish="Significativo"
+data-french="Significatif"
+data-german="Bedeutend"
+data-chinese="重要的"
+data-turkish="Önemli"
+data-korean="중요한"
+data-japanese="重要な">اہم / نمایاں</div>
+
+<p class="example">
+<b>Example:</b> There has been a significant change.
+</p>
+
+<div class="buttons">
+
+<button onclick="speak('Significant')">🔊 Listen</button>
+
+<button class="favorite" onclick="favorite(this)">
+❤️ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="word" data-level="C1">
+
+<span class="level">C1</span>
+
+<h3>Compelling</h3>
+
+<div class="pronunciation">/kəmˈpelɪŋ/</div>
+
+<div class="translation"
+data-urdu="قائل کرنے والا"
+data-arabic="مقنع"
+data-spanish="Convincente"
+data-french="Convaincant"
+data-german="Überzeugend"
+data-chinese="引人注目的"
+data-turkish="İkna edici"
+data-korean="설득력 있는"
+data-japanese="説得力のある">قائل کرنے والا</div>
+
+<p class="example">
+<b>Example:</b> She gave a compelling argument.
+</p>
+
+<div class="buttons">
+
+<button onclick="speak('Compelling')">🔊 Listen</button>
+
+<button class="favorite" onclick="favorite(this)">
+❤️ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="word" data-level="C2">
+
+<span class="level">C2</span>
+
+<h3>Meticulous</h3>
+
+<div class="pronunciation">/məˈtɪkjələs/</div>
+
+<div class="translation"
+data-urdu="نہایت محتاط / باریک بین"
+data-arabic="دقيق"
+data-spanish="Meticuloso"
+data-french="Méticuleux"
+data-german="Sorgfältig"
+data-chinese="一丝不苟的"
+data-turkish="Titiz"
+data-korean="꼼꼼한"
+data-japanese="細心な">نہایت محتاط / باریک بین</div>
+
+<p class="example">
+<b>Example:</b> She is meticulous about her work.
+</p>
+
+<div class="buttons">
+
+<button onclick="speak('Meticulous')">🔊 Listen</button>
+
+<button class="favorite" onclick="favorite(this)">
+❤️ Favorite
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- QUIZ -->
+
+<div class="quiz">
+
+<h2>🧠 Vocabulary Quiz</h2>
+
+<p>
+Test yourself and see how much you remember.
+</p>
+
+<a href="vocabulary-quiz.html">
+
+<button>
+Start Quiz 🚀
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<h3>🌍 LinguaPath</h3>
+
+<p>Learn • Practice • Improve</p>
+
+<p>© 2026 LinguaPath</p>
+
+</footer>
+
+
+<script>
+
+function changeLanguage() {
+
+  const language =
+  document.getElementById("language").value;
+
+  document.querySelectorAll(".translation").forEach(function(item) {
+
+    const translation =
+    item.getAttribute("data-" + language);
+
+    if (translation) {
+      item.textContent = translation;
+    }
+
+  });
+
+}
+
+
+function speak(word) {
+
+  if ("speechSynthesis" in window) {
+
+    const speech =
+    new SpeechSynthesisUtterance(word);
+
+    speech.lang = "en-US";
+    speech.rate = 0.85;
+
+    window.speechSynthesis.speak(speech);
+
+  }
+
+}
+
+
+function favorite(button) {
+
+  button.classList.toggle("active");
+
+  if (button.classList.contains("active")) {
+
+    button.textContent = "💛 Saved";
+
+  } else {
+
+    button.textContent = "❤️ Favorite";
+
+  }
+
+}
+
+
+function filterWords() {
+
+  const selected =
+  document.getElementById("levelFilter").value;
+
+  document.querySelectorAll(".word").forEach(function(word) {
+
+    if (
+      selected === "all" ||
+      word.dataset.level === selected
+    ) {
+
+      word.style.display = "block";
+
+    } else {
+
+      word.style.display = "none";
+
+    }
+
+  });
+
+}
+
+
+function searchWords() {
+
+  const search =
+  document.getElementById("search").value.toLowerCase();
+
+  document.querySelectorAll(".word").forEach(function(word) {
+
+    const text =
+    word.textContent.toLowerCase();
+
+    if (text.includes(search)) {
+
+      word.style.display = "block";
+
+    } else {
+
+      word.style.display = "none";
+
+    }
+
+  });
+
+}
+
+</script>
+
+</body>
+  </html><!DOCTYPE html>
+<html lang="en">
+
+<head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
