@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vocabulary Quiz | LinguaPath</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#20242c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#263a8b,#5267c9);
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+font-size:36px;
+margin-bottom:8px;
+}
+
+header p{
+font-size:17px;
+}
+
+nav{
+background:white;
+padding:16px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:10;
+}
+
+nav a{
+color:#263a8b;
+text-decoration:none;
+font-weight:bold;
+margin:0 10px;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+.container{
+max-width:850px;
+margin:auto;
+padding:35px 18px;
+}
+
+.back{
+display:inline-block;
+margin-bottom:25px;
+color:#263a8b;
+text-decoration:none;
+font-weight:bold;
+}
+
+.quiz-intro{
+background:white;
+padding:30px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+margin-bottom:25px;
+}
+
+.quiz-intro h2{
+color:#263a8b;
+margin-bottom:8px;
+}
+
+.quiz-intro p{
+color:#666;
+}
+
+.quiz-box{
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.progress{
+text-align:center;
+color:#666;
+margin-bottom:20px;
+font-weight:bold;
+}
+
+.question{
+font-size:24px;
+font-weight:bold;
+text-align:center;
+margin-bottom:25px;
+color:#263a8b;
+}
+
+.options{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.option{
+background:#f1f3fa;
+color:#20242c;
+border:2px solid transparent;
+padding:15px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+transition:.2s;
+}
+
+.option:hover{
+border-color:#263a8b;
+background:#eef1ff;
+}
+
+.option.correct{
+background:#d8f5df;
+border-color:#2e8b57;
+}
+
+.option.wrong{
+background:#ffe0e0;
+border-color:#d9534f;
+}
+
+.feedback{
+text-align:center;
+font-size:18px;
+font-weight:bold;
+margin-top:20px;
+min-height:28px;
+}
+
+.next-button{
+display:block;
+margin:20px auto 0;
+background:#263a8b;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:9px;
+font-size:16px;
+cursor:pointer;
+}
+
+.next-button:hover{
+background:#17245f;
+}
+
+.result{
+display:none;
+text-align:center;
+background:white;
+padding:35px;
+border-radius:18px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.result h2{
+color:#263a8b;
+margin-bottom:12px;
+}
+
+.score{
+font-size:30px;
+font-weight:bold;
+margin:15px 0;
+}
+
+.restart{
+background:#263a8b;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:9px;
+font-size:16px;
+cursor:pointer;
+}
+
+footer{
+margin-top:45px;
+background:#202b55;
+color:white;
+text-align:center;
+padding:28px;
+}
+
+@media(max-width:600px){
+
+.options{
+grid-template-columns:1fr;
+}
+
+nav a{
+display:inline-block;
+margin:5px;
+}
+
+.quiz-box{
+padding:22px;
+}
+
+.question{
+font-size:21px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>🧠 Vocabulary Quiz</h1>
+
+<p>Test your English vocabulary with LinguaPath.</p>
+
+</header>
+
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="vocabulary.html">📚 Vocabulary</a>
+
+<a href="stories.html">📖 Stories</a>
+
+<a href="vocabulary-quiz.html">🧠 Quiz</a>
+
+</nav>
+
+
+<main class="container">
+
+
+<a class="back" href="vocabulary.html">
+← Back to Vocabulary
+</a>
+
+
+<div class="quiz-intro">
+
+<h2>🎯 Test Your Vocabulary</h2>
+
+<p>
+Choose the correct meaning of each English word.
+</p>
+
+</div>
+
+
+<div class="quiz-box" id="quizBox">
+
+<div class="progress" id="progress">
+Question 1 of 10
+</div>
+
+
+<div class="question" id="question">
+What does "Beautiful" mean?
+</div>
+
+
+<div class="options" id="options">
+</div>
+
+
+<div class="feedback" id="feedback"></div>
+
+
+<button class="next-button" id="nextButton" onclick="nextQuestion()" style="display:none;">
+Next Question →
+</button>
+
+</div>
+
+
+<div class="result" id="result">
+
+<h2>🎉 Quiz Complete!</h2>
+
+<p>Your final score is:</p>
+
+<div class="score" id="score">
+0 / 10
+</div>
+
+<p id="message"></p>
+
+<button class="restart" onclick="restartQuiz()">
+🔄 Try Again
+</button>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<h3>🌍 LinguaPath</h3>
+
+<p>Learn • Practice • Improve</p>
+
+<p>© 2026 LinguaPath</p>
+
+</footer>
+
+
+<script>
+
+const questions = [
+
+{
+question:'What does "Beautiful" mean?',
+options:[
+'خوبصورت',
+'اداس',
+'مشکل',
+'تیز'
+],
+answer:0
+},
+
+{
+question:'What does "Happy" mean?',
+options:[
+'غصہ',
+'خوش',
+'کمزور',
+'خاموش'
+],
+answer:1
+},
+
+{
+question:'What does "Opportunity" mean?',
+options:[
+'کتاب',
+'موقع',
+'گھر',
+'راستہ'
+],
+answer:1
+},
+
+{
+question:'What does "Improve" mean?',
+options:[
+'بہتر کرنا',
+'بھولنا',
+'سونا',
+'دوڑنا'
+],
+answer:0
+},
+
+{
+question:'What does "Significant" mean?',
+options:[
+'چھوٹا',
+'اہم / نمایاں',
+'خالی',
+'آسان'
+],
+answer:1
+},
+
+{
+question:'What does "Compelling" mean?',
+options:[
+'قائل کرنے والا',
+'بے رنگ',
+'خاموش',
+'کمزور'
+],
+answer:0
+},
+
+{
+question:'What does "Meticulous" mean?',
+options:[
+'لاپرواہ',
+'نہایت محتاط / باریک بین',
+'جلدی کرنے والا',
+'غصے والا'
+],
+answer:1
+},
+
+{
+question:'What does "Learn" mean?',
+options:[
+'سیکھنا',
+'لکھنا',
+'کھانا',
+'سونا'
+],
+answer:0
+},
+
+{
+question:'What does "Hello" mean?',
+options:[
+'شکریہ',
+'خدا حافظ',
+'سلام',
+'معاف کرنا'
+],
+answer:2
+},
+
+{
+question:'What does "Friend" mean?',
+options:[
+'استاد',
+'دوست',
+'طالب علم',
+'پڑوسی'
+],
+answer:1
+}
+
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+
+function loadQuestion(){
+
+answered = false;
+
+const question =
+questions[currentQuestion];
+
+document.getElementById("progress").textContent =
+"Question " + (currentQuestion + 1) +
+" of " + questions.length;
+
+document.getElementById("question").textContent =
+question.question;
+
+document.getElementById("feedback").textContent = "";
+
+document.getElementById("nextButton").style.display =
+"none";
+
+const options =
+document.getElementById("options");
+
+options.innerHTML = "";
+
+
+question.options.forEach(function(option,index){
+
+const button =
+document.createElement("button");
+
+button.className = "option";
+
+button.textContent = option;
+
+button.onclick = function(){
+
+checkAnswer(index,button);
+
+};
+
+options.appendChild(button);
+
+});
+
+}
+
+
+function checkAnswer(selected,button){
+
+if(answered){
+return;
+}
+
+answered = true;
+
+const correct =
+questions[currentQuestion].answer;
+
+const allOptions =
+document.querySelectorAll(".option");
+
+if(selected === correct){
+
+button.classList.add("correct");
+
+score++;
+
+document.getElementById("feedback").textContent =
+"✅ Correct! Well done!";
+
+}else{
+
+button.classList.add("wrong");
+
+allOptions[correct].classList.add("correct");
+
+document.getElementById("feedback").textContent =
+"❌ Incorrect. The correct answer is highlighted.";
+
+}
+
+document.getElementById("nextButton").style.display =
+"block";
+
+}
+
+
+function nextQuestion(){
+
+currentQuestion++;
+
+if(currentQuestion < questions.length){
+
+loadQuestion();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+
+function showResult(){
+
+document.getElementById("quizBox").style.display =
+"none";
+
+document.getElementById("result").style.display =
+"block";
+
+document.getElementById("score").textContent =
+score + " / " + questions.length;
+
+
+let message = "";
+
+const percentage =
+(score / questions.length) * 100;
+
+if(percentage === 100){
+
+message =
+"🏆 Perfect score! Excellent vocabulary!";
+
+}else if(percentage >= 80){
+
+message =
+"🌟 Excellent work! Keep learning!";
+
+}else if(percentage >= 60){
+
+message =
+"👍 Good job! A little more practice will help.";
+
+}else{
+
+message =
+"📚 Keep practicing. You can improve!";
+
+}
+
+document.getElementById("message").textContent =
+message;
+
+}
+
+
+function restartQuiz(){
+
+currentQuestion = 0;
+
+score = 0;
+
+document.getElementById("quizBox").style.display =
+"block";
+
+document.getElementById("result").style.display =
+"none";
+
+loadQuestion();
+
+}
+
+
+loadQuestion();
+
+</script>
+
+
+</body>
+
+</html>
