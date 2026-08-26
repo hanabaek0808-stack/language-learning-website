@@ -20,18 +20,18 @@ body{
 font-family:Arial,sans-serif;
 background:#f5f7fb;
 color:#20242c;
-line-height:1.6;
+line-height:1.7;
 }
 
 header{
 background:linear-gradient(135deg,#006c35,#009e60);
 color:white;
 text-align:center;
-padding:40px 20px;
+padding:42px 20px;
 }
 
 header h1{
-font-size:38px;
+font-size:40px;
 margin-bottom:8px;
 }
 
@@ -44,6 +44,9 @@ background:white;
 padding:16px;
 text-align:center;
 box-shadow:0 2px 8px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:10;
 }
 
 nav a{
@@ -73,7 +76,7 @@ font-weight:bold;
 
 .intro{
 text-align:center;
-margin-bottom:35px;
+margin-bottom:38px;
 }
 
 .intro h2{
@@ -87,15 +90,15 @@ color:#666;
 }
 
 
-/* LEVELS */
+/* GENERAL */
 
-.levels-section{
-margin-top:25px;
+.section{
+margin-top:48px;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:22px;
+margin-bottom:24px;
 }
 
 .section-title h2{
@@ -106,6 +109,46 @@ margin-bottom:8px;
 .section-title p{
 color:#666;
 }
+
+
+/* LEARNING PATH */
+
+.path{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+}
+
+.path-card{
+background:white;
+padding:22px 15px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+transition:.2s;
+}
+
+.path-card:hover{
+transform:translateY(-4px);
+}
+
+.path-icon{
+font-size:35px;
+margin-bottom:8px;
+}
+
+.path-card h3{
+color:#006c35;
+margin-bottom:5px;
+}
+
+.path-card p{
+color:#666;
+font-size:14px;
+}
+
+
+/* ARABIC LEVELS */
 
 .levels{
 display:grid;
@@ -123,20 +166,102 @@ box-shadow:0 4px 14px rgba(0,0,0,.08);
 
 .level h3{
 color:#006c35;
-font-size:24px;
+font-size:25px;
 margin-bottom:6px;
+}
+
+.level strong{
+display:block;
+margin-bottom:7px;
 }
 
 .level p{
 color:#666;
+font-size:14px;
+}
+
+
+/* ALPHABET */
+
+.alphabet{
+background:white;
+padding:28px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.alphabet-intro{
+text-align:center;
+margin-bottom:20px;
+color:#666;
+}
+
+.letters{
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:12px;
+}
+
+.letter{
+background:#f5f7fb;
+padding:15px 8px;
+border-radius:12px;
+text-align:center;
+}
+
+.letter-ar{
+font-size:30px;
+font-weight:bold;
+color:#006c35;
+direction:rtl;
+}
+
+.letter-name{
+font-weight:bold;
+margin-top:4px;
+}
+
+.letter-sound{
+font-size:13px;
+color:#777;
+}
+
+
+/* HARAKAT */
+
+.harakat{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+}
+
+.harakat-card{
+background:white;
+padding:22px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.har{
+font-size:35px;
+font-weight:bold;
+color:#006c35;
+direction:rtl;
+}
+
+.harakat-card h3{
+color:#006c35;
+margin:6px 0;
+}
+
+.harakat-card p{
+color:#666;
+font-size:14px;
 }
 
 
 /* VOCABULARY */
-
-.vocabulary{
-margin-top:45px;
-}
 
 .words{
 display:grid;
@@ -144,19 +269,19 @@ grid-template-columns:repeat(2,1fr);
 gap:18px;
 }
 
-.word{
+.word-card{
 background:white;
 padding:22px;
 border-radius:16px;
 box-shadow:0 4px 14px rgba(0,0,0,.08);
 }
 
-.word h3{
+.word-card h3{
 color:#006c35;
-font-size:30px;
-margin-bottom:3px;
+font-size:31px;
 direction:rtl;
 text-align:right;
+margin-bottom:3px;
 }
 
 .transliteration{
@@ -169,6 +294,12 @@ margin-bottom:7px;
 font-size:18px;
 font-weight:bold;
 margin-bottom:9px;
+}
+
+.root{
+font-size:14px;
+color:#006c35;
+margin-bottom:8px;
 }
 
 .example{
@@ -194,37 +325,68 @@ background:#004d26;
 }
 
 
-/* PHRASES */
+/* GRAMMAR */
 
-.phrases{
-margin-top:45px;
+.grammar{
 background:white;
 padding:28px;
 border-radius:16px;
 box-shadow:0 4px 14px rgba(0,0,0,.08);
 }
 
-.phrases h2{
-color:#006c35;
-text-align:center;
-margin-bottom:18px;
-}
-
-.phrase{
-padding:14px 0;
+.grammar-item{
+padding:18px 0;
 border-bottom:1px solid #eee;
 }
 
-.phrase:last-child{
+.grammar-item:last-child{
 border-bottom:none;
+}
+
+.grammar h3{
+color:#006c35;
+margin-bottom:7px;
+}
+
+.arabic-example{
+direction:rtl;
+text-align:right;
+font-size:21px;
+font-weight:bold;
+margin:8px 0;
+}
+
+.grammar-note{
+color:#666;
+}
+
+
+/* PHRASES */
+
+.phrases{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.phrase{
+background:white;
+padding:22px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.phrase h3{
+color:#006c35;
+margin-bottom:8px;
 }
 
 .arabic{
 font-size:26px;
 font-weight:bold;
-color:#006c35;
 direction:rtl;
 text-align:right;
+color:#006c35;
 }
 
 .translit{
@@ -234,7 +396,60 @@ font-style:italic;
 
 .translation{
 color:#555;
-margin-bottom:10px;
+margin:7px 0 12px;
+}
+
+
+/* ROOT SYSTEM */
+
+.root-box{
+background:white;
+padding:28px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.root-box h3{
+color:#006c35;
+margin-bottom:8px;
+}
+
+.root-word{
+display:inline-block;
+background:#f5f7fb;
+padding:10px 16px;
+margin:5px;
+border-radius:10px;
+font-size:21px;
+direction:rtl;
+}
+
+.root-explanation{
+color:#666;
+margin-bottom:15px;
+}
+
+
+/* READING */
+
+.reading{
+background:white;
+padding:28px;
+border-radius:16px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.reading-text{
+direction:rtl;
+text-align:right;
+font-size:23px;
+line-height:2;
+margin-bottom:15px;
+}
+
+.reading-translation{
+color:#666;
+font-style:italic;
 }
 
 
@@ -244,7 +459,6 @@ margin-bottom:10px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:18px;
-margin-top:45px;
 }
 
 .feature{
@@ -253,6 +467,11 @@ padding:25px;
 border-radius:16px;
 text-align:center;
 box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.feature-icon{
+font-size:35px;
+margin-bottom:8px;
 }
 
 .feature h3{
@@ -265,10 +484,47 @@ color:#666;
 }
 
 
+/* QUICK START */
+
+.quick{
+margin-top:48px;
+background:white;
+padding:30px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.quick h2{
+color:#006c35;
+margin-bottom:8px;
+}
+
+.quick p{
+color:#666;
+margin-bottom:18px;
+}
+
+.quick a{
+display:inline-block;
+background:#006c35;
+color:white;
+text-decoration:none;
+padding:10px 16px;
+border-radius:8px;
+font-weight:bold;
+margin:5px;
+}
+
+.quick a:hover{
+background:#004d26;
+}
+
+
 /* FOOTER */
 
 footer{
-margin-top:45px;
+margin-top:50px;
 background:#202b55;
 color:white;
 text-align:center;
@@ -276,31 +532,57 @@ padding:28px;
 }
 
 
+/* TABLET */
+
+@media(max-width:800px){
+
+.path{
+grid-template-columns:repeat(2,1fr);
+}
+
+.levels{
+grid-template-columns:repeat(2,1fr);
+}
+
+.harakat{
+grid-template-columns:repeat(2,1fr);
+}
+
+.letters{
+grid-template-columns:repeat(4,1fr);
+}
+
+.features{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+
 /* MOBILE */
 
-@media(max-width:700px){
+@media(max-width:550px){
 
+.path,
 .levels,
-.features{
-grid-template-columns:1fr 1fr;
-}
-
-.words{
-grid-template-columns:1fr;
-}
-
-}
-
-@media(max-width:450px){
-
-.levels,
+.harakat,
+.words,
+.phrases,
 .features{
 grid-template-columns:1fr;
+}
+
+.letters{
+grid-template-columns:repeat(3,1fr);
 }
 
 nav a{
 display:inline-block;
 margin:5px;
+}
+
+header h1{
+font-size:32px;
 }
 
 }
@@ -317,7 +599,7 @@ margin:5px;
 
 <h1>🇸🇦 Arabic</h1>
 
-<p>Learn Arabic vocabulary, phrases and pronunciation.</p>
+<p>Learn Arabic from the alphabet and pronunciation to real communication.</p>
 
 </header>
 
@@ -335,7 +617,7 @@ margin:5px;
 </nav>
 
 
-<div class="container">
+<main class="container">
 
 
 <a class="back" href="index.html">
@@ -345,59 +627,473 @@ margin:5px;
 
 <section class="intro">
 
-<h2>🇸🇦 Learn Arabic</h2>
+<h2>🇸🇦 Learn Arabic Step by Step</h2>
 
 <p>
-Learn useful Arabic words, expressions and pronunciation step by step.
+Build a strong foundation in Arabic writing, pronunciation,
+vocabulary, grammar, reading and everyday communication.
 </p>
+
+</section>
+
+
+<!-- LEARNING PATH -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>🛤️ Arabic Learning Path</h2>
+
+<p>
+Follow the natural progression of Arabic learning.
+</p>
+
+</div>
+
+
+<div class="path">
+
+
+<div class="path-card">
+
+<div class="path-icon">🔤</div>
+
+<h3>1. Alphabet</h3>
+
+<p>Learn the 28 Arabic letters and their different forms.</p>
+
+</div>
+
+
+<div class="path-card">
+
+<div class="path-icon">🗣️</div>
+
+<h3>2. Sounds</h3>
+
+<p>Master Arabic pronunciation, vowels and difficult sounds.</p>
+
+</div>
+
+
+<div class="path-card">
+
+<div class="path-icon">📚</div>
+
+<h3>3. Words</h3>
+
+<p>Build vocabulary using useful everyday Arabic.</p>
+
+</div>
+
+
+<div class="path-card">
+
+<div class="path-icon">✏️</div>
+
+<h3>4. Grammar</h3>
+
+<p>Learn sentence patterns, gender, verbs and particles.</p>
+
+</div>
+
+
+<div class="path-card">
+
+<div class="path-icon">📖</div>
+
+<h3>5. Reading</h3>
+
+<p>Read Arabic words, sentences and short passages.</p>
+
+</div>
+
+
+<div class="path-card">
+
+<div class="path-icon">💬</div>
+
+<h3>6. Speaking</h3>
+
+<p>Practice useful expressions for real communication.</p>
+
+</div>
+
+
+<div class="path-card">
+
+<div class="path-icon">🎧</div>
+
+<h3>7. Listening</h3>
+
+<p>Train your ears with spoken Arabic.</p>
+
+</div>
+
+
+<div class="path-card">
+
+<div class="path-icon">🧠</div>
+
+<h3>8. Practice</h3>
+
+<p>Use quizzes and exercises to check your progress.</p>
+
+</div>
+
+
+</div>
 
 </section>
 
 
 <!-- LEVELS -->
 
-<section class="levels-section">
+<section class="section">
 
 <div class="section-title">
 
-<h2>📊 Arabic Levels</h2>
+<h2>📊 Arabic Learning Levels</h2>
 
-<p>Choose a level for your Arabic learning journey.</p>
+<p>Progress from basic communication to advanced Arabic.</p>
 
 </div>
 
 
 <div class="levels">
 
+
 <div class="level">
 <h3>A1</h3>
-<p>Beginner</p>
+<strong>Absolute Beginner</strong>
+<p>Alphabet, greetings, numbers, basic words and simple sentences.</p>
 </div>
+
 
 <div class="level">
 <h3>A2</h3>
-<p>Elementary</p>
+<strong>Elementary</strong>
+<p>Everyday conversations, common verbs, basic grammar and short texts.</p>
 </div>
+
 
 <div class="level">
 <h3>B1</h3>
-<p>Intermediate</p>
+<strong>Intermediate</strong>
+<p>Longer conversations, past and future forms, descriptions and opinions.</p>
 </div>
+
 
 <div class="level">
 <h3>B2</h3>
-<p>Upper Intermediate</p>
+<strong>Upper Intermediate</strong>
+<p>Complex sentences, extended conversations, news and detailed reading.</p>
 </div>
+
 
 <div class="level">
 <h3>C1</h3>
-<p>Advanced</p>
+<strong>Advanced</strong>
+<p>Formal Arabic, academic language, advanced grammar and fluent expression.</p>
 </div>
+
 
 <div class="level">
 <h3>C2</h3>
-<p>Mastery</p>
+<strong>Mastery</strong>
+<p>Highly advanced comprehension, precise expression and sophisticated texts.</p>
 </div>
+
+
+</div>
+
+</section>
+
+
+<!-- ALPHABET -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>🔤 Arabic Alphabet</h2>
+
+<p>Start by recognizing the 28 letters of Arabic.</p>
+
+</div>
+
+
+<div class="alphabet">
+
+<p class="alphabet-intro">
+Arabic is written from right to left. Letter shapes can change depending on their position in a word.
+</p>
+
+
+<div class="letters">
+
+
+<div class="letter">
+<div class="letter-ar">ا</div>
+<div class="letter-name">Alif</div>
+<div class="letter-sound">ā / a</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ب</div>
+<div class="letter-name">Bā'</div>
+<div class="letter-sound">b</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ت</div>
+<div class="letter-name">Tā'</div>
+<div class="letter-sound">t</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ث</div>
+<div class="letter-name">Thā'</div>
+<div class="letter-sound">th</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ج</div>
+<div class="letter-name">Jīm</div>
+<div class="letter-sound">j</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ح</div>
+<div class="letter-name">Ḥā'</div>
+<div class="letter-sound">ḥ</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">خ</div>
+<div class="letter-name">Khā'</div>
+<div class="letter-sound">kh</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">د</div>
+<div class="letter-name">Dāl</div>
+<div class="letter-sound">d</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ذ</div>
+<div class="letter-name">Dhāl</div>
+<div class="letter-sound">dh</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ر</div>
+<div class="letter-name">Rā'</div>
+<div class="letter-sound">r</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ز</div>
+<div class="letter-name">Zāy</div>
+<div class="letter-sound">z</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">س</div>
+<div class="letter-name">Sīn</div>
+<div class="letter-sound">s</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ش</div>
+<div class="letter-name">Shīn</div>
+<div class="letter-sound">sh</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ص</div>
+<div class="letter-name">Ṣād</div>
+<div class="letter-sound">ṣ</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ض</div>
+<div class="letter-name">Ḍād</div>
+<div class="letter-sound">ḍ</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ط</div>
+<div class="letter-name">Ṭā'</div>
+<div class="letter-sound">ṭ</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ظ</div>
+<div class="letter-name">Ẓā'</div>
+<div class="letter-sound">ẓ</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ع</div>
+<div class="letter-name">ʿAyn</div>
+<div class="letter-sound">ʿ</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">غ</div>
+<div class="letter-name">Ghayn</div>
+<div class="letter-sound">gh</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ف</div>
+<div class="letter-name">Fā'</div>
+<div class="letter-sound">f</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ق</div>
+<div class="letter-name">Qāf</div>
+<div class="letter-sound">q</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ك</div>
+<div class="letter-name">Kāf</div>
+<div class="letter-sound">k</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ل</div>
+<div class="letter-name">Lām</div>
+<div class="letter-sound">l</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">م</div>
+<div class="letter-name">Mīm</div>
+<div class="letter-sound">m</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ن</div>
+<div class="letter-name">Nūn</div>
+<div class="letter-sound">n</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ه</div>
+<div class="letter-name">Hā'</div>
+<div class="letter-sound">h</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">و</div>
+<div class="letter-name">Wāw</div>
+<div class="letter-sound">w / ū</div>
+</div>
+
+
+<div class="letter">
+<div class="letter-ar">ي</div>
+<div class="letter-name">Yā'</div>
+<div class="letter-sound">y / ī</div>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HARAKAT -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>🔊 Arabic Harakat</h2>
+
+<p>Learn the short vowel marks used to guide pronunciation.</p>
+
+</div>
+
+
+<div class="harakat">
+
+
+<div class="harakat-card">
+<div class="har">بَ</div>
+<h3>Fatha</h3>
+<p>Usually represents a short "a" sound.</p>
+</div>
+
+
+<div class="harakat-card">
+<div class="har">بِ</div>
+<h3>Kasra</h3>
+<p>Usually represents a short "i" sound.</p>
+</div>
+
+
+<div class="harakat-card">
+<div class="har">بُ</div>
+<h3>Damma</h3>
+<p>Usually represents a short "u" sound.</p>
+</div>
+
+
+<div class="harakat-card">
+<div class="har">بْ</div>
+<h3>Sukūn</h3>
+<p>Shows that the consonant has no short vowel.</p>
+</div>
+
+
+<div class="harakat-card">
+<div class="har">بّ</div>
+<h3>Shadda</h3>
+<p>Indicates a doubled consonant.</p>
+</div>
+
+
+<div class="harakat-card">
+<div class="har">بً</div>
+<h3>Tanwin</h3>
+<p>Used with certain indefinite noun endings.</p>
+</div>
+
 
 </div>
 
@@ -406,13 +1102,13 @@ Learn useful Arabic words, expressions and pronunciation step by step.
 
 <!-- VOCABULARY -->
 
-<section class="vocabulary">
+<section class="section">
 
 <div class="section-title">
 
-<h2>📚 Basic Arabic Vocabulary</h2>
+<h2>📚 Essential Arabic Vocabulary</h2>
 
-<p>Learn common Arabic words with pronunciation and examples.</p>
+<p>Learn words together with transliteration, meaning and context.</p>
 
 </div>
 
@@ -420,140 +1116,116 @@ Learn useful Arabic words, expressions and pronunciation step by step.
 <div class="words">
 
 
-<div class="word">
+<div class="word-card">
 
 <h3>مَرْحَبًا</h3>
 
-<div class="transliteration">
-Marhaban
-</div>
+<div class="transliteration">Marḥaban</div>
 
-<div class="meaning">
-Hello
-</div>
+<div class="meaning">Hello</div>
+
+<div class="root">Expression: Greeting</div>
 
 <p class="example">
 <b>Example:</b> مَرْحَبًا! كَيْفَ حَالُكَ؟
 </p>
 
-<button onclick="speak('مرحبا')">
-🔊 Listen
-</button>
+<button onclick="speak('مرحبا')">🔊 Listen</button>
 
 </div>
 
 
-<div class="word">
+<div class="word-card">
 
 <h3>شُكْرًا</h3>
 
-<div class="transliteration">
-Shukran
-</div>
+<div class="transliteration">Shukran</div>
 
-<div class="meaning">
-Thank you
-</div>
+<div class="meaning">Thank you</div>
+
+<div class="root">Expression: Gratitude</div>
 
 <p class="example">
-<b>Example:</b> شُكْرًا جَزِيلًا!
+<b>Example:</b> شُكْرًا جَزِيلًا.
 </p>
 
-<button onclick="speak('شكرا')">
-🔊 Listen
-</button>
+<button onclick="speak('شكرا')">🔊 Listen</button>
 
 </div>
 
 
-<div class="word">
-
-<h3>صَدِيق</h3>
-
-<div class="transliteration">
-Sadiq
-</div>
-
-<div class="meaning">
-Friend
-</div>
-
-<p class="example">
-<b>Example:</b> هُوَ صَدِيقِي.
-</p>
-
-<button onclick="speak('صديق')">
-🔊 Listen
-</button>
-
-</div>
-
-
-<div class="word">
+<div class="word-card">
 
 <h3>مَدْرَسَة</h3>
 
-<div class="transliteration">
-Madrasah
-</div>
+<div class="transliteration">Madrasah</div>
 
-<div class="meaning">
-School
-</div>
+<div class="meaning">School</div>
+
+<div class="root">Root: د ر س</div>
 
 <p class="example">
 <b>Example:</b> أَذْهَبُ إِلَى الْمَدْرَسَةِ.
 </p>
 
-<button onclick="speak('مدرسة')">
-🔊 Listen
-</button>
+<button onclick="speak('مدرسة')">🔊 Listen</button>
 
 </div>
 
 
-<div class="word">
+<div class="word-card">
+
+<h3>كِتَاب</h3>
+
+<div class="transliteration">Kitāb</div>
+
+<div class="meaning">Book</div>
+
+<div class="root">Root: ك ت ب</div>
+
+<p class="example">
+<b>Example:</b> هَذَا كِتَابٌ.
+</p>
+
+<button onclick="speak('كتاب')">🔊 Listen</button>
+
+</div>
+
+
+<div class="word-card">
 
 <h3>مَاء</h3>
 
-<div class="transliteration">
-Maa
-</div>
+<div class="transliteration">Mā'</div>
 
-<div class="meaning">
-Water
-</div>
+<div class="meaning">Water</div>
+
+<div class="root">Noun</div>
 
 <p class="example">
 <b>Example:</b> أُرِيدُ مَاءً.
 </p>
 
-<button onclick="speak('ماء')">
-🔊 Listen
-</button>
+<button onclick="speak('ماء')">🔊 Listen</button>
 
 </div>
 
 
-<div class="word">
+<div class="word-card">
 
-<h3>حُبّ</h3>
+<h3>صَدِيق</h3>
 
-<div class="transliteration">
-Hubb
-</div>
+<div class="transliteration">Ṣadīq</div>
 
-<div class="meaning">
-Love
-</div>
+<div class="meaning">Friend</div>
+
+<div class="root">Root: ص د ق</div>
 
 <p class="example">
-<b>Example:</b> الْحُبُّ جَمِيلٌ.
+<b>Example:</b> هُوَ صَدِيقِي.
 </p>
 
-<button onclick="speak('حب')">
-🔊 Listen
-</button>
+<button onclick="speak('صديق')">🔊 Listen</button>
 
 </div>
 
@@ -563,163 +1235,416 @@ Love
 </section>
 
 
-<!-- COMMON PHRASES -->
+<!-- ROOT SYSTEM -->
 
-<section class="phrases">
+<section class="section">
 
-<h2>💬 Common Arabic Phrases</h2>
+<div class="section-title">
+
+<h2>🌱 Arabic Root System</h2>
+
+<p>Discover how related words can be built from common roots.</p>
+
+</div>
+
+
+<div class="root-box">
+
+<h3>Example: ك ت ب</h3>
+
+<p class="root-explanation">
+The root <strong>ك ت ب</strong> is associated with writing and books.
+Arabic vocabulary often develops through patterns built around roots.
+</p>
+
+
+<span class="root-word">كَتَبَ</span>
+
+<span class="root-word">كِتَاب</span>
+
+<span class="root-word">كَاتِب</span>
+
+<span class="root-word">مَكْتَب</span>
+
+<span class="root-word">مَكْتَبَة</span>
+
+<p class="root-explanation">
+Writing → Book → Writer → Office/Desk → Library
+</p>
+
+</div>
+
+</section>
+
+
+<!-- GRAMMAR -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>✏️ Arabic Grammar Foundations</h2>
+
+<p>Build grammar from simple patterns before moving to advanced structures.</p>
+
+</div>
+
+
+<div class="grammar">
+
+
+<div class="grammar-item">
+
+<h3>1. Gender</h3>
+
+<p class="grammar-note">
+Arabic nouns are commonly masculine or feminine. Many feminine nouns end in ة.
+</p>
+
+<div class="arabic-example">
+طَالِبٌ — طَالِبَةٌ
+</div>
+
+<p>Student — male / female</p>
+
+</div>
+
+
+<div class="grammar-item">
+
+<h3>2. Definite Article</h3>
+
+<p class="grammar-note">
+The prefix ال can make a noun definite.
+</p>
+
+<div class="arabic-example">
+كِتَابٌ → الْكِتَابُ
+</div>
+
+<p>A book → The book</p>
+
+</div>
+
+
+<div class="grammar-item">
+
+<h3>3. Demonstratives</h3>
+
+<p class="grammar-note">
+Use هَذَا for "this" with a masculine singular noun and هَذِهِ with a feminine singular noun.
+</p>
+
+<div class="arabic-example">
+هَذَا كِتَابٌ. — هَذِهِ مَدْرَسَةٌ.
+</div>
+
+<p>This is a book. — This is a school.</p>
+
+</div>
+
+
+<div class="grammar-item">
+
+<h3>4. Basic Verbal Sentence</h3>
+
+<p class="grammar-note">
+A common Arabic verbal sentence can begin with a verb followed by the subject.
+</p>
+
+<div class="arabic-example">
+ذَهَبَ الطَّالِبُ إِلَى الْمَدْرَسَةِ.
+</div>
+
+<p>The student went to school.</p>
+
+</div>
+
+
+<div class="grammar-item">
+
+<h3>5. Possession</h3>
+
+<p class="grammar-note">
+Arabic commonly expresses possession through an iḍāfah construction.
+</p>
+
+<div class="arabic-example">
+كِتَابُ الطَّالِبِ
+</div>
+
+<p>The student's book.</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- EVERYDAY PHRASES -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>💬 Everyday Arabic Communication</h2>
+
+<p>Learn expressions you can actually use in conversations.</p>
+
+</div>
+
+
+<div class="phrases">
 
 
 <div class="phrase">
 
-<div class="arabic">
-السَّلَامُ عَلَيْكُمْ
-</div>
+<h3>Greeting</h3>
 
-<div class="translit">
-As-salamu alaykum
-</div>
+<div class="arabic">السَّلَامُ عَلَيْكُمْ</div>
 
-<div class="translation">
-Peace be upon you / Hello
-</div>
+<div class="translit">As-salāmu ʿalaykum</div>
 
-<button onclick="speak('السلام عليكم')">
-🔊 Listen
-</button>
+<div class="translation">Peace be upon you / Hello</div>
+
+<button onclick="speak('السلام عليكم')">🔊 Listen</button>
 
 </div>
 
 
 <div class="phrase">
 
-<div class="arabic">
-كَيْفَ حَالُكَ؟
-</div>
+<h3>Asking about someone</h3>
 
-<div class="translit">
-Kayfa haluk?
-</div>
+<div class="arabic">كَيْفَ حَالُكَ؟</div>
 
-<div class="translation">
-How are you?
-</div>
+<div class="translit">Kayfa ḥāluka?</div>
 
-<button onclick="speak('كيف حالك')">
-🔊 Listen
-</button>
+<div class="translation">How are you?</div>
+
+<button onclick="speak('كيف حالك')">🔊 Listen</button>
 
 </div>
 
 
 <div class="phrase">
 
-<div class="arabic">
-أَنَا بِخَيْرٍ.
-</div>
+<h3>Introducing yourself</h3>
 
-<div class="translit">
-Ana bikhayr.
-</div>
+<div class="arabic">اِسْمِي أَحْمَدُ.</div>
 
-<div class="translation">
-I am fine.
-</div>
+<div class="translit">Ismī Aḥmad.</div>
 
-<button onclick="speak('أنا بخير')">
-🔊 Listen
-</button>
+<div class="translation">My name is Ahmad.</div>
+
+<button onclick="speak('اسمي أحمد')">🔊 Listen</button>
 
 </div>
 
 
 <div class="phrase">
 
-<div class="arabic">
-اِسْمِي ...
-</div>
+<h3>Asking for help</h3>
 
-<div class="translit">
-Ismi...
-</div>
+<div class="arabic">هَلْ يُمْكِنُكَ مُسَاعَدَتِي؟</div>
 
-<div class="translation">
-My name is...
-</div>
+<div class="translit">Hal yumkinuka musāʿadatī?</div>
 
-<button onclick="speak('اسمي')">
-🔊 Listen
-</button>
+<div class="translation">Can you help me?</div>
+
+<button onclick="speak('هل يمكنك مساعدتي')">🔊 Listen</button>
 
 </div>
 
 
 <div class="phrase">
 
-<div class="arabic">
-لَا أَفْهَمُ.
+<h3>When you don't understand</h3>
+
+<div class="arabic">لَا أَفْهَمُ.</div>
+
+<div class="translit">Lā afhamu.</div>
+
+<div class="translation">I don't understand.</div>
+
+<button onclick="speak('لا أفهم')">🔊 Listen</button>
+
 </div>
 
-<div class="translit">
-La afham.
+
+<div class="phrase">
+
+<h3>Asking someone to repeat</h3>
+
+<div class="arabic">مِنْ فَضْلِكَ، أَعِدْ ذَلِكَ.</div>
+
+<div class="translit">Min faḍlika, aʿid dhālika.</div>
+
+<div class="translation">Please repeat that.</div>
+
+<button onclick="speak('من فضلك أعد ذلك')">🔊 Listen</button>
+
 </div>
 
-<div class="translation">
-I don't understand.
+
 </div>
 
-<button onclick="speak('لا أفهم')">
-🔊 Listen
+</section>
+
+
+<!-- READING -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>📖 Beginner Arabic Reading</h2>
+
+<p>Read a short passage and understand it in context.</p>
+
+</div>
+
+
+<div class="reading">
+
+<div class="reading-text">
+
+أَنَا طَالِبٌ. أَذْهَبُ إِلَى الْمَدْرَسَةِ كُلَّ يَوْمٍ.
+أُحِبُّ قِرَاءَةَ الْكُتُبِ وَتَعَلُّمَ اللُّغَةِ الْعَرَبِيَّةِ.
+
+</div>
+
+<div class="reading-translation">
+
+I am a student. I go to school every day.
+I like reading books and learning Arabic.
+
+</div>
+
+<br>
+
+<button onclick="speak('أنا طالب. أذهب إلى المدرسة كل يوم. أحب قراءة الكتب وتعلم اللغة العربية.')">
+🔊 Listen to Reading
 </button>
 
 </div>
-
 
 </section>
 
 
 <!-- FEATURES -->
 
-<section class="features">
+<section class="section">
+
+<div class="section-title">
+
+<h2>🚀 Arabic Skills</h2>
+
+<p>Develop all four major language skills.</p>
+
+</div>
+
+
+<div class="features">
 
 
 <div class="feature">
 
-<h3>📚 Vocabulary</h3>
+<div class="feature-icon">📖</div>
 
-<p>
-Build your Arabic vocabulary from beginner to advanced levels.
-</p>
+<h3>Reading</h3>
+
+<p>Learn to recognize Arabic script and understand texts.</p>
 
 </div>
 
 
 <div class="feature">
 
-<h3>📖 Stories</h3>
+<div class="feature-icon">✍️</div>
 
-<p>
-Read Arabic stories and learn new words in context.
-</p>
+<h3>Writing</h3>
+
+<p>Practice letters, words, spelling and sentence formation.</p>
 
 </div>
 
 
 <div class="feature">
 
-<h3>🧠 Quizzes</h3>
+<div class="feature-icon">🎧</div>
 
-<p>
-Test your Arabic knowledge and practice what you learn.
-</p>
+<h3>Listening</h3>
+
+<p>Improve comprehension through spoken Arabic.</p>
 
 </div>
 
+
+<div class="feature">
+
+<div class="feature-icon">💬</div>
+
+<h3>Speaking</h3>
+
+<p>Practice useful Arabic expressions and sentence patterns.</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">🧠</div>
+
+<h3>Grammar</h3>
+
+<p>Understand Arabic structures instead of memorizing isolated rules.</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">🌱</div>
+
+<h3>Vocabulary Roots</h3>
+
+<p>Connect related words through the Arabic root system.</p>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-</div>
+<!-- QUICK START -->
+
+<section class="quick">
+
+<h2>🚀 Start Learning Arabic</h2>
+
+<p>Begin with the alphabet, then build your vocabulary and communication skills.</p>
+
+<a href="#alphabet">🔤 Alphabet</a>
+
+<a href="#grammar">✏️ Grammar</a>
+
+<a href="#phrases">💬 Speaking</a>
+
+<a href="vocabulary.html">📚 Vocabulary</a>
+
+<a href="stories.html">📖 Stories</a>
+
+<a href="quizzes.html">🧠 Quizzes</a>
+
+</section>
+
+
+</main>
 
 
 <footer>
@@ -743,7 +1668,6 @@ const speech =
 new SpeechSynthesisUtterance(text);
 
 speech.lang="ar-SA";
-
 speech.rate=0.8;
 
 window.speechSynthesis.cancel();
