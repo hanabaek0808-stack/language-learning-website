@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,69 +16,121 @@ margin:0;
 padding:0;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:Arial,sans-serif;
 background:#f5f7fb;
 color:#20242c;
 line-height:1.6;
+transition:.3s;
+}
+
+body.dark{
+background:#151923;
+color:#eee;
 }
 
 header{
 background:linear-gradient(135deg,#263a8b,#5267c9);
 color:white;
 text-align:center;
-padding:40px 20px;
+padding:50px 20px;
 }
 
 header h1{
-font-size:36px;
-margin-bottom:8px;
+font-size:42px;
+margin-bottom:10px;
 }
 
 header p{
-font-size:17px;
+font-size:18px;
 }
 
 nav{
 background:white;
-padding:16px;
+padding:15px;
 text-align:center;
 box-shadow:0 2px 8px rgba(0,0,0,.08);
 position:sticky;
 top:0;
-z-index:10;
+z-index:100;
+}
+
+body.dark nav{
+background:#202533;
 }
 
 nav a{
 color:#263a8b;
 text-decoration:none;
 font-weight:bold;
-margin:0 10px;
+margin:0 8px;
+display:inline-block;
+}
+
+body.dark nav a{
+color:#8ea0ff;
+}
+
+nav a:hover{
+text-decoration:underline;
 }
 
 .container{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
 padding:35px 18px;
 }
 
 .hero{
 background:white;
-padding:30px;
-border-radius:18px;
+padding:35px;
+border-radius:20px;
 text-align:center;
-box-shadow:0 4px 14px rgba(0,0,0,.08);
-margin-bottom:35px;
+box-shadow:0 5px 18px rgba(0,0,0,.08);
+margin-bottom:40px;
+}
+
+body.dark .hero,
+body.dark .level,
+body.dark .word,
+body.dark .grammar-card,
+body.dark .conversation,
+body.dark .feature,
+body.dark .challenge,
+body.dark .numbers,
+body.dark .quiz,
+body.dark .progress{
+background:#202533;
 }
 
 .hero h2{
 color:#263a8b;
-font-size:28px;
+font-size:30px;
 margin-bottom:10px;
+}
+
+body.dark h2,
+body.dark h3{
+color:#9aa9ff;
 }
 
 .hero p{
 color:#666;
+max-width:800px;
+margin:auto;
+}
+
+body.dark .hero p,
+body.dark p{
+color:#bbb;
+}
+
+.section{
+margin-top:55px;
 }
 
 .section-title{
@@ -86,7 +139,7 @@ margin-bottom:25px;
 }
 
 .section-title h2{
-font-size:28px;
+font-size:29px;
 color:#263a8b;
 margin-bottom:8px;
 }
@@ -95,7 +148,54 @@ margin-bottom:8px;
 color:#666;
 }
 
-/* LEVELS */
+
+/* BUTTONS */
+
+button,
+.btn{
+background:#263a8b;
+color:white;
+border:none;
+padding:10px 16px;
+border-radius:9px;
+cursor:pointer;
+font-weight:bold;
+text-decoration:none;
+display:inline-block;
+margin-top:8px;
+}
+
+button:hover,
+.btn:hover{
+background:#17245f;
+}
+
+.secondary{
+background:#e8ebff;
+color:#263a8b;
+}
+
+.secondary:hover{
+background:#d9deff;
+}
+
+
+/* DARK MODE */
+
+.dark-btn{
+position:fixed;
+right:18px;
+bottom:18px;
+z-index:200;
+border-radius:50%;
+width:48px;
+height:48px;
+font-size:20px;
+padding:0;
+}
+
+
+/* TOPIK LEVELS */
 
 .levels{
 display:grid;
@@ -106,9 +206,14 @@ gap:18px;
 .level{
 background:white;
 padding:25px;
-border-radius:16px;
+border-radius:17px;
 text-align:center;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+transition:.2s;
+}
+
+.level:hover{
+transform:translateY(-5px);
 }
 
 .level h3{
@@ -117,15 +222,50 @@ font-size:25px;
 margin-bottom:7px;
 }
 
+.level .badge{
+display:inline-block;
+background:#eef0ff;
+color:#263a8b;
+padding:4px 10px;
+border-radius:20px;
+font-size:13px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
 .level p{
 color:#666;
 }
 
-/* VOCABULARY */
 
-.vocabulary{
-margin-top:50px;
+/* HANGUL */
+
+.hangul{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:12px;
 }
+
+.letter{
+background:white;
+padding:18px;
+border-radius:14px;
+text-align:center;
+box-shadow:0 3px 10px rgba(0,0,0,.07);
+}
+
+.letter .korean{
+font-size:34px;
+font-weight:bold;
+color:#263a8b;
+}
+
+.letter small{
+color:#777;
+}
+
+
+/* VOCABULARY */
 
 .words{
 display:grid;
@@ -135,19 +275,18 @@ gap:18px;
 
 .word{
 background:white;
-padding:22px;
-border-radius:16px;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
+padding:24px;
+border-radius:17px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
 }
 
 .word h3{
 color:#263a8b;
-font-size:24px;
-margin-bottom:5px;
+margin-bottom:8px;
 }
 
-.korean{
-font-size:28px;
+.korean-word{
+font-size:32px;
 font-weight:bold;
 margin-bottom:5px;
 }
@@ -155,31 +294,127 @@ margin-bottom:5px;
 .romanization{
 color:#777;
 font-style:italic;
-margin-bottom:8px;
+margin-bottom:7px;
 }
 
 .meaning{
 font-weight:bold;
+font-size:18px;
 margin-bottom:8px;
 }
 
 .example{
 color:#555;
-margin-bottom:12px;
+margin-bottom:10px;
 }
 
-button{
-background:#263a8b;
-color:white;
-border:none;
-padding:9px 14px;
+
+/* SEARCH */
+
+.search-box{
+text-align:center;
+margin-bottom:20px;
+}
+
+.search-box input{
+width:100%;
+max-width:500px;
+padding:13px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+
+/* GRAMMAR */
+
+.grammar{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.grammar-card{
+background:white;
+padding:25px;
+border-radius:17px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.grammar-card h3{
+color:#263a8b;
+margin-bottom:10px;
+}
+
+.formula{
+background:#f0f2ff;
+padding:12px;
 border-radius:8px;
-cursor:pointer;
+font-weight:bold;
+margin:10px 0;
 }
 
-button:hover{
-background:#17245f;
+
+/* CONVERSATION */
+
+.conversation{
+background:white;
+padding:28px;
+border-radius:18px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
 }
+
+.dialogue{
+padding:15px 0;
+border-bottom:1px solid #eee;
+}
+
+.dialogue:last-child{
+border-bottom:none;
+}
+
+.speaker{
+font-weight:bold;
+color:#263a8b;
+}
+
+.korean-line{
+font-size:22px;
+font-weight:bold;
+}
+
+.translation{
+color:#666;
+}
+
+
+/* NUMBERS */
+
+.numbers{
+background:white;
+padding:28px;
+border-radius:18px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+overflow-x:auto;
+}
+
+.number-table{
+width:100%;
+border-collapse:collapse;
+}
+
+.number-table th,
+.number-table td{
+padding:12px;
+border-bottom:1px solid #ddd;
+text-align:center;
+}
+
+.number-table th{
+background:#eef0ff;
+color:#263a8b;
+}
+
 
 /* FEATURES */
 
@@ -187,15 +422,19 @@ background:#17245f;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:18px;
-margin-top:50px;
 }
 
 .feature{
 background:white;
 padding:25px;
-border-radius:16px;
+border-radius:17px;
 text-align:center;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.feature-icon{
+font-size:35px;
+margin-bottom:8px;
 }
 
 .feature h3{
@@ -203,29 +442,153 @@ color:#263a8b;
 margin-bottom:8px;
 }
 
+
+/* QUIZ */
+
+.quiz{
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.question{
+font-size:25px;
+font-weight:bold;
+margin-bottom:18px;
+}
+
+.options{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+max-width:600px;
+margin:auto;
+}
+
+.options button{
+background:#f0f2ff;
+color:#263a8b;
+border:2px solid transparent;
+}
+
+.options button:hover{
+border-color:#263a8b;
+}
+
+#quizResult{
+margin-top:18px;
+font-weight:bold;
+font-size:18px;
+}
+
+
+/* CHALLENGE */
+
+.challenge{
+background:linear-gradient(135deg,#263a8b,#5267c9);
+color:white;
+padding:32px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 5px 18px rgba(0,0,0,.1);
+}
+
+.challenge h2{
+color:white;
+margin-bottom:8px;
+}
+
+.challenge button{
+background:white;
+color:#263a8b;
+}
+
+
+/* PROGRESS */
+
+.progress{
+background:white;
+padding:28px;
+border-radius:18px;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.progress-bar{
+height:18px;
+background:#e5e7ef;
+border-radius:20px;
+overflow:hidden;
+margin:15px 0;
+}
+
+.progress-fill{
+width:35%;
+height:100%;
+background:#263a8b;
+border-radius:20px;
+}
+
+.progress p{
+color:#666;
+}
+
+
 /* FOOTER */
 
 footer{
-margin-top:50px;
+margin-top:60px;
 background:#202b55;
 color:white;
 text-align:center;
-padding:28px;
+padding:30px;
 }
+
+footer p{
+margin-top:5px;
+}
+
 
 /* MOBILE */
 
-@media(max-width:650px){
+@media(max-width:800px){
+
+.levels,
+.features{
+grid-template-columns:1fr 1fr;
+}
+
+.hangul{
+grid-template-columns:repeat(4,1fr);
+}
+
+}
+
+@media(max-width:600px){
+
+header h1{
+font-size:34px;
+}
 
 .levels,
 .words,
-.features{
+.grammar,
+.features,
+.options{
 grid-template-columns:1fr;
 }
 
+.hangul{
+grid-template-columns:repeat(3,1fr);
+}
+
 nav a{
-display:inline-block;
 margin:5px;
+}
+
+.hero{
+padding:25px;
 }
 
 }
@@ -234,30 +597,36 @@ margin:5px;
 
 </head>
 
+
 <body>
+
 
 <header>
 
 <h1>🇰🇷 Korean</h1>
 
-<p>Learn Korean vocabulary, phrases and basic language skills.</p>
+<p>
+Learn Korean from Hangul and basic conversation to advanced TOPIK skills.
+</p>
 
 </header>
 
 
 <nav>
 
-<a href="index.html">Home</a>
-
-<a href="vocabulary.html">Vocabulary</a>
-
-<a href="stories.html">Stories</a>
-
-<a href="quizzes.html">Quizzes</a>
-
-<a href="korean.html">Korean</a>
+<a href="index.html">🏠 Home</a>
+<a href="vocabulary.html">📚 Vocabulary</a>
+<a href="stories.html">📖 Stories</a>
+<a href="quizzes.html">🧠 Quizzes</a>
+<a href="#hangul">🔤 Hangul</a>
+<a href="#grammar">✏️ Grammar</a>
+<a href="#speaking">🗣️ Speaking</a>
+<a href="#quiz">🎯 Practice</a>
 
 </nav>
+
+
+<button class="dark-btn" onclick="toggleDark()">🌙</button>
 
 
 <main class="container">
@@ -270,21 +639,30 @@ margin:5px;
 <h2>🌸 Welcome to Korean</h2>
 
 <p>
-Start learning Korean from beginner level and gradually improve your vocabulary and communication skills.
+Build your Korean skills step by step. Learn Hangul, vocabulary,
+grammar, pronunciation, listening, speaking and real-life communication.
 </p>
+
+<br>
+
+<a href="#levels" class="btn">
+🚀 Start Learning
+</a>
 
 </section>
 
 
-<!-- LEVELS -->
+<!-- LEARNING SYSTEM -->
 
-<section>
+<section class="section" id="levels">
 
 <div class="section-title">
 
-<h2>📊 Korean Learning Levels</h2>
+<h2>📊 Korean Learning Roadmap</h2>
 
-<p>Choose a level that matches your Korean ability.</p>
+<p>
+Progress through structured Korean levels and prepare for TOPIK.
+</p>
 
 </div>
 
@@ -292,33 +670,179 @@ Start learning Korean from beginner level and gradually improve your vocabulary 
 <div class="levels">
 
 <div class="level">
-<h3>A1</h3>
-<p>Basic Korean words and greetings.</p>
+
+<span class="badge">BEGINNER</span>
+
+<h3>TOPIK I</h3>
+
+<p>
+Learn Hangul, greetings, numbers, basic vocabulary
+and simple sentences.
+</p>
+
 </div>
 
-<div class="level">
-<h3>A2</h3>
-<p>Everyday phrases and simple conversations.</p>
-</div>
 
 <div class="level">
-<h3>B1</h3>
-<p>Intermediate Korean communication.</p>
+
+<span class="badge">ELEMENTARY</span>
+
+<h3>TOPIK I – Level 2</h3>
+
+<p>
+Understand everyday conversations and communicate
+in familiar situations.
+</p>
+
 </div>
 
-<div class="level">
-<h3>B2</h3>
-<p>More advanced vocabulary and grammar.</p>
-</div>
 
 <div class="level">
-<h3>C1</h3>
-<p>Advanced Korean comprehension.</p>
+
+<span class="badge">INTERMEDIATE</span>
+
+<h3>TOPIK II – Level 3</h3>
+
+<p>
+Discuss daily topics and understand longer Korean texts.
+</p>
+
 </div>
 
+
 <div class="level">
-<h3>C2</h3>
-<p>Near-native Korean mastery.</p>
+
+<span class="badge">INTERMEDIATE+</span>
+
+<h3>TOPIK II – Level 4</h3>
+
+<p>
+Improve grammar, reading comprehension and formal communication.
+</p>
+
+</div>
+
+
+<div class="level">
+
+<span class="badge">ADVANCED</span>
+
+<h3>TOPIK II – Level 5</h3>
+
+<p>
+Understand academic, professional and complex Korean.
+</p>
+
+</div>
+
+
+<div class="level">
+
+<span class="badge">MASTERY</span>
+
+<h3>TOPIK II – Level 6</h3>
+
+<p>
+Develop sophisticated comprehension and advanced expression.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HANGUL -->
+
+<section class="section" id="hangul">
+
+<div class="section-title">
+
+<h2>🔤 Learn Hangul</h2>
+
+<p>
+Start Korean correctly by learning the Korean writing system.
+</p>
+
+</div>
+
+
+<div class="hangul">
+
+<div class="letter">
+<div class="korean">ㄱ</div>
+<small>g / k</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㄴ</div>
+<small>n</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㄷ</div>
+<small>d / t</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㄹ</div>
+<small>r / l</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㅁ</div>
+<small>m</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㅂ</div>
+<small>b / p</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㅅ</div>
+<small>s</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㅇ</div>
+<small>ng / silent</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㅈ</div>
+<small>j</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㅊ</div>
+<small>ch</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㅋ</div>
+<small>k</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㅌ</div>
+<small>t</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㅍ</div>
+<small>p</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㅎ</div>
+<small>h</small>
+</div>
+
+<div class="letter">
+<div class="korean">ㅏ</div>
+<small>a</small>
 </div>
 
 </div>
@@ -328,40 +852,46 @@ Start learning Korean from beginner level and gradually improve your vocabulary 
 
 <!-- VOCABULARY -->
 
-<section class="vocabulary">
+<section class="section">
 
 <div class="section-title">
 
-<h2>📚 Basic Korean Vocabulary</h2>
+<h2>📚 Essential Korean Vocabulary</h2>
 
-<p>Learn useful Korean words and expressions.</p>
+<p>
+Learn useful words with romanization, meanings, examples and pronunciation.
+</p>
 
 </div>
 
 
-<div class="words">
+<div class="search-box">
+
+<input
+type="text"
+id="wordSearch"
+placeholder="🔍 Search Korean vocabulary..."
+onkeyup="searchWords()"
+>
+
+</div>
 
 
-<!-- HELLO -->
+<div class="words" id="wordList">
+
 
 <div class="word">
 
 <h3>Hello</h3>
 
-<div class="korean">
-안녕하세요
-</div>
+<div class="korean-word">안녕하세요</div>
 
-<div class="romanization">
-Annyeonghaseyo
-</div>
+<div class="romanization">Annyeonghaseyo</div>
 
-<div class="meaning">
-Meaning: Hello
-</div>
+<div class="meaning">Meaning: Hello</div>
 
 <p class="example">
-Example: 안녕하세요!
+Example: 안녕하세요! 만나서 반갑습니다.
 </p>
 
 <button onclick="speak('안녕하세요')">
@@ -371,26 +901,18 @@ Example: 안녕하세요!
 </div>
 
 
-<!-- THANK YOU -->
-
 <div class="word">
 
 <h3>Thank You</h3>
 
-<div class="korean">
-감사합니다
-</div>
+<div class="korean-word">감사합니다</div>
 
-<div class="romanization">
-Gamsahamnida
-</div>
+<div class="romanization">Gamsahamnida</div>
 
-<div class="meaning">
-Meaning: Thank you
-</div>
+<div class="meaning">Meaning: Thank you</div>
 
 <p class="example">
-Example: 감사합니다!
+Example: 도와주셔서 감사합니다.
 </p>
 
 <button onclick="speak('감사합니다')">
@@ -400,84 +922,18 @@ Example: 감사합니다!
 </div>
 
 
-<!-- GOOD MORNING -->
-
-<div class="word">
-
-<h3>Good Morning</h3>
-
-<div class="korean">
-좋은 아침이에요
-</div>
-
-<div class="romanization">
-Joeun achimieyo
-</div>
-
-<div class="meaning">
-Meaning: Good morning
-</div>
-
-<p class="example">
-Example: 좋은 아침이에요!
-</p>
-
-<button onclick="speak('좋은 아침이에요')">
-🔊 Listen
-</button>
-
-</div>
-
-
-<!-- GOODBYE -->
-
-<div class="word">
-
-<h3>Goodbye</h3>
-
-<div class="korean">
-안녕히 가세요
-</div>
-
-<div class="romanization">
-Annyeonghi gaseyo
-</div>
-
-<div class="meaning">
-Meaning: Goodbye
-</div>
-
-<p class="example">
-Example: 안녕히 가세요.
-</p>
-
-<button onclick="speak('안녕히 가세요')">
-🔊 Listen
-</button>
-
-</div>
-
-
-<!-- FRIEND -->
-
 <div class="word">
 
 <h3>Friend</h3>
 
-<div class="korean">
-친구
-</div>
+<div class="korean-word">친구</div>
 
-<div class="romanization">
-Chingu
-</div>
+<div class="romanization">Chingu</div>
 
-<div class="meaning">
-Meaning: Friend
-</div>
+<div class="meaning">Meaning: Friend</div>
 
 <p class="example">
-Example: 그는 내 친구예요.
+Example: 그는 제 친구예요.
 </p>
 
 <button onclick="speak('친구')">
@@ -487,29 +943,105 @@ Example: 그는 내 친구예요.
 </div>
 
 
-<!-- WATER -->
+<div class="word">
+
+<h3>School</h3>
+
+<div class="korean-word">학교</div>
+
+<div class="romanization">Hakgyo</div>
+
+<div class="meaning">Meaning: School</div>
+
+<p class="example">
+Example: 저는 학교에 가요.
+</p>
+
+<button onclick="speak('학교')">
+🔊 Listen
+</button>
+
+</div>
+
 
 <div class="word">
 
 <h3>Water</h3>
 
-<div class="korean">
-물
-</div>
+<div class="korean-word">물</div>
 
-<div class="romanization">
-Mul
-</div>
+<div class="romanization">Mul</div>
 
-<div class="meaning">
-Meaning: Water
-</div>
+<div class="meaning">Meaning: Water</div>
 
 <p class="example">
-Example: 물 주세요.
+Example: 물 좀 주세요.
 </p>
 
 <button onclick="speak('물')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Food</h3>
+
+<div class="korean-word">음식</div>
+
+<div class="romanization">Eumsik</div>
+
+<div class="meaning">Meaning: Food</div>
+
+<p class="example">
+Example: 한국 음식이 맛있어요.
+</p>
+
+<button onclick="speak('음식')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Love</h3>
+
+<div class="korean-word">사랑</div>
+
+<div class="romanization">Sarang</div>
+
+<div class="meaning">Meaning: Love</div>
+
+<p class="example">
+Example: 사랑은 아름다워요.
+</p>
+
+<button onclick="speak('사랑')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word">
+
+<h3>Study</h3>
+
+<div class="korean-word">공부하다</div>
+
+<div class="romanization">Gongbuhada</div>
+
+<div class="meaning">Meaning: To study</div>
+
+<p class="example">
+Example: 저는 한국어를 공부해요.
+</p>
+
+<button onclick="speak('공부하다')">
 🔊 Listen
 </button>
 
@@ -521,16 +1053,346 @@ Example: 물 주세요.
 </section>
 
 
+<!-- GRAMMAR -->
+
+<section class="section" id="grammar">
+
+<div class="section-title">
+
+<h2>✏️ Korean Grammar</h2>
+
+<p>
+Learn important Korean sentence structures.
+</p>
+
+</div>
+
+
+<div class="grammar">
+
+
+<div class="grammar-card">
+
+<h3>1️⃣ Korean Word Order</h3>
+
+<p>
+Korean commonly follows a Subject–Object–Verb pattern.
+</p>
+
+<div class="formula">
+Subject + Object + Verb
+</div>
+
+<p>
+저는 한국어를 공부해요.
+</p>
+
+<p>
+I study Korean.
+</p>
+
+<button onclick="speak('저는 한국어를 공부해요')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="grammar-card">
+
+<h3>2️⃣ 이에요 / 예요</h3>
+
+<p>
+Used to say that something is or identify something.
+</p>
+
+<div class="formula">
+Noun + 이에요 / 예요
+</div>
+
+<p>
+저는 학생이에요.
+</p>
+
+<p>
+I am a student.
+</p>
+
+<button onclick="speak('저는 학생이에요')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="grammar-card">
+
+<h3>3️⃣ 은 / 는</h3>
+
+<p>
+Topic particles used to introduce or emphasize a topic.
+</p>
+
+<div class="formula">
+Noun + 은 / 는
+</div>
+
+<p>
+저는 학생이에요.
+</p>
+
+<p>
+As for me, I am a student.
+</p>
+
+</div>
+
+
+<div class="grammar-card">
+
+<h3>4️⃣ 을 / 를</h3>
+
+<p>
+Object particles mark the object of an action.
+</p>
+
+<div class="formula">
+Object + 을 / 를
+</div>
+
+<p>
+한국어를 공부해요.
+</p>
+
+<p>
+I study Korean.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- CONVERSATION -->
+
+<section class="section" id="speaking">
+
+<div class="section-title">
+
+<h2>🗣️ Real-Life Korean Conversation</h2>
+
+<p>
+Practice a complete beginner conversation.
+</p>
+
+</div>
+
+
+<div class="conversation">
+
+
+<div class="dialogue">
+
+<div class="speaker">A:</div>
+
+<div class="korean-line">
+안녕하세요!
+</div>
+
+<div class="translation">
+Hello!
+</div>
+
+<button onclick="speak('안녕하세요')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="dialogue">
+
+<div class="speaker">B:</div>
+
+<div class="korean-line">
+안녕하세요. 잘 지냈어요?
+</div>
+
+<div class="translation">
+Hello. Have you been well?
+</div>
+
+<button onclick="speak('안녕하세요. 잘 지냈어요?')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="dialogue">
+
+<div class="speaker">A:</div>
+
+<div class="korean-line">
+네, 잘 지냈어요. 감사합니다.
+</div>
+
+<div class="translation">
+Yes, I have been well. Thank you.
+</div>
+
+<button onclick="speak('네, 잘 지냈어요. 감사합니다.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="dialogue">
+
+<div class="speaker">B:</div>
+
+<div class="korean-line">
+만나서 반가워요.
+</div>
+
+<div class="translation">
+Nice to meet you.
+</div>
+
+<button onclick="speak('만나서 반가워요')">
+🔊 Listen
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- NUMBERS -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>🔢 Korean Numbers</h2>
+
+<p>
+Learn the basic native Korean numbers.
+</p>
+
+</div>
+
+
+<div class="numbers">
+
+<table class="number-table">
+
+<tr>
+<th>Number</th>
+<th>Korean</th>
+<th>Romanization</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>하나</td>
+<td>Hana</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>둘</td>
+<td>Dul</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>셋</td>
+<td>Set</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>넷</td>
+<td>Net</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>다섯</td>
+<td>Daseot</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>여섯</td>
+<td>Yeoseot</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>일곱</td>
+<td>Ilgop</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>여덟</td>
+<td>Yeodeol</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>아홉</td>
+<td>Ahop</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>열</td>
+<td>Yeol</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
 <!-- FEATURES -->
 
-<section class="features">
+<section class="section">
+
+<div class="section-title">
+
+<h2>🎓 Korean Skills</h2>
+
+<p>
+Build all four major language skills.
+</p>
+
+</div>
+
+
+<div class="features">
+
 
 <div class="feature">
 
-<h3>📚 Vocabulary</h3>
+<div class="feature-icon">📚</div>
+
+<h3>Vocabulary</h3>
 
 <p>
-Learn Korean words with meanings and pronunciation.
+Build vocabulary from beginner to advanced Korean.
 </p>
 
 </div>
@@ -538,10 +1400,12 @@ Learn Korean words with meanings and pronunciation.
 
 <div class="feature">
 
-<h3>📖 Stories</h3>
+<div class="feature-icon">✏️</div>
+
+<h3>Grammar</h3>
 
 <p>
-Read simple Korean stories and learn vocabulary in context.
+Understand Korean sentence structures and particles.
 </p>
 
 </div>
@@ -549,10 +1413,171 @@ Read simple Korean stories and learn vocabulary in context.
 
 <div class="feature">
 
-<h3>🧠 Quizzes</h3>
+<div class="feature-icon">🎧</div>
+
+<h3>Listening</h3>
 
 <p>
-Test your Korean vocabulary and improve your knowledge.
+Train your ears with Korean words and conversations.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">🗣️</div>
+
+<h3>Speaking</h3>
+
+<p>
+Practice useful expressions for real conversations.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">📖</div>
+
+<h3>Reading</h3>
+
+<p>
+Read Korean sentences and gradually longer texts.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">✍️</div>
+
+<h3>Writing</h3>
+
+<p>
+Practice Hangul and Korean sentence construction.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section class="section" id="quiz">
+
+<div class="section-title">
+
+<h2>🧠 Korean Vocabulary Quiz</h2>
+
+<p>
+Test what you have learned.
+</p>
+
+</div>
+
+
+<div class="quiz">
+
+<div class="question">
+물 means...
+</div>
+
+
+<div class="options">
+
+<button onclick="checkAnswer(this,true)">
+Water
+</button>
+
+<button onclick="checkAnswer(this,false)">
+School
+</button>
+
+<button onclick="checkAnswer(this,false)">
+Friend
+</button>
+
+<button onclick="checkAnswer(this,false)">
+Food
+</button>
+
+</div>
+
+
+<div id="quizResult"></div>
+
+</div>
+
+</section>
+
+
+<!-- DAILY CHALLENGE -->
+
+<section class="section">
+
+<div class="challenge">
+
+<h2>🔥 Daily Korean Challenge</h2>
+
+<p>
+Learn one Korean expression every day.
+</p>
+
+<br>
+
+<h3 id="challengeWord">
+오늘도 화이팅!
+</h3>
+
+<p id="challengeMeaning">
+Keep going today! / You can do it!
+</p>
+
+<button onclick="speak('오늘도 화이팅!')">
+🔊 Listen
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PROGRESS -->
+
+<section class="section">
+
+<div class="progress">
+
+<div class="section-title">
+
+<h2>📈 Your Learning Progress</h2>
+
+<p>
+Keep practicing and build your Korean skills every day.
+</p>
+
+</div>
+
+
+<p>
+Korean learning progress
+</p>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<p>
+35% completed
 </p>
 
 </div>
@@ -569,6 +1594,8 @@ Test your Korean vocabulary and improve your knowledge.
 
 <p>Learn • Practice • Improve</p>
 
+<p>🇰🇷 Korean Learning • TOPIK • Hangul • Conversation</p>
+
 <p>© 2026 LinguaPath</p>
 
 </footer>
@@ -576,16 +1603,21 @@ Test your Korean vocabulary and improve your knowledge.
 
 <script>
 
-function speak(word){
+
+/* SPEECH */
+
+function speak(text){
 
 if("speechSynthesis" in window){
 
 const speech =
-new SpeechSynthesisUtterance(word);
+new SpeechSynthesisUtterance(text);
 
 speech.lang="ko-KR";
 
 speech.rate=0.8;
+
+window.speechSynthesis.cancel();
 
 window.speechSynthesis.speak(speech);
 
@@ -593,7 +1625,74 @@ window.speechSynthesis.speak(speech);
 
 }
 
+
+/* DARK MODE */
+
+function toggleDark(){
+
+document.body.classList.toggle("dark");
+
+}
+
+
+/* SEARCH VOCABULARY */
+
+function searchWords(){
+
+const input =
+document.getElementById("wordSearch")
+.value.toLowerCase();
+
+const words =
+document.querySelectorAll(".word");
+
+words.forEach(function(word){
+
+const text =
+word.innerText.toLowerCase();
+
+if(text.includes(input)){
+
+word.style.display="block";
+
+}else{
+
+word.style.display="none";
+
+}
+
+});
+
+}
+
+
+/* QUIZ */
+
+function checkAnswer(button,correct){
+
+const result =
+document.getElementById("quizResult");
+
+if(correct){
+
+result.innerHTML =
+"✅ Correct! 물 means Water.";
+
+result.style.color="green";
+
+}else{
+
+result.innerHTML =
+"❌ Not quite. Try again!";
+
+result.style.color="red";
+
+}
+
+}
+
 </script>
+
 
 </body>
 
