@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quizzes | LinguaPath</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #20242c;
+  line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+  background: linear-gradient(135deg, #263a8b, #5267c9);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 17px;
+}
+
+/* NAVIGATION */
+
+nav {
+  background: white;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  color: #263a8b;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* CONTAINER */
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 18px;
+}
+
+/* BACK */
+
+.back {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #263a8b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* INTRO */
+
+.intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.intro h2 {
+  color: #263a8b;
+  margin-bottom: 8px;
+}
+
+/* QUIZ CARDS */
+
+.quiz-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.quiz-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  text-align: center;
+}
+
+.quiz-icon {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.quiz-card h3 {
+  color: #263a8b;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.quiz-card p {
+  color: #666;
+  margin-bottom: 18px;
+}
+
+/* LEVEL */
+
+.level {
+  display: inline-block;
+  background: #eef1ff;
+  color: #263a8b;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* BUTTON */
+
+.quiz-btn {
+  display: inline-block;
+  background: #263a8b;
+  color: white;
+  border: none;
+  text-decoration: none;
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.quiz-btn:hover {
+  background: #17245f;
+}
+
+/* PRACTICE */
+
+.practice {
+  margin-top: 40px;
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.practice h2 {
+  text-align: center;
+  color: #263a8b;
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 25px;
+}
+
+.question h3 {
+  margin-bottom: 12px;
+}
+
+.option {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  background: #f5f7fb;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: left;
+  color: #20242c;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #eef1ff;
+}
+
+.correct {
+  background: #d8f5df !important;
+  border-color: #48a868 !important;
+}
+
+.wrong {
+  background: #ffdede !important;
+  border-color: #d9534f !important;
+}
+
+.result {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #263a8b;
+}
+
+/* FOOTER */
+
+footer {
+  margin-top: 45px;
+  background: #202b55;
+  color: white;
+  text-align: center;
+  padding: 28px;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .quiz-list {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<h1>🧠 Quizzes</h1>
+
+<p>
+Test your vocabulary and improve your language skills.
+</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="vocabulary.html">Vocabulary</a>
+
+<a href="stories.html">Stories</a>
+
+<a href="quizzes.html">Quizzes</a>
+
+</nav>
+
+
+<main class="container">
+
+
+<a class="back" href="index.html">
+← Back to LinguaPath
+</a>
+
+
+<!-- INTRO -->
+
+<div class="intro">
+
+<h2>🎯 Choose Your Quiz</h2>
+
+<p>
+Practice vocabulary and check how much you remember.
+</p>
+
+</div>
+
+
+<!-- QUIZ LIST -->
+
+<section class="quiz-list">
+
+
+<div class="quiz-card">
+
+<div class="quiz-icon">🌱</div>
+
+<span class="level">A1</span>
+
+<h3>Beginner Vocabulary</h3>
+
+<p>
+Test basic English vocabulary and everyday words.
+</p>
+
+<a href="#practice" class="quiz-btn">
+Start Quiz
+</a>
+
+</div>
+
+
+<div class="quiz-card">
+
+<div class="quiz-icon">📚</div>
+
+<span class="level">A2</span>
+
+<h3>Elementary Vocabulary</h3>
+
+<p>
+Practice common English words and meanings.
+</p>
+
+<a href="#practice" class="quiz-btn">
+Start Quiz
+</a>
+
+</div>
+
+
+<div class="quiz-card">
+
+<div class="quiz-icon">🎓</div>
+
+<span class="level">B1</span>
+
+<h3>Intermediate Vocabulary</h3>
+
+<p>
+Challenge yourself with intermediate vocabulary.
+</p>
+
+<a href="#practice" class="quiz-btn">
+Start Quiz
+</a>
+
+</div>
+
+
+<div class="quiz-card">
+
+<div class="quiz-icon">🔥</div>
+
+<span class="level">B2</span>
+
+<h3>Upper Intermediate</h3>
+
+<p>
+Test your understanding of more advanced vocabulary.
+</p>
+
+<a href="#practice" class="quiz-btn">
+Start Quiz
+</a>
+
+</div>
+
+
+</section>
+
+
+<!-- PRACTICE QUIZ -->
+
+<section class="practice" id="practice">
+
+<h2>📝 Quick Vocabulary Quiz</h2>
+
+
+<div class="question">
+
+<h3>1. What does "Beautiful" mean?</h3>
+
+<button class="option" onclick="checkAnswer(this, true)">
+A. Attractive and pleasing
+</button>
+
+<button class="option" onclick="checkAnswer(this, false)">
+B. Very angry
+</button>
+
+<button class="option" onclick="checkAnswer(this, false)">
+C. Very tired
+</button>
+
+</div>
+
+
+<div class="question">
+
+<h3>2. What does "Opportunity" mean?</h3>
+
+<button class="option" onclick="checkAnswer(this, false)">
+A. A problem
+</button>
+
+<button class="option" onclick="checkAnswer(this, true)">
+B. A chance to do something
+</button>
+
+<button class="option" onclick="checkAnswer(this, false)">
+C. A place to live
+</button>
+
+</div>
+
+
+<div class="question">
+
+<h3>3. What does "Improve" mean?</h3>
+
+<button class="option" onclick="checkAnswer(this, false)">
+A. To stop something
+</button>
+
+<button class="option" onclick="checkAnswer(this, false)">
+B. To forget something
+</button>
+
+<button class="option" onclick="checkAnswer(this, true)">
+C. To make something better
+</button>
+
+</div>
+
+
+<div class="question">
+
+<h3>4. What does "Significant" mean?</h3>
+
+<button class="option" onclick="checkAnswer(this, true)">
+A. Important or noticeable
+</button>
+
+<button class="option" onclick="checkAnswer(this, false)">
+B. Very small
+</button>
+
+<button class="option" onclick="checkAnswer(this, false)">
+C. Completely unknown
+</button>
+
+</div>
+
+
+<div class="question">
+
+<h3>5. What does "Meticulous" mean?</h3>
+
+<button class="option" onclick="checkAnswer(this, false)">
+A. Careless
+</button>
+
+<button class="option" onclick="checkAnswer(this, true)">
+B. Very careful and precise
+</button>
+
+<button class="option" onclick="checkAnswer(this, false)">
+C. Very noisy
+</button>
+
+</div>
+
+
+<div class="result" id="result">
+
+Score: 0 / 5
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>🌍 LinguaPath</h3>
+
+<p>
+Learn • Practice • Improve
+</p>
+
+<p>
+© 2026 LinguaPath
+</p>
+
+</footer>
+
+
+<script>
+
+let score = 0;
+
+let answered = 0;
+
+function checkAnswer(button, correct) {
+
+  if (button.parentElement.dataset.answered === "true") {
+    return;
+  }
+
+  button.parentElement.dataset.answered = "true";
+
+  const options =
+    button.parentElement.querySelectorAll(".option");
+
+  options.forEach(function(option) {
+    option.disabled = true;
+  });
+
+  if (correct) {
+
+    button.classList.add("correct");
+
+    score++;
+
+  } else {
+
+    button.classList.add("wrong");
+
+    options.forEach(function(option) {
+
+      if (
+        option.onclick &&
+        option.onclick.toString().includes("true")
+      ) {
+        option.classList.add("correct");
+      }
+
+    });
+
+  }
+
+  answered++;
+
+  document.getElementById("result").textContent =
+    "Score: " + score + " / 5";
+
+  if (answered === 5) {
+
+    setTimeout(function() {
+
+      let message = "";
+
+      if (score === 5) {
+        message = "🎉 Excellent! Perfect score!";
+      } else if (score >= 3) {
+        message = "👏 Great job! Keep practicing!";
+      } else {
+        message = "💪 Keep learning! You can improve!";
+      }
+
+      document.getElementById("result").textContent =
+        "Score: " + score + " / 5 — " + message;
+
+    }, 300);
+
+  }
+
+}
+
+</script>
+
+
+</body>
+
+  </html>
