@@ -403,8 +403,6 @@ footer {
 
 <body>
 
-<!-- HEADER -->
-
 <header>
 
 <h1>📚 LinguaPath Vocabulary</h1>
@@ -415,8 +413,6 @@ Learn new words, meanings, pronunciation and translations.
 
 </header>
 
-
-<!-- NAVIGATION -->
 
 <nav>
 
@@ -433,7 +429,6 @@ Learn new words, meanings, pronunciation and translations.
 
 <main class="container">
 
-<!-- INTRO -->
 
 <section class="intro">
 
@@ -446,8 +441,6 @@ Search words, choose your level and learn through examples.
 </section>
 
 
-<!-- SEARCH -->
-
 <div class="search-box">
 
 <input
@@ -458,8 +451,6 @@ onkeyup="searchWords()">
 
 </div>
 
-
-<!-- FILTERS -->
 
 <div class="filters">
 
@@ -507,12 +498,8 @@ onkeyup="searchWords()">
 </div>
 
 
-<!-- WORDS -->
-
 <div class="words">
 
-
-<!-- HELLO -->
 
 <div class="word" data-level="A1">
 
@@ -558,8 +545,6 @@ data-arabic="مرحبا">
 </div>
 
 
-<!-- BEAUTIFUL -->
-
 <div class="word" data-level="A1">
 
 <span class="level">A1</span>
@@ -603,8 +588,6 @@ data-arabic="جميل">
 
 </div>
 
-
-<!-- HAPPY -->
 
 <div class="word" data-level="A1">
 
@@ -650,8 +633,6 @@ data-arabic="سعيد">
 </div>
 
 
-<!-- LEARN -->
-
 <div class="word" data-level="A2">
 
 <span class="level">A2</span>
@@ -695,8 +676,6 @@ data-arabic="يتعلم">
 
 </div>
 
-
-<!-- IMPROVE -->
 
 <div class="word" data-level="A2">
 
@@ -742,8 +721,6 @@ data-arabic="يحسن">
 </div>
 
 
-<!-- OPPORTUNITY -->
-
 <div class="word" data-level="B1">
 
 <span class="level">B1</span>
@@ -787,8 +764,6 @@ data-arabic="فرصة">
 
 </div>
 
-
-<!-- SIGNIFICANT -->
 
 <div class="word" data-level="B2">
 
@@ -834,8 +809,6 @@ data-arabic="مهم">
 </div>
 
 
-<!-- COMPELLING -->
-
 <div class="word" data-level="C1">
 
 <span class="level">C1</span>
@@ -879,8 +852,6 @@ data-arabic="مقنع">
 
 </div>
 
-
-<!-- METICULOUS -->
 
 <div class="word" data-level="C2">
 
@@ -986,8 +957,6 @@ Showing all 54 vocabulary PDFs
 </section>
 
 
-<!-- QUIZ -->
-
 <section class="quiz">
 
 <h2>🧠 Test Your Vocabulary</h2>
@@ -1004,8 +973,6 @@ Start Quiz 🚀
 
 </main>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -1140,96 +1107,472 @@ function searchWords() {
 }
 
 
-/* LANGUAGES */
+/* PDF FILES */
 
-const languages = [
+const pdfFiles = [
+
+  /* ENGLISH */
 
   {
-    name: "English",
-    flag: "🇬🇧"
+    language: "English",
+    flag: "🇬🇧",
+    level: "A1",
+    name: "Beginner",
+    file: "English A1 _LinguaPath.pdf_20260827_173449_0000.pdf"
   },
 
   {
-    name: "Spanish",
-    flag: "🇪🇸"
+    language: "English",
+    flag: "🇬🇧",
+    level: "A2",
+    name: "Elementary",
+    file: "English A2_LinguaPath.pdf_20260827_173531_0000.pdf"
   },
 
   {
-    name: "French",
-    flag: "🇫🇷"
+    language: "English",
+    flag: "🇬🇧",
+    level: "B1",
+    name: "Intermediate",
+    file: "English B1_LinguaPath. pdf_20260827_173705_0000.pdf"
   },
 
   {
-    name: "Italian",
-    flag: "🇮🇹"
+    language: "English",
+    flag: "🇬🇧",
+    level: "B2",
+    name: "Upper Intermediate",
+    file: "English B2_LinguaPath. pdf_20260827_173726_0000.pdf"
   },
 
   {
-    name: "Chinese",
-    flag: "🇨🇳"
+    language: "English",
+    flag: "🇬🇧",
+    level: "C1",
+    name: "Advanced",
+    file: "English C1 LinguaPath.pdf_20260827_173752_0000.pdf"
   },
 
   {
-    name: "Korean",
-    flag: "🇰🇷"
+    language: "English",
+    flag: "🇬🇧",
+    level: "C2",
+    name: "Mastery",
+    file: "English C2_LinguaPath.pdf_20260827_173829_0000.pdf"
+  },
+
+
+  /* SPANISH */
+
+  {
+    language: "Spanish",
+    flag: "🇪🇸",
+    level: "A1",
+    name: "Beginner",
+    file: "Spanish A1 _LinguaPath.pdf_20260827_180719_0000.pdf"
   },
 
   {
-    name: "Japanese",
-    flag: "🇯🇵"
+    language: "Spanish",
+    flag: "🇪🇸",
+    level: "A2",
+    name: "Elementary",
+    file: "Spanish A2_LinguaPath. pdf_20260827_180747_0000.pdf"
   },
 
   {
-    name: "German",
-    flag: "🇩🇪"
+    language: "Spanish",
+    flag: "🇪🇸",
+    level: "B1",
+    name: "Intermediate",
+    file: "Spanish B1_LinguaPath. pdf_20260827_180808_0000.pdf"
   },
 
   {
-    name: "Arabic",
-    flag: "🇸🇦"
+    language: "Spanish",
+    flag: "🇪🇸",
+    level: "B2",
+    name: "Upper Intermediate",
+    file: "Spanish B2_LinguaPath.pdf_20260827_200434_0000.pdf"
+  },
+
+  {
+    language: "Spanish",
+    flag: "🇪🇸",
+    level: "C1",
+    name: "Advanced",
+    file: "Spanish C1_LinguaPath.pdf_20260827_180853_0000.pdf"
+  },
+
+  {
+    language: "Spanish",
+    flag: "🇪🇸",
+    level: "C2",
+    name: "Mastery",
+    file: "Spanish C2_LinguaPath.pdf_20260827_180928_0000.pdf"
+  },
+
+
+  /* FRENCH */
+
+  {
+    language: "French",
+    flag: "🇫🇷",
+    level: "A1",
+    name: "Beginner",
+    file: "French A1 _LinguaPath.pdf_20260827_185913_0000.pdf"
+  },
+
+  {
+    language: "French",
+    flag: "🇫🇷",
+    level: "A2",
+    name: "Elementary",
+    file: "French A2_LinguaPath.pdf_20260827_185932_0000.pdf"
+  },
+
+  {
+    language: "French",
+    flag: "🇫🇷",
+    level: "B1",
+    name: "Intermediate",
+    file: "French B1_LinguaPath. pdf_20260827_185950_0000.pdf"
+  },
+
+  {
+    language: "French",
+    flag: "🇫🇷",
+    level: "B2",
+    name: "Upper Intermediate",
+    file: "French B2_LinguaPath. pdf_20260827_190012_0000.pdf"
+  },
+
+  {
+    language: "French",
+    flag: "🇫🇷",
+    level: "C1",
+    name: "Advanced",
+    file: "French C1_LinguaPath.pdf_20260827_190030_0000.pdf"
+  },
+
+  {
+    language: "French",
+    flag: "🇫🇷",
+    level: "C2",
+    name: "Mastery",
+    file: "French C2_LinguaPath.pdf_20260827_201045_0000.pdf"
+  },
+
+
+  /* ITALIAN */
+
+  {
+    language: "Italian",
+    flag: "🇮🇹",
+    level: "A1",
+    name: "Beginner",
+    file: "Italian A1_LinguaPath.pdf_20260827_190123_0000.pdf"
+  },
+
+  {
+    language: "Italian",
+    flag: "🇮🇹",
+    level: "A2",
+    name: "Elementary",
+    file: "Italian A2_LinguaPath pdf_20260827_190143_0000.pdf"
+  },
+
+  {
+    language: "Italian",
+    flag: "🇮🇹",
+    level: "B1",
+    name: "Intermediate",
+    file: "Italian B1_LinguaPath. pdf_20260827_190938_0000.pdf"
+  },
+
+  {
+    language: "Italian",
+    flag: "🇮🇹",
+    level: "B2",
+    name: "Upper Intermediate",
+    file: "Italian B2_LinguaPath. pdf_20260827_191000_0000.pdf"
+  },
+
+  {
+    language: "Italian",
+    flag: "🇮🇹",
+    level: "C1",
+    name: "Advanced",
+    file: "Italian C1_LinguaPath.pdf_20260827_191024_0000.pdf"
+  },
+
+  {
+    language: "Italian",
+    flag: "🇮🇹",
+    level: "C2",
+    name: "Mastery",
+    file: "Italian C2_LinguaPath.pdf_20260827_191043_0000.pdf"
+  },
+
+
+  /* CHINESE */
+
+  {
+    language: "Chinese",
+    flag: "🇨🇳",
+    level: "A1",
+    name: "Beginner",
+    file: "Chinese A1_LinguaPath.pdf_20260827_191131_0000.pdf"
+  },
+
+  {
+    language: "Chinese",
+    flag: "🇨🇳",
+    level: "A2",
+    name: "Elementary",
+    file: "Chinese A2_LinguaPath.pdf_20260827_191151_0000.pdf"
+  },
+
+  {
+    language: "Chinese",
+    flag: "🇨🇳",
+    level: "B1",
+    name: "Intermediate",
+    file: "Chinese B1_LinguaPath. pdf_20260827_191216_0000.pdf"
+  },
+
+  {
+    language: "Chinese",
+    flag: "🇨🇳",
+    level: "B2",
+    name: "Upper Intermediate",
+    file: "Chinese B2_LinguaPath. pdf_20260827_191237_0000.pdf"
+  },
+
+  {
+    language: "Chinese",
+    flag: "🇨🇳",
+    level: "C1",
+    name: "Advanced",
+    file: "Chinese C1_LinguaPath.pdf_20260827_191316_0000.pdf"
+  },
+
+  {
+    language: "Chinese",
+    flag: "🇨🇳",
+    level: "C2",
+    name: "Mastery",
+    file: "Chinese C2_LinguaPath.pdf_20260827_191335_0000.pdf"
+  },
+
+
+  /* KOREAN */
+
+  {
+    language: "Korean",
+    flag: "🇰🇷",
+    level: "A1",
+    name: "Beginner",
+    file: "Korean A1_LinguaPath.pdf_20260827_191408_0000.pdf"
+  },
+
+  {
+    language: "Korean",
+    flag: "🇰🇷",
+    level: "A2",
+    name: "Elementary",
+    file: "Korean A2_LinguaPath.pdf_20260827_191429_0000.pdf"
+  },
+
+  {
+    language: "Korean",
+    flag: "🇰🇷",
+    level: "B1",
+    name: "Intermediate",
+    file: "Korean B1_LinguaPath. pdf_20260827_191448_0000.pdf"
+  },
+
+  {
+    language: "Korean",
+    flag: "🇰🇷",
+    level: "B2",
+    name: "Upper Intermediate",
+    file: "Korean B2_LinguaPath. pdf_20260827_191520_0000.pdf"
+  },
+
+  {
+    language: "Korean",
+    flag: "🇰🇷",
+    level: "C1",
+    name: "Advanced",
+    file: "Korean C1_LinguaPath.pdf_20260827_191550_0000.pdf"
+  },
+
+  {
+    language: "Korean",
+    flag: "🇰🇷",
+    level: "C2",
+    name: "Mastery",
+    file: "Korean C2_LinguaPath.pdf_20260827_191635_0000.pdf"
+  },
+
+
+  /* JAPANESE */
+
+  {
+    language: "Japanese",
+    flag: "🇯🇵",
+    level: "A1",
+    name: "Beginner",
+    file: "Japanese A1_LinguaPath.pdf_20260827_191729_0000.pdf"
+  },
+
+  {
+    language: "Japanese",
+    flag: "🇯🇵",
+    level: "A2",
+    name: "Elementary",
+    file: "Japanese A2_LinguaPath.pdf_20260827_191806_0000.pdf"
+  },
+
+  {
+    language: "Japanese",
+    flag: "🇯🇵",
+    level: "B1",
+    name: "Intermediate",
+    file: "Japanese B1_LinguaPath. pdf_20260827_191828_0000.pdf"
+  },
+
+  {
+    language: "Japanese",
+    flag: "🇯🇵",
+    level: "B2",
+    name: "Upper Intermediate",
+    file: "Japanese B2_LinguaPath. pdf_20260827_191849_0000.pdf"
+  },
+
+  {
+    language: "Japanese",
+    flag: "🇯🇵",
+    level: "C1",
+    name: "Advanced",
+    file: "Japanese C1_LinguaPath.pdf_20260827_191912_0000.pdf"
+  },
+
+  {
+    language: "Japanese",
+    flag: "🇯🇵",
+    level: "C2",
+    name: "Mastery",
+    file: "Japanese C2_linguaPath.pdf_20260827_192047_0000.pdf"
+  },
+
+
+  /* GERMAN */
+
+  {
+    language: "German",
+    flag: "🇩🇪",
+    level: "A1",
+    name: "Beginner",
+    file: "German A1_LinguaPath.pdf_20260827_192118_0000.pdf"
+  },
+
+  {
+    language: "German",
+    flag: "🇩🇪",
+    level: "A2",
+    name: "Elementary",
+    file: "German A2_LinguaPath.pdf_20260827_192137_0000.pdf"
+  },
+
+  {
+    language: "German",
+    flag: "🇩🇪",
+    level: "B1",
+    name: "Intermediate",
+    file: "German B1_LinguaPath. pdf_20260827_192211_0000.pdf"
+  },
+
+  {
+    language: "German",
+    flag: "🇩🇪",
+    level: "B2",
+    name: "Upper Intermediate",
+    file: "102203"
+  },
+
+  {
+    language: "German",
+    flag: "🇩🇪",
+    level: "C1",
+    name: "Advanced",
+    file: "German C1_LinguaPath.pdf_20260827_192254_0000.pdf"
+  },
+
+  {
+    language: "German",
+    flag: "🇩🇪",
+    level: "C2",
+    name: "Mastery",
+    file: "German C2_LinguaPath.pdf _20260827_192314_0000.pdf"
+  },
+
+
+  /* ARABIC */
+
+  {
+    language: "Arabic",
+    flag: "🇸🇦",
+    level: "A1",
+    name: "Beginner",
+    file: "Arabic A1_LinguaPath.pdf_20260827_192345_0000.pdf"
+  },
+
+  {
+    language: "Arabic",
+    flag: "🇸🇦",
+    level: "A2",
+    name: "Elementary",
+    file: "Arabic A2_LinguaPath.pdf_20260827_192404_0000.pdf"
+  },
+
+  {
+    language: "Arabic",
+    flag: "🇸🇦",
+    level: "B1",
+    name: "Intermediate",
+    file: "Arabic B1_LinguaPath. pdf_20260827_192427_0000.pdf"
+  },
+
+  {
+    language: "Arabic",
+    flag: "🇸🇦",
+    level: "B2",
+    name: "Upper Intermediate",
+    file: "Arabic B2_LinguaPath. pdf_20260827_192931_0000.pdf"
+  },
+
+  {
+    language: "Arabic",
+    flag: "🇸🇦",
+    level: "C1",
+    name: "Advanced",
+    file: "Arabic C1_LinguaPath.pdf_20260827_193024_0000.pdf"
+  },
+
+  {
+    language: "Arabic",
+    flag: "🇸🇦",
+    level: "C2",
+    name: "Mastery",
+    file: "Arabic C2_LinguaPath.pdf _20260827_193048_0000.pdf"
   }
 
 ];
 
 
-/* LEVELS */
-
-const levels = [
-
-  {
-    code: "A1",
-    name: "Beginner"
-  },
-
-  {
-    code: "A2",
-    name: "Elementary"
-  },
-
-  {
-    code: "B1",
-    name: "Intermediate"
-  },
-
-  {
-    code: "B2",
-    name: "Upper Intermediate"
-  },
-
-  {
-    code: "C1",
-    name: "Advanced"
-  },
-
-  {
-    code: "C2",
-    name: "Mastery"
-  }
-
-];
-
-
-/* CREATE 54 PDF CARDS */
+/* SHOW PDFS */
 
 function showPDFs() {
 
@@ -1244,76 +1587,61 @@ function showPDFs() {
 
   grid.innerHTML = "";
 
-  let total = 0;
+  let visibleFiles = pdfFiles.filter(function(pdf) {
+
+    return selectedLanguage === "all" ||
+           pdf.language === selectedLanguage;
+
+  });
 
 
-  languages.forEach(function(language) {
+  visibleFiles.forEach(function(pdf) {
 
-    if (
-      selectedLanguage !== "all" &&
-      selectedLanguage !== language.name
-    ) {
+    const card =
+      document.createElement("div");
 
-      return;
-
-    }
+    card.className = "pdf-card";
 
 
-    levels.forEach(function(level) {
+    card.innerHTML = `
 
-      total++;
+      <div class="pdf-icon">
+        📄
+      </div>
 
+      <h3>
+        ${pdf.flag} ${pdf.language}
+      </h3>
 
-      const fileName =
-        language.name + "-" + level.code + ".pdf";
+      <div class="pdf-level">
+        ${pdf.level} — ${pdf.name}
+      </div>
 
+      <div class="pdf-buttons">
 
-      const card =
-        document.createElement("div");
+        <a
+          class="pdf-button"
+          href="pdfs/${encodeURIComponent(pdf.file)}"
+          target="_blank"
+          rel="noopener"
+        >
+          👁️ View PDF
+        </a>
 
-      card.className = "pdf-card";
+        <a
+          class="pdf-button download-button"
+          href="pdfs/${encodeURIComponent(pdf.file)}"
+          download
+        >
+          ⬇️ Download
+        </a>
 
+      </div>
 
-      card.innerHTML = `
-
-        <div class="pdf-icon">
-          📄
-        </div>
-
-        <h3>
-          ${language.flag} ${language.name}
-        </h3>
-
-        <div class="pdf-level">
-          ${level.code} — ${level.name}
-        </div>
-
-        <div class="pdf-buttons">
-
-          <a
-            class="pdf-button"
-            href="pdfs/${fileName}"
-            target="_blank"
-          >
-            👁️ View PDF
-          </a>
-
-          <a
-            class="pdf-button download-button"
-            href="pdfs/${fileName}"
-            download
-          >
-            ⬇️ Download
-          </a>
-
-        </div>
-
-      `;
+    `;
 
 
-      grid.appendChild(card);
-
-    });
+    grid.appendChild(card);
 
   });
 
@@ -1321,12 +1649,14 @@ function showPDFs() {
   if (selectedLanguage === "all") {
 
     count.textContent =
-      "Showing all 54 vocabulary PDFs";
+      "Showing all " + visibleFiles.length +
+      " vocabulary PDFs";
 
   } else {
 
     count.textContent =
-      "Showing 6 PDFs for " +
+      "Showing " + visibleFiles.length +
+      " PDFs for " +
       selectedLanguage;
 
   }
